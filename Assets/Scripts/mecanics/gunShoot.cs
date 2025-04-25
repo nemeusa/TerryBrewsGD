@@ -2,23 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gunShoot : MonoBehaviour
+public class GunShoot : MonoBehaviour
 {
     public LookInteraction lookInteraction; // Arrastrás el Player al Inspector
-    public GameObject muzzleFlashPrefab; // asignar en Inspector
+    public GameObject muzzleFlashPrefab; // Asignar en Inspector
     public float flashDuration = 0.05f;
+    public LayerMask enemyLayer; // Asigna la capa de enemigos en el Inspector
+    public float shootRange = 100f; // Ajusta la distancia de disparo según sea necesario
 
-    // Start is called before the first frame update
     void Start()
     {
-
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Agregar sun log para ver si estamos en el Update y si tenemos el arma
-        Debug.Log("En Update - tiene arma: " + (lookInteraction.heldWeapon != null) + ", Prefab asignado: " + (muzzleFlashPrefab != null));
+        // Agregar un log para ver si estamos en el Update y si tenemos el arma
+        Debug.Log("En Update - tiene arma: " + (lookInteraction.heldWeapon != null)
+                  + ", Prefab asignado: " + (muzzleFlashPrefab != null));
 
         // Verificar si tienes un arma y el prefab de fuego está asignado
         if (lookInteraction.heldWeapon != null && muzzleFlashPrefab != null)
@@ -46,5 +46,16 @@ public class gunShoot : MonoBehaviour
         // Instanciar el efecto visual del disparo en ese punto
         GameObject flash = Instantiate(muzzleFlashPrefab, muzzle.position, muzzle.rotation, muzzle);
         Destroy(flash, flashDuration); // Destruir después de un tiempo para que no se acumule
+
+        // Disparar un rayo para detectar el enemigo
+        Ray ray = new Ray(muzzle.position, muzzle.forward);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, shootRange, enemyLayer))
+        {
+            Debug.Log("¡Enemigo alcanzado!");
+            // Eliminar al enemigo
+            Destroy(hit.collider.gameObject); // Destruir el GameObject del enemigo
+        }
     }
 }
