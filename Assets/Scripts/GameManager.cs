@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+
+
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -49,7 +51,9 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("naooo me mataste :c");
             score -= 1;
+            if (score < 0) score = 0;
             scoreText.text = "Puntos: " + score;
+
         }
 
         else if (piumbaCode.piumba && clientCode._imposter && clientCode.pidiendo)
@@ -63,6 +67,8 @@ public class GameManager : MonoBehaviour
 
     void EntregarBebida()
     {
+        if (score < 0) score = 0;
+
         if (selectedDrink == null) return;
 
         if (selectedDrink == currentRequest)
@@ -78,13 +84,15 @@ public class GameManager : MonoBehaviour
             else
             {
                 score -= 100;
+                if (score < 0) score = 0;
                 StartCoroutine(ScaryJumpscary());
             }
         }
         else
         {
             score -= 10;
-           // Debug.Log("No");
+            if (score < 0) score = 0;
+            // Debug.Log("No");
         }
 
 
