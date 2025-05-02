@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 24848780113920416}
   - component: {fileID: 8985918851535115524}
   - component: {fileID: 3579959054627474534}
+  - component: {fileID: 80842431327447635}
   m_Layer: 6
   m_Name: client
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 2083364825804263593}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.45, y: 2.5, z: -3.3600001}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -94,7 +95,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2083364825804263593}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3352c8faa1639454cb592c235a29e15d, type: 3}
   m_Name: 
@@ -104,9 +105,13 @@ MonoBehaviour:
   _orderingTime: 0.3
   _orderTimer: 0
   _served: 0
+  pidiendo: 0
   _servePoint: {fileID: 0}
+  _enterPoint: {fileID: 0}
   pedidoTexto: {fileID: 0}
+  _imposter: 0
   nuevoColor: {r: 1, g: 0, b: 0, a: 1}
+  buenoColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!65 &8985918851535115524
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -124,7 +129,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -140,7 +145,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea50c4f9b7bdad5439b3fa0b72c26597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requestedItem: 
+  requestedItem: Cerveza
+--- !u!114 &80842431327447635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083364825804263593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b83e12ba04fca84ea035b90e6745289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movSpeed: 5
+  _chair: {fileID: 0}
 --- !u!1 &2939783058530435608
 GameObject:
   m_ObjectHideFlags: 0
