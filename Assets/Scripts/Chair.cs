@@ -9,10 +9,17 @@ public class Chair : MonoBehaviour
 
     public void Ocuppy()
     {
-        isOcupped = true;
+        if (!isOcupped)
+        {
+            isOcupped = true;
+            Debug.Log("Ocupado");
+            GetComponent<Renderer>().material.color = Color.red;
+        }
     } 
     public void Free()
     {
-        isOcupped = false;
+            isOcupped = false;
+            Debug.Log("Libre");
+            GetComponent<Renderer>().material.color = Color.green;
     }
 }

@@ -20,6 +20,13 @@ public class OrderState : State
 
     public void OnUpdate()
     {
+        Debug.Log("Order");
+        _client.chair.Ocuppy();
+        _client.transform.forward = new Vector3 (0, 0, 0);
+        if (Input.GetButtonDown("Jump"))
+        {
+            _fsm.ChangeState(TypeFSM.ExitBar);
+        }
     }
 
     public void OnExit()

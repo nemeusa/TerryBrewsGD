@@ -1,4 +1,5 @@
 
+using System.Collections;
 using UnityEngine;
 
 public class ExitBarState : State
@@ -19,7 +20,12 @@ public class ExitBarState : State
 
     public void OnUpdate()
     {
-        _client.LeaveChair();
+        Debug.Log("Exit");
+        _client.chair.Free();
+        var dir = _client.chair.transform.position + _client.transform.position;
+        _client.transform.forward = dir;
+        _client.transform.position += (dir * _client._movSpeed * Time.deltaTime);
+        _client.IsDestroy();
     }
 
     public void OnExit()

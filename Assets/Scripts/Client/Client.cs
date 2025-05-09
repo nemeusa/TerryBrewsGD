@@ -7,9 +7,9 @@ public class Client : MonoBehaviour
 {
     FSM<TypeFSM> _fsm;
 
-    [SerializeField] float _movSpeed;
+    public float _movSpeed;
     [HideInInspector]
-    public Chair _chair;
+    public Chair chair;
 
     void Awake()
     {
@@ -28,14 +28,14 @@ public class Client : MonoBehaviour
 
     public void AssignChair(Chair chair)
     {
-        _chair = chair;
-        _chair.Ocuppy();
+        this.chair = chair;
+        this.chair.Ocuppy();
         StartCoroutine(GoSeat());
     }
 
     IEnumerator GoSeat()
     {
-        var dir = transform.position - _chair.transform.position;
+        var dir = transform.position - chair.transform.position;
         while (dir.x < 0.1)
         {
             //transform.forward = dir;
@@ -46,9 +46,15 @@ public class Client : MonoBehaviour
 
     public void LeaveChair()
     {
-        _chair.Free();
+        chair.Free();
+    }
+
+    public IEnumerator IsDestroy()
+    {
+        yield return new WaitForSeconds(2);
         Destroy(gameObject);
     }
+       
 }
 
 public enum TypeFSM

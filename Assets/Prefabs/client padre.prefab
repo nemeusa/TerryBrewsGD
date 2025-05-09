@@ -11,12 +11,11 @@ GameObject:
   - component: {fileID: 5207650852976784881}
   - component: {fileID: 5777193134198357389}
   - component: {fileID: 9194782329493329966}
-  - component: {fileID: 24848780113920416}
   - component: {fileID: 8985918851535115524}
   - component: {fileID: 3579959054627474534}
   - component: {fileID: 80842431327447635}
   m_Layer: 6
-  m_Name: client
+  m_Name: client padre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,30 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &24848780113920416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2083364825804263593}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3352c8faa1639454cb592c235a29e15d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 1.5
-  _exitSpeed: 10
-  _orderingTime: 0.3
-  _orderTimer: 0
-  _served: 0
-  pidiendo: 0
-  _servePoint: {fileID: 0}
-  _enterPoint: {fileID: 0}
-  pedidoTexto: {fileID: 0}
-  _imposter: 0
-  nuevoColor: {r: 1, g: 0, b: 0, a: 1}
-  buenoColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!65 &8985918851535115524
 BoxCollider:
   m_ObjectHideFlags: 0

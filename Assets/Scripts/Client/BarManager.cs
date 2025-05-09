@@ -20,9 +20,8 @@ public class BarManager : MonoBehaviour
     public void TrySpawnClient()
     {
         Chair freeChair = allChairs.FirstOrDefault(c => !c.isOcupped);
-        //spawnPoint.position = new Vector3(0, 0, 0);
-        //spawnPoint.position = new Vector3(spawnPoint.position.x * _randomEnter, _altureChair.position.y, spawnPoint.position.z);
-        Vector3 spawn = new Vector3(spawnPoint.position.x * _randomEnter, _altureChair.position.y, spawnPoint.position.z);
+        //Vector3 spawn = new Vector3(spawnPoint.position.x * _randomEnter, _altureChair.position.y, spawnPoint.position.z);
+        Vector3 spawn = new Vector3(spawnPoint.position.x, _altureChair.position.y, spawnPoint.position.z);
 
         if (freeChair != null)
         {
