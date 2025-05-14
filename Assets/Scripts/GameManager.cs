@@ -9,8 +9,9 @@ public class GameManager : MonoBehaviour
     public LayerMask clientLayer;
     public Animator cameraDown;
 
-    public Clients clientCode;
+    public Client clientCode;
     public InputManager piumbaCode;
+    public BarManager barCode;
 
     public TMP_Text scoreText;
     public TMP_Text requestText;
@@ -23,8 +24,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        clientCode = GetComponent<Clients>();
-        NuevaPeticion();
+        clientCode = GetComponent<Client>();
+        //NuevaPeticion();
     }
 
     void Update()
@@ -48,21 +49,21 @@ public class GameManager : MonoBehaviour
                 EntregarBebida();
             }
         }
-        if (piumbaCode.piumba && !clientCode._imposter && clientCode.pidiendo)
-        {
-            Debug.Log("naooo me mataste :c");
-            score -= 1;
-            if (score < 0) score = 0;
-            scoreText.text = "Puntos: " + score;
+        //if (piumbaCode.piumba && !clientCode._imposter && clientCode.pidiendo)
+        //{
+        //    Debug.Log("naooo me mataste :c");
+        //    score -= 1;
+        //    if (score < 0) score = 0;
+        //    scoreText.text = "Puntos: " + score;
 
-        }
+        //}
 
-        else if (piumbaCode.piumba && clientCode._imposter && clientCode.pidiendo)
-        {
-            score += 1;
-            Debug.Log("que pete");
-            scoreText.text = "Puntos: " + score;
-        }
+        //else if (piumbaCode.piumba && clientCode._imposter && clientCode.pidiendo)
+        //{
+        //    score += 1;
+        //    Debug.Log("que pete");
+        //    scoreText.text = "Puntos: " + score;
+        //}
 
     }
 
@@ -75,19 +76,19 @@ public class GameManager : MonoBehaviour
         if (selectedDrink == currentRequest)
         {
             //Debug.Log("Si");
-            if (!clientCode._imposter)
-            {
-                score += 100;
-                cameraDown.SetBool("Imposter", false);
+            //if (!clientCode._imposter)
+            //{
+            //    score += 100;
+            //    cameraDown.SetBool("Imposter", false);
 
-            }
+            //}
 
-            else
-            {
-                score -= 100;
-                if (score < 0) score = 0;
-                StartCoroutine(ScaryJumpscary());
-            }
+            //else
+            //{
+            //    score -= 100;
+            //    if (score < 0) score = 0;
+            //    StartCoroutine(ScaryJumpscary());
+            //}
         }
         else
         {
@@ -100,17 +101,17 @@ public class GameManager : MonoBehaviour
 
         scoreText.text = "Puntos: " + score;
         selectedDrink = null;
-        NuevaPeticion();
+        //barCode.NuevaPeticion();
     }
 
-    void NuevaPeticion()
-    {
-        string[] opciones = { "Agua", "Jugo", "Cerveza", "Gaseosa" };
-        currentRequest = opciones[Random.Range(0, opciones.Length)];
-        requestText.text = "El cliente quiere: " + currentRequest;
+    //void NuevaPeticion()
+    //{
+    //    string[] opciones = { "Agua", "Jugo", "Cerveza", "Gaseosa" };
+    //    currentRequest = opciones[Random.Range(0, opciones.Length)];
+    //    requestText.text = "El cliente quiere: " + currentRequest;
 
-        cliente.GetComponent<NPCRequest>().requestedItem = currentRequest;
-    }
+    //    cliente.GetComponent<NPCRequest>().requestedItem = currentRequest;
+    //}
 
     IEnumerator ScaryJumpscary()
     {
@@ -119,7 +120,5 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         cameraDown.SetBool("Imposter", false);
         JumpsCareSus.SetActive(false);
-
-
     }
 }

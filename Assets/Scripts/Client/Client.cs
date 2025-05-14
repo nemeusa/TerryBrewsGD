@@ -10,6 +10,8 @@ public class Client : MonoBehaviour
     public float _movSpeed;
     [HideInInspector]
     public Chair chair;
+    public NPCRequest npcRequest;
+
 
     void Awake()
     {
