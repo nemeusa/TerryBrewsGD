@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        clientCode = GetComponent<Clients>();
         NuevaPeticion();
     }
 
