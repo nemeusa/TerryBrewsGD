@@ -8,6 +8,8 @@ public class Client : MonoBehaviour
     FSM<TypeFSM> _fsm;
 
     public float _movSpeed;
+
+    public bool isSit;
     [HideInInspector]
     public Chair chair;
     public NPCRequest npcRequest;
@@ -32,6 +34,7 @@ public class Client : MonoBehaviour
     {
         this.chair = chair;
         this.chair.Ocuppy();
+        isSit = true;
         StartCoroutine(GoSeat());
     }
 
@@ -49,6 +52,7 @@ public class Client : MonoBehaviour
     public void LeaveChair()
     {
         chair.Free();
+        isSit = false;
     }
 
     public IEnumerator IsDestroy()

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3123,6 +3123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textoUI: {fileID: 401835558}
+  ocuppy: 0
 --- !u!1 &728048623
 GameObject:
   m_ObjectHideFlags: 0
@@ -3521,6 +3522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textoUI: {fileID: 1516572446}
+  ocuppy: 0
 --- !u!1 &862242078
 GameObject:
   m_ObjectHideFlags: 0
@@ -4535,7 +4537,7 @@ GameObject:
   - component: {fileID: 1415146502}
   - component: {fileID: 1415146501}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Canvas 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6511,6 +6513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textoUI: {fileID: 520660138}
+  ocuppy: 0
 --- !u!1 &1872010261
 GameObject:
   m_ObjectHideFlags: 0

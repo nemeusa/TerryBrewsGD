@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6405939003535891439
 RectTransform:
   m_ObjectHideFlags: 0
@@ -236,6 +236,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requestedItem: Agua
+  currentRequest: 
+  ocuppy: 0
   order: 0
 --- !u!114 &80842431327447635
 MonoBehaviour:
@@ -250,6 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movSpeed: 5
+  isSit: 0
   chair: {fileID: 0}
   npcRequest: {fileID: 3579959054627474534}
 --- !u!54 &5929659609626681198
@@ -514,7 +517,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2262128924393605390
 RectTransform:
   m_ObjectHideFlags: 0
