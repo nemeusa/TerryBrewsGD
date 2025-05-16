@@ -3,6 +3,11 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class NPCRequest : MonoBehaviour
 {
+    public static NPCRequest instance;
+
+    public LayerMask beverageLayer;
+    public LayerMask clientLayer;
+
     public string requestedItem;
 
     public string currentRequest;
@@ -12,7 +17,7 @@ public class NPCRequest : MonoBehaviour
 
     public bool ocuppy;
 
-    public bool order;
+    public bool goodOrder;
     Client client;
 
     private void Start()
@@ -20,6 +25,29 @@ public class NPCRequest : MonoBehaviour
         client = GetComponent<Client>();
         NuevaPeticion();
     }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out RaycastHit hit, 100f, beverageLayer))
+            {
+                Beverage drinkType = hit.collider.GetComponent<Beverage>();
+                if (drinkType != null)
+                {
+                    selectedDrink = drinkType.drinkType.ToString();
+                }
+            }
+            else if (Physics.Raycast(ray, out hit, 100f, clientLayer))
+            {
+
+                EntregarBebida();
+            }
+        }
+    }
+
     public void NuevaPeticion()
     {
         string[] opciones = { "Agua", "Jugo", "Cerveza", "Gaseosa" };
@@ -27,7 +55,7 @@ public class NPCRequest : MonoBehaviour
     }
 
 
-    void EntregarBebida()
+    public void EntregarBebida()
     {
         if (score < 0) score = 0;
 
@@ -35,7 +63,8 @@ public class NPCRequest : MonoBehaviour
 
         if (selectedDrink == currentRequest)
         {
-            order = true;
+            Debug.Log("pedido correcto");
+            goodOrder = true;
         }
     }
 

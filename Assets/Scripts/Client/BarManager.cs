@@ -13,6 +13,8 @@ public class BarManager : MonoBehaviour
     [SerializeField] Transform _altureChair;
     private float _randomEnter;
 
+    public GameManager gameManager;
+
     //private string currentRequest;
     //public TMP_Text requestText;
 
@@ -35,6 +37,7 @@ public class BarManager : MonoBehaviour
         {
             GameObject clientObj = Instantiate(clientPrefab, spawn, Quaternion.identity);
             Client client = clientObj.GetComponent<Client>();
+            gameManager.client = client;
             //NuevaPeticion();
             //client.GetComponent<NPCRequest>().requestedItem = currentRequest;
             client.AssignChair(freeChair);

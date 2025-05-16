@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     private string currentRequest;
     private int score = 0;
 
+    public Client client;
+
     void Start()
     {
         clientCode = GetComponent<Client>();
@@ -46,7 +48,8 @@ public class GameManager : MonoBehaviour
             }
             else if (Physics.Raycast(ray, out hit, 100f, clientLayer))
             {
-                EntregarBebida();
+               
+                client.npcRequest.EntregarBebida();
             }
         }
         //if (piumbaCode.piumba && !clientCode._imposter && clientCode.pidiendo)
