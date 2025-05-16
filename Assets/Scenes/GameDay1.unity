@@ -1874,8 +1874,8 @@ Transform:
   - {fileID: 2072215174}
   - {fileID: 1666173849}
   - {fileID: 428016389}
-  - {fileID: 116087094}
   - {fileID: 1794779722}
+  - {fileID: 116087094}
   - {fileID: 1295040545}
   - {fileID: 1477788893}
   - {fileID: 362844697}
@@ -2711,6 +2711,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Silla (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2a58513e23cec1a48938477ff2e85a6d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4066,10 +4071,11 @@ Transform:
   m_GameObject: {fileID: 911509686}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.41179955, y: 0, z: 0}
+  m_LocalPosition: {x: 0.035799563, y: 0.018354995, z: 0.15}
   m_LocalScale: {x: 7.307535, y: 11.501136, z: 5.6530957}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 543450651806134751}
   m_Father: {fileID: 1256561750}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &911509689
@@ -4611,8 +4617,8 @@ Transform:
   m_GameObject: {fileID: 1256561749}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.09, y: 2.96, z: -0.91}
-  m_LocalScale: {x: 1.5038, y: 1.5038, z: 1.5038}
+  m_LocalPosition: {x: 1.8189, y: 3.05, z: -1.42}
+  m_LocalScale: {x: 1.8579427, y: 1.8579427, z: 1.8579427}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1345699102}
@@ -4756,7 +4762,7 @@ Transform:
   m_GameObject: {fileID: 1345699101}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.058, y: -0.089355, z: 0}
+  m_LocalPosition: {x: 0.682, y: -0.071, z: 0}
   m_LocalScale: {x: 6.0986805, y: 9.598553, z: 5.946477}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5582,7 +5588,7 @@ Transform:
   m_GameObject: {fileID: 1560596696}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.62, y: -0.07, z: 0}
+  m_LocalPosition: {x: -1.8, y: -0.07, z: 0.166}
   m_LocalScale: {x: 34.120197, y: 32.915413, z: 26.39532}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6133,6 +6139,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Silla (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2a58513e23cec1a48938477ff2e85a6d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6575,6 +6586,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Silla
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2a58513e23cec1a48938477ff2e85a6d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6593,7 +6609,7 @@ GameObject:
   - component: {fileID: 1794779720}
   - component: {fileID: 1794779719}
   m_Layer: 0
-  m_Name: BAR
+  m_Name: Fondo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6680,8 +6696,8 @@ Transform:
   m_GameObject: {fileID: 1794779718}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 1.5450001, y: 2.1490002, z: -7.4449997}
-  m_LocalScale: {x: 3.491947, y: 0.7083199, z: 2.1119266}
+  m_LocalPosition: {x: 8.6, y: 2.1490002, z: -7.4449997}
+  m_LocalScale: {x: 4.139409, y: 0.7083199, z: 2.1119266}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 356088219}
@@ -7441,110 +7457,6 @@ Transform:
   - {fileID: 553727572}
   m_Father: {fileID: 356088219}
   m_LocalEulerAnglesHint: {x: -10.053, y: 35.724, z: 0}
---- !u!1001 &1936102964
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 7b32e868fd8b3734984f93143e3e8990,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 72.63756
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7b32e868fd8b3734984f93143e3e8990,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 72.63756
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7b32e868fd8b3734984f93143e3e8990,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 72.63756
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7b32e868fd8b3734984f93143e3e8990,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.13
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7b32e868fd8b3734984f93143e3e8990,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.28
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7b32e868fd8b3734984f93143e3e8990,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.83
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7b32e868fd8b3734984f93143e3e8990,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7b32e868fd8b3734984f93143e3e8990,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7b32e868fd8b3734984f93143e3e8990,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7b32e868fd8b3734984f93143e3e8990,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7b32e868fd8b3734984f93143e3e8990,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7b32e868fd8b3734984f93143e3e8990,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7b32e868fd8b3734984f93143e3e8990,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -467337866081456071, guid: 7b32e868fd8b3734984f93143e3e8990,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.00741
-      objectReference: {fileID: 0}
-    - target: {fileID: -467337866081456071, guid: 7b32e868fd8b3734984f93143e3e8990,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.012913458
-      objectReference: {fileID: 0}
-    - target: {fileID: -467337866081456071, guid: 7b32e868fd8b3734984f93143e3e8990,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.02647
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 7b32e868fd8b3734984f93143e3e8990,
-        type: 3}
-      propertyPath: m_Name
-      value: Vaso Jugo
-      objectReference: {fileID: 0}
-    - target: {fileID: 5438235509153088103, guid: 7b32e868fd8b3734984f93143e3e8990,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: c4c702e482468fe4094798a7874bd8dd, type: 2}
-    m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 7953361883486865624, guid: 7b32e868fd8b3734984f93143e3e8990, type: 3}
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7b32e868fd8b3734984f93143e3e8990, type: 3}
 --- !u!1 &2010870174
 GameObject:
   m_ObjectHideFlags: 0
@@ -8022,6 +7934,121 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2079595699}
   m_CullTransparentMesh: 1
+--- !u!4 &543450651806134751
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147869789029}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.052712753, y: -0.0393168, z: -0.22585243}
+  m_LocalScale: {x: 6.6099815, y: 4.199818, z: 8.544464}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8756034169953756685}
+  m_Father: {fileID: 911509687}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &919132147869789029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 543450651806134751}
+  m_Layer: 0
+  m_Name: Vaso Jugo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &5438235507754194003
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6376358056143412489}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: c4c702e482468fe4094798a7874bd8dd, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &6376358056143412489
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8756034169953756685}
+  - component: {fileID: 7885430663885863927}
+  - component: {fileID: 5438235507754194003}
+  m_Layer: 0
+  m_Name: Frutita_Jugo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!33 &7885430663885863927
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6376358056143412489}
+  m_Mesh: {fileID: 2823158133485712150, guid: 7b32e868fd8b3734984f93143e3e8990, type: 3}
+--- !u!4 &8756034169953756685
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6376358056143412489}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.6507449, y: -0.2766426, z: -0.2766426, w: 0.6507449}
+  m_LocalPosition: {x: 0.00741, y: 0.012913458, z: 0.02647}
+  m_LocalScale: {x: 0.22396502, y: 0.023888912, z: 0.22396502}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 543450651806134751}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -8042,7 +8069,6 @@ SceneRoots:
   - {fileID: 1483362353}
   - {fileID: 1879261662}
   - {fileID: 72052354}
-  - {fileID: 1936102964}
   - {fileID: 1779382543}
   - {fileID: 472092575}
   - {fileID: 1648719131}
