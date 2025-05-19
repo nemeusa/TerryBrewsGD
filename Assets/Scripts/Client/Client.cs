@@ -1,15 +1,17 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class Client : MonoBehaviour
 {
     FSM<TypeFSM> _fsm;
 
-    public float _movSpeed;
+    public float _movSpeed, _exitSpeed;
 
-    public bool isSit;
     [HideInInspector]
     public Chair chair;
+
+    public TMP_Text _textMesh;
 
     public string currentRequest;
 
@@ -36,7 +38,6 @@ public class Client : MonoBehaviour
     {
         this.chair = chair;
         this.chair.Ocuppy();
-        isSit = true;
         StartCoroutine(GoSeat());
     }
 
@@ -54,7 +55,6 @@ public class Client : MonoBehaviour
     public void LeaveChair()
     {
         chair.Free();
-        isSit = false;
     }
 
     public IEnumerator IsDestroy()

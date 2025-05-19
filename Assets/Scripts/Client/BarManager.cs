@@ -47,14 +47,6 @@ public class BarManager : MonoBehaviour
         }
     }
 
-
-    //public void NuevaPeticion()
-    //{
-    //    string[] opciones = { "Agua", "Jugo", "Cerveza", "Gaseosa" };
-    //    currentRequest = opciones[Random.Range(0, opciones.Length)];
-    //    requestText.text = "El cliente quiere: " + currentRequest;
-    //}
-
     IEnumerator SpawnRoutine()
     {
         while (true)

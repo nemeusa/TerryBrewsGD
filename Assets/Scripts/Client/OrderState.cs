@@ -15,13 +15,14 @@ public class OrderState : State
 
     public void OnEnter()
     {
-
+        _client._textMesh.gameObject.SetActive(true);
+        _client._textMesh.text = _client.currentRequest;
     }
 
     public void OnUpdate()
     {
         Debug.Log("Order");
-        _client.chair.Ocuppy();
+        //_client.chair.Ocuppy();
         _client.transform.forward = new Vector3 (0, 0, 0);
         if (_client.goodOrder)
         {
@@ -31,5 +32,6 @@ public class OrderState : State
 
     public void OnExit()
     {
+        _client._textMesh.gameObject.SetActive(false);
     }
 }

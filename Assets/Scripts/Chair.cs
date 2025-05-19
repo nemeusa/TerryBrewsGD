@@ -5,7 +5,13 @@ using UnityEngine;
 public class Chair : MonoBehaviour
 {
     public bool isOcupped{ get; private set; }
+    [HideInInspector]
     public Transform seatPosition;
+
+    private void Start()
+    {
+        seatPosition = this.transform;
+    }
 
     public void Ocuppy()
     {

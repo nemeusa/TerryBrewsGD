@@ -6,6 +6,7 @@ public class ExitBarState : State
 {
     FSM<TypeFSM> _fsm;
     Client _client;
+    Vector3 _dir;
 
     public ExitBarState(FSM<TypeFSM> fsm, Client client)
     {
@@ -15,16 +16,16 @@ public class ExitBarState : State
 
     public void OnEnter()
     {
-
+        _dir = (Random.Range(0, 2) == 0) ? Vector3.left : Vector3.right;
     }
 
     public void OnUpdate()
     {
         Debug.Log("Exit");
-        _client.chair.Free();
-        var dir = _client.chair.transform.position + _client.transform.position;
-        _client.transform.forward = dir;
-        _client.transform.position += (dir * _client._movSpeed * Time.deltaTime);
+        _client.LeaveChair();
+        //var dir = _client.chair.transform.position + _client.transform.position;
+        _client.transform.forward = _dir;
+        _client.transform.position += _dir * _client._exitSpeed * Time.deltaTime;
         _client.IsDestroy();
     }
 
