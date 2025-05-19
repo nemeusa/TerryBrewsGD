@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class OrderState : State
@@ -22,11 +21,12 @@ public class OrderState : State
     public void OnUpdate()
     {
         Debug.Log("Order");
-        //_client.chair.Ocuppy();
+        _client.chair.Ocuppy();
         _client.transform.forward = new Vector3 (0, 0, 0);
         if (_client.goodOrder)
         {
             _fsm.ChangeState(TypeFSM.ExitBar);
+            //StartCoroutine(niceOrder());
         }
     }
 
@@ -34,4 +34,10 @@ public class OrderState : State
     {
         _client._textMesh.gameObject.SetActive(false);
     }
+
+    //IEnumerator niceOrder()
+    //{
+    //    GetComponent<MeshRenderer>().material.color = Color.green;
+    //    yield return new WaitForSeconds(0.1f);
+    //}
 }
