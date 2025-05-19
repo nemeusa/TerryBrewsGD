@@ -23,7 +23,7 @@ public class OrderState : State
         Debug.Log("Order");
         _client.chair.Ocuppy();
         _client.transform.forward = new Vector3 (0, 0, 0);
-        if (_client.npcRequest.goodOrder)
+        if (_client.goodOrder)
         {
             _fsm.ChangeState(TypeFSM.ExitBar);
         }

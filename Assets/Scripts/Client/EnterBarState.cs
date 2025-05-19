@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnterBarState : State
@@ -16,7 +13,7 @@ public class EnterBarState : State
 
     public void OnEnter()
     {
-
+        NuevaPeticion();
     }
 
     public void OnUpdate()
@@ -35,6 +32,12 @@ public class EnterBarState : State
     public void OnExit()
     {
 
+    }
+
+    public void NuevaPeticion()
+    {
+        string[] opciones = { "Agua", "Jugo", "Cerveza", "Gaseosa" };
+        _client.currentRequest = opciones[UnityEngine.Random.Range(0, opciones.Length)];
     }
 
 }

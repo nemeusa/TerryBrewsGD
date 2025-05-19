@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1589,12 +1589,7 @@ GameObject:
   - component: {fileID: 330585545}
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
-  - component: {fileID: 330585549}
-  - component: {fileID: 330585548}
-  - component: {fileID: 330585550}
   - component: {fileID: 330585551}
-  - component: {fileID: 330585552}
-  - component: {fileID: 330585553}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1721,7 +1716,7 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!114 &330585548
+--- !u!114 &330585551
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1730,7 +1725,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 330585543}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcd5827a2bb01764d8e9f589970fc628, type: 3}
+  m_Script: {fileID: 11500000, guid: 96ad65577b9d01f41b4ca21501f4819a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   beverageLayer:
@@ -1739,109 +1734,7 @@ MonoBehaviour:
   clientLayer:
     serializedVersion: 2
     m_Bits: 64
-  cameraDown: {fileID: 330585550}
-  clientCode: {fileID: 0}
-  piumbaCode: {fileID: 330585549}
-  barCode: {fileID: 1483362352}
-  scoreText: {fileID: 156511863}
-  requestText: {fileID: 278569186}
-  cliente: {fileID: 2083364825804263593, guid: f768e64ecd7a3e14c897d3b12272b284, type: 3}
-  JumpsCareSus: {fileID: 1577383857}
-  client: {fileID: 0}
---- !u!114 &330585549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330585543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76398834a9f2b9e4fb4dacfae9fe9416, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactableLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  muerto: {fileID: 1880146210}
-  animatorClient: {fileID: 0}
-  piumba: 0
---- !u!95 &330585550
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330585543}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f73c3e2277e5c2b438585acbc2e6c08c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &330585551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330585543}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9c82a446c77e2845bb8a138c13b18c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseSensitivity: 176.2
---- !u!114 &330585552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330585543}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a246b3244a8b9c458d2a50c5b158790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CrossHair: {fileID: 953302697}
-  CrossHairReticula: {fileID: 2079595699}
-  interactionDistance: 3
-  interactuable:
-    serializedVersion: 2
-    m_Bits: 256
-  useText: {fileID: 1619901974}
-  targetObjectName: shotgun
-  weaponHolder: {fileID: 728048624}
-  heldWeapon: {fileID: 0}
---- !u!114 &330585553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330585543}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0e9ed3deb586bf42ad5da35ab4068a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lookInteraction: {fileID: 330585552}
-  muzzleFlashPrefab: {fileID: 1017039368896950624, guid: 02ea205af87544b4daf9805ee3740469,
-    type: 3}
-  flashDuration: 0.05
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  shootRange: 100
+  currentRequest: 
 --- !u!1 &356088218
 GameObject:
   m_ObjectHideFlags: 0
@@ -5181,7 +5074,6 @@ MonoBehaviour:
   - {fileID: 702410741}
   spawnPoint: {fileID: 72052354}
   _altureChair: {fileID: 1879261662}
-  gameManager: {fileID: 330585548}
 --- !u!4 &1483362353
 Transform:
   m_ObjectHideFlags: 0

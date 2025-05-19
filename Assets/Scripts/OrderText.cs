@@ -11,7 +11,7 @@ public class OrderText : MonoBehaviour
     {
         if (!ocuppy)
         {
-            NPCRequest client = other.GetComponent<NPCRequest>();
+            Client client = other.GetComponent<Client>();
 
 
             if (client != null)
@@ -27,7 +27,7 @@ public class OrderText : MonoBehaviour
     {
         if (ocuppy)
         {
-            NPCRequest client = other.GetComponent<NPCRequest>();
+            Client client = other.GetComponent<Client>();
 
             if (client != null)
             {

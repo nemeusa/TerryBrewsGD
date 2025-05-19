@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
             else if (Physics.Raycast(ray, out hit, 100f, clientLayer))
             {
                
-                client.npcRequest.EntregarBebida();
+                //client.npcRequest.EntregarBebida();
             }
         }
         //if (piumbaCode.piumba && !clientCode._imposter && clientCode.pidiendo)

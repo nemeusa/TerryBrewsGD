@@ -10,8 +10,12 @@ public class Client : MonoBehaviour
     public bool isSit;
     [HideInInspector]
     public Chair chair;
-    public NPCRequest npcRequest;
 
+    public string currentRequest;
+
+    public bool ocuppy;
+
+    public bool goodOrder;
 
     void Awake()
     {
