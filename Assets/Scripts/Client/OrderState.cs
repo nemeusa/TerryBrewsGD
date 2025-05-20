@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class OrderState : State
+public class OrderState : MonoBehaviour, State
 {
     FSM<TypeFSM> _fsm;
     Client _client;
@@ -14,8 +14,8 @@ public class OrderState : State
 
     public void OnEnter()
     {
-        _client._textMesh.gameObject.SetActive(true);
-        _client._textMesh.text = _client.currentRequest;
+        _client.textOrder.gameObject.SetActive(true);
+        _client.textOrder.text = _client.currentRequest;
     }
 
     public void OnUpdate()
@@ -25,19 +25,28 @@ public class OrderState : State
         _client.transform.forward = new Vector3 (0, 0, 0);
         if (_client.goodOrder)
         {
-            _fsm.ChangeState(TypeFSM.ExitBar);
+            if (_client.imposter) _fsm.ChangeState(TypeFSM.Attack);
+
+            else _fsm.ChangeState(TypeFSM.ExitBar);
             //StartCoroutine(niceOrder());
+        }
+
+        if (_client.isDeath)
+        {
+            _fsm.ChangeState(TypeFSM.Death);
         }
     }
 
     public void OnExit()
     {
-        _client._textMesh.gameObject.SetActive(false);
+        _client.LeaveChair();
+        _client.textOrder.gameObject.SetActive(false);
+        _client.textCharla.gameObject.SetActive(false);
     }
 
-    //IEnumerator niceOrder()
-    //{
-    //    GetComponent<MeshRenderer>().material.color = Color.green;
-    //    yield return new WaitForSeconds(0.1f);
-    //}
+    IEnumerator niceOrder()
+    {
+        _client.GetComponent<MeshRenderer>().material.color = Color.green;
+        yield return new WaitForSeconds(0.1f);
+    }
 }

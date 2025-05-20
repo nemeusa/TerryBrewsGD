@@ -21,7 +21,7 @@ public class EnterBarState : State
         Debug.Log("entrando");
         var dir = _client.chair.transform.position - _client.transform.position;
         _client.transform.forward = dir;
-        _client.transform.position += (dir * _client._movSpeed * Time.deltaTime);
+        _client.transform.position += (dir * _client.speed * Time.deltaTime);
 
         if (MathF.Abs(dir.x) < 0.1)
         {

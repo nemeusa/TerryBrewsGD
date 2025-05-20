@@ -22,10 +22,10 @@ public class ExitBarState : State
     public void OnUpdate()
     {
         Debug.Log("Exit");
-        _client.LeaveChair();
+        _client.GetComponent<MeshRenderer>().material.color = Color.green;
         //var dir = _client.chair.transform.position + _client.transform.position;
         _client.transform.forward = _dir;
-        _client.transform.position += _dir * _client._exitSpeed * Time.deltaTime;
+        _client.transform.position += _dir * _client.exitSpeed * Time.deltaTime;
         _client.IsDestroy();
     }
 

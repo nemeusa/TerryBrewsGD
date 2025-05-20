@@ -15,6 +15,13 @@ public class Player : MonoBehaviour
     [SerializeField] TMP_Text _scoreText;
     [SerializeField] TMP_Text _selectionText;
 
+    [SerializeField] MeshRenderer meshPumpBar;
+    [SerializeField] MeshRenderer meshPumpHand;
+
+    bool _usePump;
+
+    Pump _pumpCode = null;
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -24,9 +31,18 @@ public class Player : MonoBehaviour
             if (Physics.Raycast(ray, out RaycastHit hit, 100f, _beverageLayer))
             {
                 Beverage drinkType = hit.collider.GetComponent<Beverage>();
+                Pump pump = hit.collider.GetComponent<Pump>();
+                _pumpCode = pump;
+
                 if (drinkType != null)
                 {
                     _selectedDrink = drinkType.drinkType.ToString();
+                    PumpOff();
+                    _pumpCode = null;
+                }
+                if (_pumpCode != null)
+                {
+                    PumpOn();
                 }
             }
             else if (Physics.Raycast(ray, out hit, 100f, _clientLayer))
@@ -35,8 +51,9 @@ public class Player : MonoBehaviour
 
                 if (client != null)
                 { 
+                    //client.player = this;
                     currentRequest = client.currentRequest.ToString();
-                    Debug.Log("pide : " + currentRequest);
+                    //Debug.Log("pide : " + currentRequest);
                 }
 
                 EntregarBebida(client);
@@ -51,19 +68,41 @@ public class Player : MonoBehaviour
     public void EntregarBebida(Client client)
     {
 
+        if (_usePump)
+        {
+            client.isDeath = true;
+            if (client.imposter) _score += 50;
+            else _score -= 200;
+            PumpOff();
+        }
+
         if (_selectedDrink == null) return;
 
         if (_selectedDrink == currentRequest)
         {
             Debug.Log("pedido correcto");
-            _score += 100;
+            if (!client.imposter) _score += 100;
+            else _score -= 50;
             client.goodOrder = true;
         }
         else
             _score -= 50;
 
-
         _selectedDrink = null;
     }
 
+    void PumpOn()
+    {
+        meshPumpBar.enabled = false;
+        meshPumpHand.enabled = true;
+        _usePump = true;
+    }
+
+    void PumpOff()
+    {
+        meshPumpBar.enabled = true;
+        meshPumpHand.enabled = false;
+        _usePump = false;
+        _pumpCode = null;
+    }
 }

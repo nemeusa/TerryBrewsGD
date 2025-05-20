@@ -12,6 +12,8 @@ public class BarManager : MonoBehaviour
     [SerializeField] Transform _altureChair;
     private float _randomEnter;
 
+    [SerializeField] Player _player;
+
     //public GameManager gameManager;
 
     //private string currentRequest;
@@ -39,6 +41,7 @@ public class BarManager : MonoBehaviour
             //gameManager.client = client;
             //NuevaPeticion();
             //client.GetComponent<NPCRequest>().requestedItem = currentRequest;
+            client.player = _player;
             client.AssignChair(freeChair);
         }
         else

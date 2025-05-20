@@ -6,18 +6,31 @@ public class Client : MonoBehaviour
 {
     FSM<TypeFSM> _fsm;
 
-    public float _movSpeed, _exitSpeed;
+    public float speed, exitSpeed;
 
     [HideInInspector]
     public Chair chair;
 
-    public TMP_Text _textMesh;
+    [HideInInspector]
+    public Player player;
+
+    public TMP_Text textOrder;
+    public TMP_Text textCharla;
 
     public string currentRequest;
+
+    //public List<string> charlaGood = new List<string>();
+
+    //public List<string> charlaBad = new List<string>();
+
+    public string[] charlaGood, charlaBad;
 
     public bool ocuppy;
 
     public bool goodOrder;
+
+    public bool imposter;
+    public bool isDeath;
 
     void Awake()
     {
@@ -25,8 +38,12 @@ public class Client : MonoBehaviour
         _fsm.AddState(TypeFSM.EnterBar, new EnterBarState(_fsm, this));
         _fsm.AddState(TypeFSM.Order, new OrderState(_fsm, this));
         _fsm.AddState(TypeFSM.ExitBar, new ExitBarState(_fsm, this));
+        _fsm.AddState(TypeFSM.Attack, new AttackState(_fsm, this));
+        _fsm.AddState(TypeFSM.Death, new DeathState(_fsm, this));
 
         _fsm.ChangeState(TypeFSM.EnterBar);
+
+        RandomImposter();
     }
 
     void Update()
@@ -47,7 +64,7 @@ public class Client : MonoBehaviour
         while (dir.x < 0.1)
         {
             //transform.forward = dir;
-            transform.position -= Vector3.right * _movSpeed * Time.deltaTime;
+            transform.position -= Vector3.right * speed * Time.deltaTime;
             yield return null;
         }
     }
@@ -62,6 +79,31 @@ public class Client : MonoBehaviour
         yield return new WaitForSeconds(2);
         Destroy(gameObject);
     }
+
+    void RandomImposter()
+    {
+        if (Random.Range(0, 101) > 50) imposter = true;
+        else imposter = false;
+
+        if (!imposter)
+        {
+            string charla;
+
+            charla = charlaGood[Random.Range(0, charlaGood.Length)];
+            textCharla.text = charla;
+            //Debug.Log(charla);
+
+        }
+
+        else
+        {
+            string charla;
+
+            charla = charlaBad[Random.Range(0, charlaBad.Length)];
+            textCharla.text = charla;
+        }
+
+    }
        
 }
 
@@ -70,5 +112,7 @@ public enum TypeFSM
     EnterBar,
     Order,
     ExitBar,
-    Imposter
+    Imposter,
+    Attack,
+    Death
 }
