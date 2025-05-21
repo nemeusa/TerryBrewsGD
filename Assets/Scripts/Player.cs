@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class Player : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class Player : MonoBehaviour
     bool _usePump;
 
     Pump _pumpCode = null;
+
+    [SerializeField] ParticleSystem _smokeParticle;
 
     private void Update()
     {
@@ -73,7 +76,7 @@ public class Player : MonoBehaviour
             client.isDeath = true;
             if (client.imposter) _score += 50;
             else _score -= 200;
-            PumpOff();
+            StartCoroutine(Shoot());
         }
 
         if (_selectedDrink == null) return;
@@ -104,5 +107,12 @@ public class Player : MonoBehaviour
         meshPumpHand.enabled = false;
         _usePump = false;
         _pumpCode = null;
+    }
+
+    IEnumerator Shoot()
+    {
+        _smokeParticle.Play();
+        yield return new WaitForSeconds(0.3f);
+        PumpOff ();
     }
 }
