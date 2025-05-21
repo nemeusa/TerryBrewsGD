@@ -32,6 +32,8 @@ public class Client : MonoBehaviour
     public bool imposter;
     public bool isDeath;
 
+    public ParticleSystem _goodClientParticles;
+
     void Awake()
     {
         _fsm = new FSM<TypeFSM>();

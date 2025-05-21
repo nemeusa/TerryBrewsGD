@@ -46,6 +46,7 @@ public class Player : MonoBehaviour
                 if (_pumpCode != null)
                 {
                     PumpOn();
+                    _selectedDrink = null;
                 }
             }
             else if (Physics.Raycast(ray, out hit, 100f, _clientLayer))

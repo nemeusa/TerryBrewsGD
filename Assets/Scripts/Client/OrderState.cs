@@ -27,7 +27,11 @@ public class OrderState : MonoBehaviour, State
         {
             if (_client.imposter) _fsm.ChangeState(TypeFSM.Attack);
 
-            else _fsm.ChangeState(TypeFSM.ExitBar);
+            else
+            {
+                _client._goodClientParticles.Play();
+                _fsm.ChangeState(TypeFSM.ExitBar);
+            }
             //StartCoroutine(niceOrder());
         }
 

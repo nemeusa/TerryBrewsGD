@@ -38,10 +38,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Color: 11.06
+    - _Color: 14.17
     - _QueueControl: 0
     - _QueueOffset: -44
-    - _Spread: 1.08
+    - _Spread: 0.6
     m_Colors: []
   m_BuildTextureStacks: []
 --- !u!114 &7141807377378310742
