@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class Player : MonoBehaviour
     Pump _pumpCode = null;
 
     [SerializeField] ParticleSystem _smokeParticle;
+
+    [SerializeField] Scene _sceneName;
 
     private void Update()
     {
@@ -67,6 +70,17 @@ public class Player : MonoBehaviour
         if (_score < 0) _score = 0;
         _scoreText.text = "Puntos: " + _score;
         _selectionText.text = "Tienes: " + _selectedDrink;
+
+        if (_score >= 1000)
+        {
+            //void LoadScene(string sceneName)
+            //{
+               SceneManager.LoadScene("Win");
+            //}
+
+        }
+
+
     }
 
     public void EntregarBebida(Client client)

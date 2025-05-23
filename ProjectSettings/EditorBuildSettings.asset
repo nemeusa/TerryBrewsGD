@@ -10,8 +10,11 @@ EditorBuildSettings:
     guid: 08682307573f46a4e94138f1fcb00aa8
   - enabled: 1
     path: Assets/Scenes/GameDay1.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    guid: e0ba9956aeac8334f87ad6216c4456c1
   - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: a04448e4fc645a24abace7137a15d0f5
+  - enabled: 0
     path: Assets/Scenes/Pascua/Pascua.unity
     guid: fca6ea23ec3b26f4ab60143c5d85f7bf
   m_configObjects: {}
