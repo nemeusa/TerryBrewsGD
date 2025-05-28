@@ -23,6 +23,7 @@ public class DeathState : State
         var dir = _client.player.transform.position - _client.transform.position;
         _client.transform.forward = dir;
         _client.transform.position += -dir * _client.speed * Time.deltaTime;
+        _client.StartCoroutine(_client.IsDestroy());
     }
 
     public void OnExit()

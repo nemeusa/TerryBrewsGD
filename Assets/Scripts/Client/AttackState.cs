@@ -25,6 +25,7 @@ public class AttackState : State
         _client.transform.forward = dir;
         _client.transform.position += dir * _client.speed * Time.deltaTime;
         //_client.transform.Translate(Vector3.forward * _client.exitSpeed * Time.deltaTime);
+        _client.StartCoroutine(_client.IsDestroy());
     }
 
     public void OnExit()

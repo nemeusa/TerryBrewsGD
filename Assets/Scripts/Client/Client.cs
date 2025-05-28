@@ -42,6 +42,7 @@ public class Client : MonoBehaviour
         _fsm.AddState(TypeFSM.ExitBar, new ExitBarState(_fsm, this));
         _fsm.AddState(TypeFSM.Attack, new AttackState(_fsm, this));
         _fsm.AddState(TypeFSM.Death, new DeathState(_fsm, this));
+        _fsm.AddState(TypeFSM.VIP, new VIPState(_fsm, this));
 
         _fsm.ChangeState(TypeFSM.EnterBar);
 
@@ -51,6 +52,7 @@ public class Client : MonoBehaviour
     void Update()
     {
         _fsm.Execute();
+        //Destroy(gameObject, 2);
     }
 
     public void AssignChair(Chair chair)
@@ -78,7 +80,7 @@ public class Client : MonoBehaviour
 
     public IEnumerator IsDestroy()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
 
@@ -116,5 +118,6 @@ public enum TypeFSM
     ExitBar,
     Imposter,
     Attack,
-    Death
+    Death,
+    VIP
 }

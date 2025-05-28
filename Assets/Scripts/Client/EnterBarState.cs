@@ -26,7 +26,15 @@ public class EnterBarState : State
         if (MathF.Abs(dir.x) < 0.1)
         {
             _fsm.ChangeState(TypeFSM.Order);
+
+
+            //Cliente vip
+            //if(UnityEngine.Random.Range(0, 101) == 1)
+            //{
+            //    _fsm.ChangeState(TypeFSM.VIP);
+            //}
         }
+
     }
 
     public void OnExit()

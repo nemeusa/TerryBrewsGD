@@ -13,9 +13,11 @@ public class Player : MonoBehaviour
     private string _selectedDrink = null;
 
     private int _score = 0;
+    private int _cordura = 100;
 
     [SerializeField] TMP_Text _scoreText;
     [SerializeField] TMP_Text _selectionText;
+    [SerializeField] TMP_Text _corduraText;
 
     [SerializeField] MeshRenderer meshPumpBar;
     [SerializeField] MeshRenderer meshPumpHand;
@@ -70,6 +72,7 @@ public class Player : MonoBehaviour
         if (_score < 0) _score = 0;
         _scoreText.text = "Puntos: " + _score;
         _selectionText.text = "Tienes: " + _selectedDrink;
+        _corduraText.text = "Cordura: " + _cordura;
 
         if (_score >= 1000)
         {
@@ -89,8 +92,16 @@ public class Player : MonoBehaviour
         if (_usePump)
         {
             client.isDeath = true;
-            if (client.imposter) _score += 50;
-            else _score -= 200;
+            if (client.imposter)
+            {
+                _score += 50;
+                _cordura += 10;
+            }
+            else
+            {
+                _score -= 200;
+                _cordura -= 10;
+            }
             StartCoroutine(Shoot());
         }
 
@@ -99,12 +110,20 @@ public class Player : MonoBehaviour
         if (_selectedDrink == currentRequest)
         {
             Debug.Log("pedido correcto");
-            if (!client.imposter) _score += 100;
-            else _score -= 50;
+            if (!client.imposter)
+            {
+                _score += 100;
+            }
+            else
+            {
+                _score -= 50;
+            }
             client.goodOrder = true;
         }
         else
+        {
             _score -= 50;
+        }
 
         _selectedDrink = null;
     }

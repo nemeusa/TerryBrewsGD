@@ -26,7 +26,7 @@ public class ExitBarState : State
         //var dir = _client.chair.transform.position + _client.transform.position;
         _client.transform.forward = _dir;
         _client.transform.position += _dir * _client.exitSpeed * Time.deltaTime;
-        _client.IsDestroy();
+        _client.StartCoroutine(_client.IsDestroy());
     }
 
     public void OnExit()
