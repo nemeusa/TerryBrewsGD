@@ -30,6 +30,13 @@ public class Player : MonoBehaviour
 
     [SerializeField] Scene _sceneName;
 
+    Flash _flash;
+
+    private void Awake()
+    {
+        _flash = GetComponent<Flash>();
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -122,6 +129,7 @@ public class Player : MonoBehaviour
             {
                 _score -= 50;
                 _cordura -= 30;
+                StartCoroutine(_flash.PostActive());
             }
             client.goodOrder = true;
         }

@@ -190,9 +190,9 @@ MonoBehaviour:
   - Los precios son muy altos
   - '*Patea la mesa*'
   agua: {r: 0.31764707, g: 0.7607844, b: 0.7607844, a: 1}
-  jugo: {r: 0.80392164, g: 0.43529415, b: 0, a: 1}
-  cerveza: {r: 0.81568635, g: 0.81568635, b: 0, a: 1}
-  gaseosa: {r: 0.7735849, g: 0.105820596, b: 0.12627462, a: 1}
+  jugo: {r: 1, g: 0.20784314, b: 0, a: 1}
+  cerveza: {r: 0.97938144, g: 1, b: 0, a: 1}
+  gaseosa: {r: 1, g: 0, b: 0.2546935, a: 1}
   ocuppy: 0
   goodOrder: 0
   imposter: 0
