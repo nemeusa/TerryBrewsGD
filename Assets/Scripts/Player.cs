@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
         _scoreText.text = "Puntos: " + _score;
         _selectionText.text = "Tienes: " + _selectedDrink;
 
-        if (_cordura <= 0) _cordura = 0;
+        if (_cordura <= 0) SceneManager.LoadScene("Lose");
         if (_cordura > 100) _cordura = 100;
         _corduraText.text = "Cordura: " + _cordura;
 
