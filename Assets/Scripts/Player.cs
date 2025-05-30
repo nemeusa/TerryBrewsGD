@@ -72,6 +72,9 @@ public class Player : MonoBehaviour
         if (_score < 0) _score = 0;
         _scoreText.text = "Puntos: " + _score;
         _selectionText.text = "Tienes: " + _selectedDrink;
+
+        if (_cordura <= 0) _cordura = 0;
+        if (_cordura > 100) _cordura = 100;
         _corduraText.text = "Cordura: " + _cordura;
 
         if (_score >= 1000)
@@ -100,7 +103,7 @@ public class Player : MonoBehaviour
             else
             {
                 _score -= 200;
-                _cordura -= 10;
+                _cordura -= 15;
             }
             StartCoroutine(Shoot());
         }
@@ -113,17 +116,18 @@ public class Player : MonoBehaviour
             if (!client.imposter)
             {
                 _score += 100;
+                _cordura += 5;
             }
             else
             {
                 _score -= 50;
+                _cordura -= 30;
             }
             client.goodOrder = true;
         }
         else
         {
-            _score -= 50;
-        }
+            _score -= 50;        }
 
         _selectedDrink = null;
     }
