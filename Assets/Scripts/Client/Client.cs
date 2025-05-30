@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Drawing;
 using TMPro;
 using UnityEngine;
 
@@ -24,6 +25,11 @@ public class Client : MonoBehaviour
     //public List<string> charlaBad = new List<string>();
 
     public string[] charlaGood, charlaBad;
+
+    public UnityEngine.Color agua;
+    public UnityEngine.Color jugo;
+    public UnityEngine.Color cerveza;
+    public UnityEngine.Color gaseosa;
 
     public bool ocuppy;
 
@@ -108,7 +114,34 @@ public class Client : MonoBehaviour
         }
 
     }
-       
+
+    public void colorDrink()
+    {
+        if (currentRequest == "Agua")
+        {
+            Debug.Log("funciona xd");
+            textOrder.color = agua;
+        }
+
+        if (currentRequest == "Jugo")
+        {
+            Debug.Log("funciona xd");
+            textOrder.color = jugo;
+        }
+
+        if (currentRequest == "Cerveza")
+        {
+            Debug.Log("funciona xd");
+            textOrder.color = cerveza;
+        }
+
+        if (currentRequest == "Gaseosa")
+        {
+            Debug.Log("funciona xd");
+            textOrder.color = gaseosa;
+        }
+    }
+
 }
 
 public enum TypeFSM

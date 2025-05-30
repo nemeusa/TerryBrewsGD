@@ -9268,8 +9268,8 @@ GameObject:
   - component: {fileID: 1560596697}
   - component: {fileID: 1560596701}
   - component: {fileID: 1560596700}
-  - component: {fileID: 1560596699}
   - component: {fileID: 1560596702}
+  - component: {fileID: 1560596703}
   m_Layer: 3
   m_Name: Cerveza
   m_TagString: Untagged
@@ -9293,27 +9293,6 @@ Transform:
   - {fileID: 1297951719}
   m_Father: {fileID: 1256561750}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1560596699
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1560596696}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.01253037, y: 0.013397014, z: 0.008945657}
-  m_Center: {x: -0.0000000011641532, y: -2.3283064e-10, z: 4.656613e-10}
 --- !u!23 &1560596700
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9378,6 +9357,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drinkType: 2
+--- !u!65 &1560596703
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560596696}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.012852872, y: 0.014951901, z: 0.01631619}
+  m_Center: {x: -0.01644858, y: 0.0004210182, z: -0.00022919613}
 --- !u!1 &1565586587
 GameObject:
   m_ObjectHideFlags: 0
@@ -10123,7 +10123,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752643327}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

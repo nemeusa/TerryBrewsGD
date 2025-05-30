@@ -14,6 +14,7 @@ public class OrderState : MonoBehaviour, State
 
     public void OnEnter()
     {
+        _client.colorDrink();
         _client.textOrder.gameObject.SetActive(true);
         _client.textOrder.text = _client.currentRequest;
     }
