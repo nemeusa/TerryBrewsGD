@@ -18,19 +18,19 @@ MonoBehaviour:
     m_Value: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.71
   intensity:
     m_OverrideState: 1
     m_Value: 1
   scatter:
     m_OverrideState: 1
-    m_Value: 0.7
+    m_Value: 0.426
   clamp:
     m_OverrideState: 0
     m_Value: 65472
   tint:
-    m_OverrideState: 0
-    m_Value: {r: 1, g: 0.66952926, b: 0, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 0.24120542, g: 0.6226415, b: 0.06167675, a: 1}
   highQualityFiltering:
     m_OverrideState: 0
     m_Value: 0
@@ -42,11 +42,36 @@ MonoBehaviour:
     m_Value: 6
   dirtTexture:
     m_OverrideState: 0
-    m_Value: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+    m_Value: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
     dimension: 1
   dirtIntensity:
     m_OverrideState: 0
     m_Value: 95.43
+--- !u!114 &-7706988171486770026
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29fa0085f50d5e54f8144f766051a691, type: 3}
+  m_Name: FilmGrain
+  m_EditorClassIdentifier: 
+  active: 1
+  type:
+    m_OverrideState: 1
+    m_Value: 9
+  intensity:
+    m_OverrideState: 1
+    m_Value: 1
+  response:
+    m_OverrideState: 1
+    m_Value: 0
+  texture:
+    m_OverrideState: 1
+    m_Value: {fileID: 2800000, guid: 00ea409bd1af7f3479d7517086bb9801, type: 3}
 --- !u!114 &-7011558710299706105
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -62,16 +87,16 @@ MonoBehaviour:
   active: 1
   color:
     m_OverrideState: 1
-    m_Value: {r: 0.467, g: 0.467, b: 0.467, a: 1}
+    m_Value: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 1}
   center:
     m_OverrideState: 1
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.46
+    m_Value: 0.449
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.811
+    m_Value: 1
   rounded:
     m_OverrideState: 1
     m_Value: 1
@@ -87,34 +112,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdfbdbb87d3286943a057f7791b43141, type: 3}
   m_Name: ChannelMixer
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   redOutRedIn:
     m_OverrideState: 1
-    m_Value: -2
+    m_Value: 72
   redOutGreenIn:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
   redOutBlueIn:
-    m_OverrideState: 1
-    m_Value: 80
+    m_OverrideState: 0
+    m_Value: 0
   greenOutRedIn:
     m_OverrideState: 0
     m_Value: 0
   greenOutGreenIn:
-    m_OverrideState: 0
-    m_Value: 100
+    m_OverrideState: 1
+    m_Value: 99
   greenOutBlueIn:
     m_OverrideState: 0
     m_Value: 0
   blueOutRedIn:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: -4
   blueOutGreenIn:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: -13
   blueOutBlueIn:
-    m_OverrideState: 0
-    m_Value: 100
+    m_OverrideState: 1
+    m_Value: 127
+--- !u!114 &-244492244592912313
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb60a22f311433c4c962b888d1393f88, type: 3}
+  m_Name: PaniniProjection
+  m_EditorClassIdentifier: 
+  active: 1
+  distance:
+    m_OverrideState: 1
+    m_Value: 0.39
+  cropToFit:
+    m_OverrideState: 1
+    m_Value: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +177,9 @@ MonoBehaviour:
   - {fileID: -7011558710299706105}
   - {fileID: 8902033756606452184}
   - {fileID: -6463420695826266513}
+  - {fileID: 2530386307485858612}
+  - {fileID: -7706988171486770026}
+  - {fileID: -244492244592912313}
 --- !u!114 &849379129802519247
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -173,6 +220,22 @@ MonoBehaviour:
   maxNits:
     m_OverrideState: 0
     m_Value: 1000
+--- !u!114 &2530386307485858612
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81180773991d8724ab7f2d216912b564, type: 3}
+  m_Name: ChromaticAberration
+  m_EditorClassIdentifier: 
+  active: 1
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0
 --- !u!114 &8902033756606452184
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -185,13 +248,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 558a8e2b6826cf840aae193990ba9f2e, type: 3}
   m_Name: ShadowsMidtonesHighlights
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   shadows:
     m_OverrideState: 1
     m_Value: {x: 1, y: 0.5863277, z: 0.4993813, w: 0.42062417}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.7110241, z: 0.49877483, w: -0.5929444}
+    m_Value: {x: 1, y: 0.8054097, z: 0.6887933, w: -0.5929444}
   highlights:
     m_OverrideState: 0
     m_Value: {x: 0.1673528, y: 1, z: 0, w: 1}
