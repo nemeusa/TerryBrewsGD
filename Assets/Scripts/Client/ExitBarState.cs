@@ -17,6 +17,7 @@ public class ExitBarState : State
     public void OnEnter()
     {
         _dir = (Random.Range(0, 2) == 0) ? Vector3.left : Vector3.right;
+        _client.visor.GetComponent<MeshRenderer>().material.color = Color.green;
     }
 
     public void OnUpdate()

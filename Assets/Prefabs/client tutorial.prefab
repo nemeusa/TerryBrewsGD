@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 80842431327447635}
   - component: {fileID: 5929659609626681198}
   m_Layer: 6
-  m_Name: client padre
+  m_Name: client tutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -199,6 +199,7 @@ MonoBehaviour:
   isDeath: 0
   _goodClientParticles: {fileID: 4030324384528410208}
   visor: {fileID: 2939783058530435608}
+  _onlyGood: 1
 --- !u!54 &5929659609626681198
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -25,7 +25,7 @@ public class FastJump : MonoBehaviour
     void Update()
     {
         // Detectar el salto solo si no está saltando
-        if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && !isJumping)
         {
             Jump();
         }

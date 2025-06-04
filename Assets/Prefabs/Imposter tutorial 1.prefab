@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 80842431327447635}
   - component: {fileID: 5929659609626681198}
   m_Layer: 6
-  m_Name: client padre
+  m_Name: Imposter tutorial 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,7 +69,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f6464a849e78275409b347473feaa68c, type: 2}
+  - {fileID: 2100000, guid: 5c695b061f3d05741a3879aa5d7e6a9e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -199,6 +199,7 @@ MonoBehaviour:
   isDeath: 0
   _goodClientParticles: {fileID: 4030324384528410208}
   visor: {fileID: 2939783058530435608}
+  _onlyGood: 0
 --- !u!54 &5929659609626681198
 Rigidbody:
   m_ObjectHideFlags: 0

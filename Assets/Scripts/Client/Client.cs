@@ -40,6 +40,10 @@ public class Client : MonoBehaviour
 
     public ParticleSystem _goodClientParticles;
 
+    public GameObject visor;
+
+    [SerializeField] bool _onlyGood;
+
     void Awake()
     {
         _fsm = new FSM<TypeFSM>();
@@ -52,6 +56,7 @@ public class Client : MonoBehaviour
 
         _fsm.ChangeState(TypeFSM.EnterBar);
 
+        if(!_onlyGood)
         RandomImposter();
     }
 

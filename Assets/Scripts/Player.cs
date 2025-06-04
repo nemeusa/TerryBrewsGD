@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEditor.PackageManager;
 
 public class Player : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class Player : MonoBehaviour
 
     private string _selectedDrink = null;
 
-    private int _score = 0;
+    public int _score = 0;
     private int _cordura = 100;
 
     [SerializeField] TMP_Text _scoreText;
@@ -31,6 +32,8 @@ public class Player : MonoBehaviour
     [SerializeField] Scene _sceneName;
 
     Flash _flash;
+
+    Client _client;
 
     private void Awake()
     {
@@ -98,6 +101,7 @@ public class Player : MonoBehaviour
 
     public void EntregarBebida(Client client)
     {
+        _client = client;
 
         if (_usePump)
         {
@@ -106,11 +110,13 @@ public class Player : MonoBehaviour
             {
                 _score += 50;
                 _cordura += 10;
+                StartCoroutine(correct());
             }
             else
             {
                 _score -= 200;
                 _cordura -= 15;
+                StartCoroutine(Incorrect());
             }
             StartCoroutine(Shoot());
         }
@@ -122,11 +128,13 @@ public class Player : MonoBehaviour
             Debug.Log("pedido correcto");
             if (!client.imposter)
             {
+                StartCoroutine(correct());
                 _score += 100;
                 _cordura += 5;
             }
             else
             {
+                StartCoroutine(Incorrect());
                 _score -= 50;
                 _cordura -= 30;
                 StartCoroutine(_flash.PostActive());
@@ -135,7 +143,10 @@ public class Player : MonoBehaviour
         }
         else
         {
-            _score -= 50;        }
+            StartCoroutine(Incorrect());
+
+            _score -= 50;        
+        }
 
         _selectedDrink = null;
     }
@@ -160,5 +171,18 @@ public class Player : MonoBehaviour
         _smokeParticle.Play();
         yield return new WaitForSeconds(0.3f);
         PumpOff ();
+    }
+    IEnumerator Incorrect()
+    {
+        _client.visor.GetComponent<MeshRenderer>().material.color = Color.red;
+        yield return new WaitForSeconds(0.3f);
+        _client.visor.GetComponent<MeshRenderer>().material.color = Color.white;
+    }
+
+    IEnumerator correct()
+    {
+        _client.visor.GetComponent<MeshRenderer>().material.color = Color.green;
+        yield return new WaitForSeconds(0.3f);
+        _client.visor.GetComponent<MeshRenderer>().material.color = Color.white;
     }
 }
