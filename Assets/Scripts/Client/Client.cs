@@ -42,7 +42,7 @@ public class Client : MonoBehaviour
 
     public GameObject visor;
 
-    [SerializeField] bool _onlyGood;
+    [SerializeField] bool _onlyGood, _onlyImposter;
 
     void Awake()
     {
@@ -56,8 +56,10 @@ public class Client : MonoBehaviour
 
         _fsm.ChangeState(TypeFSM.EnterBar);
 
-        if(!_onlyGood)
-        RandomImposter();
+        if (!_onlyGood && !_onlyImposter)
+            RandomImposter();
+
+        else Charla();
     }
 
     void Update()
@@ -95,11 +97,20 @@ public class Client : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void InstantDestroy()
+    { 
+        Destroy(gameObject);
+    }
+
     void RandomImposter()
     {
         if (Random.Range(0, 101) > 50) imposter = true;
         else imposter = false;
+        Charla();
+    }
 
+    void Charla()
+    {
         if (!imposter)
         {
             string charla;

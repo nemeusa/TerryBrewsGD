@@ -1,49 +1,140 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class Tutorial : MonoBehaviour
 {
-    [SerializeField] GameObject _chairScript1;
-    [SerializeField] GameObject _chairScript2;
+    [SerializeField] GameObject _tutoBro;
+    [SerializeField] string[] _tips;
+    [SerializeField] TMP_Text _textTips;
+    [SerializeField] int _indexTips;
+
+
     [SerializeField] Player _playerScript;
-    [SerializeField] BarManager _barScript;
     [SerializeField] Pump _pumpScript;
 
-    public bool _empiezaElTuto;
+    public bool _ElTuto;
+
+    [SerializeField] GameObject clientPrefab, imposterPrefab;
+    GameObject _currentClientPrefab;
+    public List<Chair> allChairs;
+    [SerializeField] Transform spawnPoint;
+    [SerializeField] Transform _altureChair;
+
+    [SerializeField] Player _player;
+    Client _client;
+
+    //public GameManager gameManager;
+
+    //private string currentRequest;
+    //public TMP_Text requestText;
 
 
-    // Start is called before the first frame update
+
     void Start()
     {
-        _chairScript1.SetActive(false);
-        _chairScript2.SetActive(false);
+        //StartCoroutine(SpawnRoutine());
+        tutoBro();
+        _currentClientPrefab = clientPrefab;
+        //NuevaPeticion();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (_playerScript._score >= 149)
+        if (_playerScript._score == 100)
         {
-            Debug.Log("Aparecen los impostores");
+            _tutoBro.SetActive(false);
+            TrySpawnClient();
+            _ElTuto = true;
         }
 
-        if (_playerScript._score >= 500)
+        if (_playerScript._score == 200)
         {
-            _chairScript1.SetActive(true);
+            if (_ElTuto)
+            {
+                tutoBro();
+                _ElTuto = false;
+            }
+            if (Input.GetButtonDown("Jump"))
+            {
+                _tutoBro.SetActive(false);
+                _currentClientPrefab = imposterPrefab;
+                TrySpawnClient();
+            }
+        }
+
+        if (_playerScript._score == 400)
+        {
+            //activar silla 1
         }
 
         if (_playerScript._score >= 600)
         {
-            _chairScript2.SetActive(true);
+            //activar silla 2
         }
 
-        if (_empiezaElTuto)
+        if (Input.GetButtonDown("Jump"))
         {
-            _barScript.TrySpawnClient();
+            _tutoBro.SetActive(false);
+            TrySpawnClient();
         }
 
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            tutoBro();
+        }
+
+        
     }
 
-    
+    public void TrySpawnClient()
+    {
+        Chair freeChair = allChairs.FirstOrDefault(c => !c.isOcupped);
+        //Vector3 spawn = new Vector3(spawnPoint.position.x * _randomEnter, _altureChair.position.y, spawnPoint.position.z);
+        Vector3 spawn = new Vector3(spawnPoint.position.x, _altureChair.position.y, spawnPoint.position.z);
+
+        if (freeChair != null)
+        {
+            GameObject clientObj = Instantiate(_currentClientPrefab, spawn, Quaternion.identity);
+            Client client = clientObj.GetComponent<Client>();
+            _client = client;
+            //gameManager.client = client;
+            //NuevaPeticion();
+            //client.GetComponent<NPCRequest>().requestedItem = currentRequest;
+            client.player = _player;
+            client.AssignChair(freeChair);
+        }
+        else
+        {
+            Debug.Log("No hay sillas libres, no spawnea el cliente.");
+        }
+    }
+    void tutoBro()
+    {
+        //_client.InstantDestroy(); 
+        // if (_client != null) Destroy( _client );
+        if (_client != null)
+        {
+            _client.LeaveChair();
+            _client.InstantDestroy();
+        }
+        _tutoBro.SetActive(true);
+        string charla;
+
+        charla = _tips[_indexTips];
+        _textTips.text = charla;
+        _indexTips++;
+    }
+
+
+    IEnumerator SpawnRoutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(Random.Range(2f, 4f));
+            TrySpawnClient();
+        }
+    }
 }

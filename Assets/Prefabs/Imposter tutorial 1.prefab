@@ -195,11 +195,12 @@ MonoBehaviour:
   gaseosa: {r: 1, g: 0, b: 0.2546935, a: 1}
   ocuppy: 0
   goodOrder: 0
-  imposter: 0
+  imposter: 1
   isDeath: 0
   _goodClientParticles: {fileID: 4030324384528410208}
   visor: {fileID: 2939783058530435608}
   _onlyGood: 0
+  _onlyImposter: 1
 --- !u!54 &5929659609626681198
 Rigidbody:
   m_ObjectHideFlags: 0
