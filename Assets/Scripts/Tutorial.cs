@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Tutorial : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class Tutorial : MonoBehaviour
     [SerializeField] string[] _tips;
     [SerializeField] TMP_Text _textTips;
     [SerializeField] int _indexTips;
+
+    [SerializeField] GameObject flechitasDrinks;
+    [SerializeField] GameObject flechitaPump;
 
 
     [SerializeField] Player _playerScript;
@@ -43,6 +47,11 @@ public class Tutorial : MonoBehaviour
 
     void Update()
     {
+        if (_playerScript._score < 200)
+        {
+            flechitasDrinks.SetActive(true);
+        }
+
         if (_playerScript._score == 100)
         {
             _tutoBro.SetActive(false);
@@ -52,21 +61,46 @@ public class Tutorial : MonoBehaviour
 
         if (_playerScript._score == 200)
         {
+            flechitasDrinks.SetActive(false) ;
+            flechitaPump.SetActive(true) ;
+
             if (_ElTuto)
             {
                 tutoBro();
                 _ElTuto = false;
             }
-            if (Input.GetButtonDown("Jump"))
-            {
-                _tutoBro.SetActive(false);
-                _currentClientPrefab = imposterPrefab;
+            if (Input.GetButtonDown("Jump")) _tutoBro.SetActive(false);
+            //{
+
+            _currentClientPrefab = imposterPrefab;
                 TrySpawnClient();
-            }
+            //}
         }
 
-        if (_playerScript._score == 400)
+        if (_playerScript._score == 250)
         {
+            //if (_client != null)
+            //{
+            //    _client.LeaveChair();
+            //    _client.InstantDestroy();
+            //}
+            TrySpawnClient();
+            _ElTuto = true;
+        }
+
+        if (_playerScript._score == 300)
+        {
+            if (_ElTuto)
+            {
+                tutoBro();
+                _ElTuto = false;
+
+            }
+
+            if (Input.GetButtonDown("Jump"))
+            {
+                SceneManager.LoadScene("GameDay1");
+            }
             //activar silla 1
         }
 
@@ -120,6 +154,7 @@ public class Tutorial : MonoBehaviour
             _client.LeaveChair();
             _client.InstantDestroy();
         }
+        Debug.Log("aparezco");
         _tutoBro.SetActive(true);
         string charla;
 

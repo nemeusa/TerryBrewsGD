@@ -2,7 +2,6 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 using UnityEngine.SceneManagement;
-using UnityEditor.PackageManager;
 
 public class Player : MonoBehaviour
 {
