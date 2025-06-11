@@ -1,9 +1,12 @@
+using TMPro;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class TalksTeme : MonoBehaviour
 {
     Talks _talks;
-
+    public string currentRequest;
+    [SerializeField] TMP_Text textEvent;
     private void Update()
     {
         TalkTheme();
@@ -31,6 +34,16 @@ public class TalksTeme : MonoBehaviour
         {
             Debug.Log("esta despejado");
         }
+    }
+
+    void NewEvent()
+    {
+
+
+        string[] opciones = { "Agua", "Jugo", "Cerveza", "Gaseosa" };
+
+        currentRequest = opciones[UnityEngine.Random.Range(0, opciones.Length)];
+
     }
 }
 
