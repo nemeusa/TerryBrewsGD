@@ -2,14 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class BarManager : MonoBehaviour
 {
     [SerializeField] GameObject clientPrefab;
+    [SerializeField] GameObject clientGoodPrefab;
+    GameObject _currentClientPrefab;
     public List<Chair> allChairs;
     [SerializeField] Transform spawnPoint;
     [SerializeField] Transform _altureChair;
+
+    int clientsCounter;
     private float _randomEnter;
 
     [SerializeField] Player _player;
@@ -25,7 +30,14 @@ public class BarManager : MonoBehaviour
     {
         _randomEnter = Random.Range(0, 2) == 0 ? -1 : 1;
         StartCoroutine(SpawnRoutine());
+        _currentClientPrefab = clientGoodPrefab;
         //NuevaPeticion();
+    }
+
+    private void Update()
+    {
+        if (clientsCounter == 3) _currentClientPrefab = clientPrefab;
+           
     }
 
     public void TrySpawnClient()
@@ -36,7 +48,10 @@ public class BarManager : MonoBehaviour
 
         if (freeChair != null)
         {
-            GameObject clientObj = Instantiate(clientPrefab, spawn, Quaternion.identity);
+
+            clientsCounter++;
+            Debug.Log(clientsCounter);
+            GameObject clientObj = Instantiate(_currentClientPrefab, spawn, Quaternion.identity);
             Client client = clientObj.GetComponent<Client>();
             //gameManager.client = client;
             //NuevaPeticion();
@@ -46,7 +61,7 @@ public class BarManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("No hay sillas libres, no spawnea el cliente.");
+            //Debug.Log("No hay sillas libres, no spawnea el cliente.");
         }
     }
 

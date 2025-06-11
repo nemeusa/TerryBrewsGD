@@ -18,14 +18,14 @@ public class Chair : MonoBehaviour
         if (!isOcupped)
         {
             isOcupped = true;
-            Debug.Log("Ocupado");
+           // Debug.Log("Ocupado");
             GetComponent<Renderer>().material.color = Color.red;
         }
     } 
     public void Free()
     {
             isOcupped = false;
-            Debug.Log("Libre");
+           // Debug.Log("Libre");
             GetComponent<Renderer>().material.color = Color.green;
     }
 }

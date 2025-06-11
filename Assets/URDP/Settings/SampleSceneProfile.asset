@@ -30,7 +30,7 @@ MonoBehaviour:
     m_Value: 65472
   tint:
     m_OverrideState: 1
-    m_Value: {r: 0.24120542, g: 0.6226415, b: 0.06167675, a: 1}
+    m_Value: {r: 0.8113208, g: 0.5780557, b: 0.14925243, a: 1}
   highQualityFiltering:
     m_OverrideState: 0
     m_Value: 0
@@ -112,16 +112,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdfbdbb87d3286943a057f7791b43141, type: 3}
   m_Name: ChannelMixer
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   redOutRedIn:
     m_OverrideState: 1
-    m_Value: 72
+    m_Value: 93
   redOutGreenIn:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 8
   redOutBlueIn:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 8
   greenOutRedIn:
     m_OverrideState: 0
     m_Value: 0
@@ -251,13 +251,13 @@ MonoBehaviour:
   active: 0
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.5863277, z: 0.4993813, w: 0.42062417}
+    m_Value: {x: 1, y: 0.8126138, z: 0.7773446, w: -0.21485688}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.8054097, z: 0.6887933, w: -0.5929444}
+    m_Value: {x: 1, y: 0.72863775, z: 0.6584742, w: 0.024884462}
   highlights:
-    m_OverrideState: 0
-    m_Value: {x: 0.1673528, y: 1, z: 0, w: 1}
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.7077144, z: 0.41307515, w: 1}
   shadowsStart:
     m_OverrideState: 1
     m_Value: 0
@@ -266,7 +266,7 @@ MonoBehaviour:
     m_Value: 0.05
   highlightsStart:
     m_OverrideState: 1
-    m_Value: 1.29
+    m_Value: 0.04
   highlightsEnd:
     m_OverrideState: 1
-    m_Value: 1.74
+    m_Value: 5.43

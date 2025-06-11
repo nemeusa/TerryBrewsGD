@@ -21,7 +21,7 @@ public class OrderState : MonoBehaviour, State
 
     public void OnUpdate()
     {
-        Debug.Log("Order");
+        //Debug.Log("Order");
         _client.chair.Ocuppy();
         _client.transform.forward = new Vector3 (0, 0, 0);
         if (_client.goodOrder)

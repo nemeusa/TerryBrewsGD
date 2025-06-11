@@ -5,7 +5,8 @@ using UnityEngine;
 public class TalksTeme : MonoBehaviour
 {
     Talks _talks;
-    public string currentRequest;
+    public string currentClima;
+    public string currentEventos;
     [SerializeField] TMP_Text textEvent;
     private void Update()
     {
@@ -14,23 +15,22 @@ public class TalksTeme : MonoBehaviour
 
     void TalkTheme()
     {
-        if(_talks == Talks.frio)
+        if(_talks == Talks.Frio)
         {
             Debug.Log("hace frio");
         }
 
-        if (_talks == Talks.calor) 
+        if (_talks == Talks.Calor) 
         {
             Debug.Log("hace calor");
-
         }
 
-        if (_talks == Talks.transito)
+        if (_talks == Talks.Transito)
         {
             Debug.Log("no hay transito");
         }
 
-        if (_talks == Talks.despejado)
+        if (_talks == Talks.Despejado)
         {
             Debug.Log("esta despejado");
         }
@@ -40,17 +40,19 @@ public class TalksTeme : MonoBehaviour
     {
 
 
-        string[] opciones = { "Agua", "Jugo", "Cerveza", "Gaseosa" };
+        string[] clima = { "Frio", "Calor"};
+        string[] eventos = {"Trafico", "Despejado" };
 
-        currentRequest = opciones[UnityEngine.Random.Range(0, opciones.Length)];
+        currentClima = clima[UnityEngine.Random.Range(0, clima.Length)];
+        currentEventos = eventos[UnityEngine.Random.Range(0, eventos.Length)];
 
     }
 }
 
 public enum Talks
 {
-    frio,
-    calor,
-    transito,
-    despejado
+    Frio,
+    Calor,
+    Transito,
+    Despejado
 }

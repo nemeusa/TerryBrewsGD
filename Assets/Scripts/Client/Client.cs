@@ -117,6 +117,7 @@ public class Client : MonoBehaviour
 
             charla = charlaGood[Random.Range(0, charlaGood.Length)];
             textCharla.text = charla;
+            textCharla.color = UnityEngine.Color.green;
             //Debug.Log(charla);
 
         }
@@ -127,6 +128,7 @@ public class Client : MonoBehaviour
 
             charla = charlaBad[Random.Range(0, charlaBad.Length)];
             textCharla.text = charla;
+            textCharla.color = UnityEngine.Color.red;
         }
 
     }
@@ -135,25 +137,25 @@ public class Client : MonoBehaviour
     {
         if (currentRequest == "Agua")
         {
-            Debug.Log("funciona xd");
+           // Debug.Log("funciona xd");
             textOrder.color = agua;
         }
 
         if (currentRequest == "Jugo")
         {
-            Debug.Log("funciona xd");
+           // Debug.Log("funciona xd");
             textOrder.color = jugo;
         }
 
         if (currentRequest == "Cerveza")
         {
-            Debug.Log("funciona xd");
+           // Debug.Log("funciona xd");
             textOrder.color = cerveza;
         }
 
         if (currentRequest == "Gaseosa")
         {
-            Debug.Log("funciona xd");
+           // Debug.Log("funciona xd");
             textOrder.color = gaseosa;
         }
     }
