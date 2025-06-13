@@ -7,9 +7,18 @@ public class TalksTeme : MonoBehaviour
     Talks _talks;
     public string currentClima;
     public string currentEventos;
-    [SerializeField] TMP_Text textEvent;
+    public string[] currentTheme;
+    [SerializeField] TMP_Text textTheme;
+    public int _indexTheme;
+
+    private void Start()
+    {
+        InitialTheme();
+    }
+
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.V)) RandomTheme();
         TalkTheme();
     }
 
@@ -36,16 +45,25 @@ public class TalksTeme : MonoBehaviour
         }
     }
 
-    void NewEvent()
+    void RandomTheme()
     {
+        string charla;
 
+        currentTheme = new string[] { currentClima, currentEventos } ;
+        charla = currentTheme[_indexTheme];
 
-        string[] clima = { "Frio", "Calor"};
-        string[] eventos = {"Trafico", "Despejado" };
+        textTheme.text = charla;
+        _indexTheme++;
+        if (_indexTheme == 2) _indexTheme = 0;
+    }
+
+    void InitialTheme()
+    {
+        string[] clima = { "Frio", "Calor" };
+        string[] eventos = { "Trafico", "Despejado" };
 
         currentClima = clima[UnityEngine.Random.Range(0, clima.Length)];
         currentEventos = eventos[UnityEngine.Random.Range(0, eventos.Length)];
-
     }
 }
 

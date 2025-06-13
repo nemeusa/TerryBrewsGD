@@ -26,7 +26,7 @@ public class OrderState : MonoBehaviour, State
         //Debug.Log("Order");
         _client.chair.Ocuppy();
         _client.TextColor();
-        _client.transform.forward = new Vector3 (0, 0, 0);
+        _client.transform.forward = new Vector3 (0, 0, 0.01f);
         if (_client.goodOrder)
         {
             if (_client.imposter) _fsm.ChangeState(TypeFSM.Attack);
