@@ -1,5 +1,4 @@
 using TMPro;
-using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class TalksTeme : MonoBehaviour
@@ -14,6 +13,7 @@ public class TalksTeme : MonoBehaviour
     private void Start()
     {
         InitialTheme();
+        RandomTheme();
     }
 
     private void Update()

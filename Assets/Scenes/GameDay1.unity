@@ -177,6 +177,7 @@ MonoBehaviour:
   _smokeParticle: {fileID: 136390891}
   _sceneName:
     m_Handle: 0
+  _client: {fileID: 0}
   _talkTheme: {fileID: 1483362354}
   help: 0
 --- !u!23 &40187295
@@ -7044,7 +7045,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 81.93011, w: -47.49318}
+  m_margin: {x: 0, y: 0, z: 24.290024, w: -47.49318}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -9075,7 +9076,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clientPrefab: {fileID: 2083364825804263593, guid: b9e1f070c49758c4f877a0c87600c02a,
     type: 3}
-  clientGoodPrefab: {fileID: 2083364825804263593, guid: fd2f1c2ce645f7f4cbce58e7d3267397,
+  clientGoodPrefab: {fileID: 2083364825804263593, guid: dc49da3589a9cc941aa4771e883fecc8,
     type: 3}
   allChairs:
   - {fileID: 848163340}

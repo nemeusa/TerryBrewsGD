@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 
 public class OrderState : MonoBehaviour, State
@@ -14,17 +15,31 @@ public class OrderState : MonoBehaviour, State
 
     public void OnEnter()
     {
-        _client.Charla();
+        //if(_client.talkThemes)
+        //{
+        //    if (!_client.imposter)
+        //    {
+        //        if (_client.Theme != _client.player._talkTheme.currentTheme[_client.player._talkTheme._indexTheme])
+        //        _client.StartCoroutine(_client.CharlaThemeGoodCoroutine());
+
+        //    }
+        //    else
+        //    {
+        //        if (_client.Theme == _client.player._talkTheme.currentTheme[_client.player._talkTheme._indexTheme])
+        //        _client.StartCoroutine(_client.CharlaThemeBadCoroutine());
+        //    }
+        //}
         NuevaPeticion();
         _client.textOrder.gameObject.SetActive(true);
         _client.textCharla.gameObject.SetActive(true);
-        _client.colorDrink();
         _client.textOrder.gameObject.SetActive(true);
         _client.textOrder.text = _client.currentRequest;
+        //_client.Charla();
     }
 
     public void OnUpdate()
     {
+        _client.colorDrink();
         //Debug.Log("Order");
         _client.chair.Ocuppy();
         _client.TextColor();

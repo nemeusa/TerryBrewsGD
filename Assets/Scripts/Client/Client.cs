@@ -4,6 +4,7 @@ using System.Drawing;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Client : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class Client : MonoBehaviour
     public TMP_Text textCharla;
 
     public string currentRequest;
+
+    public string currentDialogue;
 
     //public List<string> charlaGood = new List<string>();
 
@@ -46,12 +49,17 @@ public class Client : MonoBehaviour
 
     [SerializeField] bool _onlyGood, _onlyImposter;
 
-    string Theme;
+    public string Theme;
 
     public ParticleSystem bloodPartycles;
 
+    public bool talkThemes;
+
     void Awake()
     {
+        if (!_onlyGood && !_onlyImposter)
+            RandomImposter();
+
         _fsm = new FSM<TypeFSM>();
         _fsm.AddState(TypeFSM.EnterBar, new EnterBarState(_fsm, this));
         _fsm.AddState(TypeFSM.Order, new OrderState(_fsm, this));
@@ -62,8 +70,6 @@ public class Client : MonoBehaviour
 
         _fsm.ChangeState(TypeFSM.EnterBar);
 
-        if (!_onlyGood && !_onlyImposter)
-            RandomImposter();
 
         //else Charla();
     }
@@ -119,18 +125,23 @@ public class Client : MonoBehaviour
     {
         if (!imposter)
         {
-            string charla;
-
-            charla = charlaGood[UnityEngine.Random.Range(0, charlaGood.Length)];
+          
             if (UnityEngine.Random.Range(0, 101) <= 50)
             {
+                string charla;
+
+                charla = charlaGood[UnityEngine.Random.Range(0, charlaGood.Length)];
                 Debug.Log("charla normal");
                 textCharla.text = charla;
+                currentDialogue = charla;
             }
             else
             {
-                CharlaThemeGood();
+                talkThemes = true;
+                StartCoroutine(CharlaThemeGoodCoroutine());
+                //CharlaThemeGood();
                 Debug.Log("charla tema");
+                currentDialogue = Theme;
 
             }
             //Debug.Log(charla);
@@ -138,37 +149,100 @@ public class Client : MonoBehaviour
 
         else
         {
-            string charla;
 
-            charla = charlaBad[UnityEngine.Random.Range(0, charlaBad.Length)];
-            if (UnityEngine.Random.Range(0, 101) <= 50) textCharla.text = charla;
+            if (UnityEngine.Random.Range(0, 101) <= 50)
+            {
+                string charla;
 
-            else CharlaThemeBad();
+                charla = charlaBad[UnityEngine.Random.Range(0, charlaBad.Length)];
+                textCharla.text = charla;
+                currentDialogue = charla;
+            }
+            else
+            {
+                talkThemes = true;
+                StartCoroutine(CharlaThemeBadCoroutine());
+                //CharlaThemeBad();
+                currentDialogue = Theme;
+            }
         }
 
     }
 
 
-    public void CharlaThemeBad()
+    //public void CharlaThemeBad()
+    //{
+    //    string[] blabla = { "Frio", "Calor", "Trafico", "Despejado" };
+
+    //    //Theme = blabla[UnityEngine.Random.Range(0, blabla.Length)];
+
+    //    //if (Theme != player._talkTheme.currentTheme[player._talkTheme._indexTheme])
+    //    //    textCharla.text = Theme;
+
+    //    do
+    //    {
+    //        Theme = blabla[UnityEngine.Random.Range(0, blabla.Length)];
+    //    }
+    //    while (Theme == player._talkTheme.currentTheme[player._talkTheme._indexTheme]);
+    //    textCharla.text = Theme;
+    //}
+
+    //public void CharlaThemeGood()
+    //{
+    //    string[] blabla = { "Frio", "Calor", "Trafico", "Despejado" };
+
+    //    //Theme = blabla[UnityEngine.Random.Range(0, blabla.Length)];
+
+    //    //if (Theme == player._talkTheme.currentTheme[player._talkTheme._indexTheme])
+    //    //    textCharla.text = Theme;
+
+    //    //else CharlaThemeGood();
+
+    //    do
+    //    {
+    //        Theme = blabla[UnityEngine.Random.Range(0, blabla.Length)];
+    //    }
+    //    while (Theme != player._talkTheme.currentTheme[player._talkTheme._indexTheme]);
+
+    //    textCharla.text = Theme;
+    //}
+
+
+    public IEnumerator CharlaThemeGoodCoroutine()
     {
         string[] blabla = { "Frio", "Calor", "Trafico", "Despejado" };
 
-        Theme = blabla[UnityEngine.Random.Range(0, blabla.Length)];
+        do
+        {
+            Theme = blabla[UnityEngine.Random.Range(0, blabla.Length)];
 
-        if (Theme != player._talkTheme.currentTheme[player._talkTheme._indexTheme])
-            textCharla.text = Theme;
+            textCharla.text = "Probando: " + Theme;
+
+            yield return new WaitForSeconds(0.1f);
+
+        } 
+        while (Theme != player._talkTheme.currentTheme[player._talkTheme._indexTheme]);
+
+        textCharla.text = Theme;
     }
 
-    public void CharlaThemeGood()
+    public IEnumerator CharlaThemeBadCoroutine()
     {
         string[] blabla = { "Frio", "Calor", "Trafico", "Despejado" };
 
-        Theme = blabla[UnityEngine.Random.Range(0, blabla.Length)];
+        do
+        {
+            Theme = blabla[UnityEngine.Random.Range(0, blabla.Length)];
 
-        if (Theme == player._talkTheme.currentTheme[player._talkTheme._indexTheme])
-            textCharla.text = Theme;
+            textCharla.text = "Probando: " + Theme;
+
+            yield return new WaitForSeconds(0.05f);
+
+        } 
+        while (Theme == player._talkTheme.currentTheme[player._talkTheme._indexTheme]);
+
+        textCharla.text = Theme;
     }
-
 
     public void TextColor()
     {
