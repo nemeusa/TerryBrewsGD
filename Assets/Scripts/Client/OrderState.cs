@@ -14,6 +14,7 @@ public class OrderState : MonoBehaviour, State
 
     public void OnEnter()
     {
+        NuevaPeticion();
         _client.textOrder.gameObject.SetActive(true);
         _client.textCharla.gameObject.SetActive(true);
         _client.colorDrink();
@@ -56,5 +57,16 @@ public class OrderState : MonoBehaviour, State
     {
         _client.GetComponent<MeshRenderer>().material.color = Color.green;
         yield return new WaitForSeconds(0.1f);
+    }
+
+
+    public void NuevaPeticion()
+    {
+        //string[] opciones = { "<color=blue>Agua</color>", "<color=orange>Jugo</color>", "<color=yellow>Cerveza</color>", "<color=red>Gaseosa</color>" };
+        string[] opciones = { "Agua", "Jugo", "Cerveza", "Gaseosa" };
+        //string a = ("< color = blue > " + opciones + " </ color >");
+
+
+        _client.currentRequest = opciones[UnityEngine.Random.Range(0, opciones.Length)];
     }
 }

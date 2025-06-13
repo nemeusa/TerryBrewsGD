@@ -17,7 +17,6 @@ public class EnterBarState : State
     {
         _client.textOrder.gameObject.SetActive(false);
         _client.textCharla.gameObject.SetActive(false);
-        NuevaPeticion();
     }
 
     public void OnUpdate()
@@ -46,14 +45,5 @@ public class EnterBarState : State
 
     }
 
-    public void NuevaPeticion()
-    {
-        //string[] opciones = { "<color=blue>Agua</color>", "<color=orange>Jugo</color>", "<color=yellow>Cerveza</color>", "<color=red>Gaseosa</color>" };
-        string[] opciones = { "Agua", "Jugo", "Cerveza", "Gaseosa" };
-        //string a = ("< color = blue > " + opciones + " </ color >");
-
-
-        _client.currentRequest = opciones[UnityEngine.Random.Range(0, opciones.Length)];
-    }
 
 }

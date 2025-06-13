@@ -134,6 +134,12 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A)) help = !help;
 
+        vinetta();
+    }
+
+    void vinetta()
+    {
+
         if (vignette != null)
         {
             float baseVignette = 1f - (_cordura / 100f);// Inversamente proporcional a la vida      
@@ -170,6 +176,7 @@ public class Player : MonoBehaviour
                 StartCoroutine(Incorrect());
             }
             StartCoroutine(Shoot());
+            PumpOff();
         }
 
         if (_selectedDrink == null) return;
@@ -220,6 +227,7 @@ public class Player : MonoBehaviour
     IEnumerator Shoot()
     {
         _smokeParticle.Play();
+        yield return new WaitForSeconds(0.1f);
         ActivateDepthOfField(3f, 0.5f);
         yield return new WaitForSeconds(0.3f);
         

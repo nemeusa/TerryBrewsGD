@@ -5,33 +5,33 @@ using UnityEngine;
 
 public class Pump : MonoBehaviour
 {
-    [SerializeField] Camera cam;
+    //[SerializeField] Camera cam;
 
-    void Update()
-    {
-        Vector3 mousePos = Input.mousePosition;
+    //void Update()
+    //{
+    //    Vector3 mousePos = Input.mousePosition;
 
-        mousePos = new Vector3(Screen.width / 2, Screen.height / 2, mousePos.z);
+    //    mousePos = new Vector3(Screen.width / 2, Screen.height / 2, mousePos.z);
 
 
-        Ray ray = cam.ScreenPointToRay(mousePos);
+    //    Ray ray = cam.ScreenPointToRay(mousePos);
 
-        Plane plane = new Plane(Vector3.up, transform.position);
-        float dist;
+    //    Plane plane = new Plane(Vector3.up, transform.position);
+    //    float dist;
 
-        if (plane.Raycast(ray, out dist))
-        {
-            Vector3 puntoEnPlano = ray.GetPoint(dist);
+    //    if (plane.Raycast(ray, out dist))
+    //    {
+    //        Vector3 puntoEnPlano = ray.GetPoint(dist);
 
-            Vector3 direccion = puntoEnPlano - transform.position;
+    //        Vector3 direccion = puntoEnPlano - transform.position;
 
-            Quaternion rotacion = Quaternion.LookRotation(direccion);
+    //        Quaternion rotacion = Quaternion.LookRotation(direccion);
 
-            float rotacionY = rotacion.eulerAngles.y;
+    //        float rotacionY = rotacion.eulerAngles.y;
 
-            rotacionY = Mathf.Clamp(rotacionY, -25, 25);
+    //        rotacionY = Mathf.Clamp(rotacionY, -25, 25);
 
-            transform.rotation = Quaternion.Euler(0, rotacionY, 0);
-        }
-    }
+    //        transform.rotation = Quaternion.Euler(0, rotacionY, 0);
+    //    }
+    //}
 }

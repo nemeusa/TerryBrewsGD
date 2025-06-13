@@ -48,6 +48,8 @@ public class Client : MonoBehaviour
 
     string Theme;
 
+    public ParticleSystem bloodPartycles;
+
     void Awake()
     {
         _fsm = new FSM<TypeFSM>();
@@ -147,6 +149,7 @@ public class Client : MonoBehaviour
         if (Theme != player._talkTheme.currentTheme[player._talkTheme._indexTheme])
             textCharla.text = Theme;
     }
+
     public void CharlaThemeGood()
     {
         string[] blabla = { "Frio", "Calor", "Trafico", "Despejado" };

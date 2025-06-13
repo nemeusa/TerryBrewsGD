@@ -16,6 +16,7 @@ public class DeathState : State
     public void OnEnter()
     {
         _client.GetComponent<MeshRenderer>().material.color = Color.white;
+        _client.bloodPartycles.Play();
     }
 
     public void OnUpdate()
