@@ -56,6 +56,7 @@ public class BarManager : MonoBehaviour
             //gameManager.client = client;
             //NuevaPeticion();
             //client.GetComponent<NPCRequest>().requestedItem = currentRequest;
+            _player._client = client;
             client.player = _player;
             client.AssignChair(freeChair);
         }

@@ -65,7 +65,7 @@ public class Client : MonoBehaviour
         if (!_onlyGood && !_onlyImposter)
             RandomImposter();
 
-        else Charla();
+        //else Charla();
     }
 
     void Update()
@@ -112,19 +112,27 @@ public class Client : MonoBehaviour
     {
         if (UnityEngine.Random.Range(0, 101) > 50) imposter = true;
         else imposter = false;
-        Charla();
+       // Charla();
     }
 
-    void Charla()
+    public void Charla()
     {
         if (!imposter)
         {
             string charla;
 
             charla = charlaGood[UnityEngine.Random.Range(0, charlaGood.Length)];
-            if (UnityEngine.Random.Range(0, 101) <= 50) textCharla.text = charla;
+            if (UnityEngine.Random.Range(0, 101) <= 50)
+            {
+                Debug.Log("charla normal");
+                textCharla.text = charla;
+            }
+            else
+            {
+                CharlaThemeGood();
+                Debug.Log("charla tema");
 
-            else CharlaThemeGood();
+            }
             //Debug.Log(charla);
         }
 
@@ -139,6 +147,7 @@ public class Client : MonoBehaviour
         }
 
     }
+
 
     public void CharlaThemeBad()
     {

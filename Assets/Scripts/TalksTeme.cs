@@ -54,7 +54,7 @@ public class TalksTeme : MonoBehaviour
 
         textTheme.text = charla;
         _indexTheme++;
-        if (_indexTheme == 2) _indexTheme = 0;
+        if (_indexTheme >= 2) _indexTheme = 0;
     }
 
     void InitialTheme()

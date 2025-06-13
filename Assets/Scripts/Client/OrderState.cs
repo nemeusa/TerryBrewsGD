@@ -14,6 +14,7 @@ public class OrderState : MonoBehaviour, State
 
     public void OnEnter()
     {
+        _client.Charla();
         NuevaPeticion();
         _client.textOrder.gameObject.SetActive(true);
         _client.textCharla.gameObject.SetActive(true);

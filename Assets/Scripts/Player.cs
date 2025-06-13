@@ -45,8 +45,9 @@ public class Player : MonoBehaviour
     [Header("NO SE XD")]
     [SerializeField] Scene _sceneName;
     Flash _flash;
-    Client _client;
+    [HideInInspector] public Client _client;
     public TalksTeme _talkTheme;
+    //public BarManager barManager;
     public bool help;
 
     private void Awake()
