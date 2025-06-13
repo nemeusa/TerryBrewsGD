@@ -31,6 +31,10 @@ public class Player : MonoBehaviour
     [SerializeField] private float aberrationOscStrength = 0.03f;
     [SerializeField] private float aberrationOscSpeed = 1f;
 
+    [Header("Depth of Field")]
+    private DepthOfField depthOfField;
+    private Coroutine depthCoroutine;
+
     [Header("SHOTGUN")]
     [SerializeField] MeshRenderer meshPumpBar;
     [SerializeField] MeshRenderer meshPumpHand; 
@@ -64,6 +68,10 @@ public class Player : MonoBehaviour
         else
         {
             Debug.LogWarning("Aca menos");
+        }
+        if (volume.profile.TryGet(out depthOfField))
+        {
+            Debug.Log("mira");
         }
 
     }
@@ -212,8 +220,35 @@ public class Player : MonoBehaviour
     IEnumerator Shoot()
     {
         _smokeParticle.Play();
+        ActivateDepthOfField(3f, 0.5f);
         yield return new WaitForSeconds(0.3f);
+        
         PumpOff ();
+        meshPumpHand.enabled = false;
+    }
+
+    private void ActivateDepthOfField(float duration, float startDistance)
+    {
+        if (depthOfField == null) return;
+        StopAllCoroutines();
+        StartCoroutine(Activate(duration, startDistance));
+    }
+
+    private IEnumerator Activate(float duration, float startDistance)
+    {
+        depthOfField.active = true;
+        depthOfField.focusDistance.value = startDistance;
+
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            depthOfField.focusDistance.value = Mathf.Lerp(startDistance, 9f, elapsed / duration);
+            yield return null;
+        }
+        depthOfField.active = false;
+        depthOfField.focusDistance.value = 9f;
     }
     IEnumerator Incorrect()
     {
