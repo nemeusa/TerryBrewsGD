@@ -34,6 +34,8 @@ public class Player : MonoBehaviour
 
     Client _client;
 
+    public TalksTeme _talkTheme;
+
     public bool help;
 
     private void Awake()

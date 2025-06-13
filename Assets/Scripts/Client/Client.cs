@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Drawing;
 using TMPro;
@@ -44,6 +45,8 @@ public class Client : MonoBehaviour
     public GameObject visor;
 
     [SerializeField] bool _onlyGood, _onlyImposter;
+
+    string Theme;
 
     void Awake()
     {
@@ -105,7 +108,7 @@ public class Client : MonoBehaviour
 
     void RandomImposter()
     {
-        if (Random.Range(0, 101) > 50) imposter = true;
+        if (UnityEngine.Random.Range(0, 101) > 50) imposter = true;
         else imposter = false;
         Charla();
     }
@@ -116,20 +119,42 @@ public class Client : MonoBehaviour
         {
             string charla;
 
-            charla = charlaGood[Random.Range(0, charlaGood.Length)];
-            textCharla.text = charla;
-            //Debug.Log(charla);
+            charla = charlaGood[UnityEngine.Random.Range(0, charlaGood.Length)];
+            if (UnityEngine.Random.Range(0, 101) <= 50) textCharla.text = charla;
 
+            else CharlaThemeGood();
+            //Debug.Log(charla);
         }
 
         else
         {
             string charla;
 
-            charla = charlaBad[Random.Range(0, charlaBad.Length)];
-            textCharla.text = charla;
+            charla = charlaBad[UnityEngine.Random.Range(0, charlaBad.Length)];
+            if (UnityEngine.Random.Range(0, 101) <= 50) textCharla.text = charla;
+
+            else CharlaThemeBad();
         }
 
+    }
+
+    public void CharlaThemeBad()
+    {
+        string[] blabla = { "Frio", "Calor", "Trafico", "Despejado" };
+
+        Theme = blabla[UnityEngine.Random.Range(0, blabla.Length)];
+
+        if (Theme != player._talkTheme.currentTheme[player._talkTheme._indexTheme])
+            textCharla.text = Theme;
+    }
+    public void CharlaThemeGood()
+    {
+        string[] blabla = { "Frio", "Calor", "Trafico", "Despejado" };
+
+        Theme = blabla[UnityEngine.Random.Range(0, blabla.Length)];
+
+        if (Theme == player._talkTheme.currentTheme[player._talkTheme._indexTheme])
+            textCharla.text = Theme;
     }
 
 
