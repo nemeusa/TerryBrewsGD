@@ -118,7 +118,6 @@ public class Player : MonoBehaviour
 
         if (vignette != null)
         {
-         Debug.Log("Viñeta RE Encontrada");
          vignette.intensity.value = 1f - (_cordura / 100f);// Intensidad inversamente proporcional a la vida
         }
 
