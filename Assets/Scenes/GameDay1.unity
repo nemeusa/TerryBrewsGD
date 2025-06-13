@@ -171,6 +171,7 @@ MonoBehaviour:
   _smokeParticle: {fileID: 136390891}
   _sceneName:
     m_Handle: 0
+  _talkTheme: {fileID: 0}
   help: 0
 --- !u!23 &40187295
 MeshRenderer:

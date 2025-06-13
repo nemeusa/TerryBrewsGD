@@ -2,6 +2,8 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.Rendering;
 
 public class Player : MonoBehaviour
 {
@@ -30,8 +32,11 @@ public class Player : MonoBehaviour
 
     [SerializeField] Scene _sceneName;
 
-    Flash _flash;
+    [SerializeField] Volume volume;
+    [SerializeField] Vignette vignette;
 
+    Flash _flash;
+   
     Client _client;
 
     public TalksTeme _talkTheme;
@@ -41,6 +46,16 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         _flash = GetComponent<Flash>();
+
+        if (volume.profile.TryGet(out vignette))
+        {
+            Debug.Log("Viñeta Encontrada");
+        }
+        else
+        {
+            Debug.LogWarning("Vignette no encontrado en el Volume.");
+        }
+
     }
 
     private void Update()
@@ -100,6 +115,14 @@ public class Player : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.A)) help = !help;
+
+        if (vignette != null)
+        {
+         Debug.Log("Viñeta RE Encontrada");
+         vignette.intensity.value = 1f - (_cordura / 100f);// Intensidad inversamente proporcional a la vida
+        }
+
+
     }
 
     public void EntregarBebida(Client client)
