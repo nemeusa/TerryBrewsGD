@@ -7,40 +7,42 @@ using UnityEngine.Rendering;
 
 public class Player : MonoBehaviour
 {
+    [Header("Bebidas y clientes")]
     [SerializeField] LayerMask _beverageLayer;
     [SerializeField] LayerMask _clientLayer;
-
     public string currentRequest;
-
     private string _selectedDrink = null;
 
+    [Header("Puntos y Cordura")]
     public int _score = 0;
     private int _cordura = 100;
-
     [SerializeField] TMP_Text _scoreText;
     [SerializeField] TMP_Text _selectionText;
     [SerializeField] TMP_Text _corduraText;
 
-    [SerializeField] MeshRenderer meshPumpBar;
-    [SerializeField] MeshRenderer meshPumpHand;
-
-    bool _usePump;
-
-    Pump _pumpCode = null;
-
-    [SerializeField] ParticleSystem _smokeParticle;
-
-    [SerializeField] Scene _sceneName;
-
+    [Header("Vignette")]
     [SerializeField] Volume volume;
     [SerializeField] Vignette vignette;
+    [SerializeField] private float vignetteOscStrength = 0.03f;
+    [SerializeField] private float vignetteOscSpeed = 1f;
 
+    [Header("Aberration")]
+    private ChromaticAberration chromAberration;
+    [SerializeField] private float aberrationOscStrength = 0.03f;
+    [SerializeField] private float aberrationOscSpeed = 1f;
+
+    [Header("SHOTGUN")]
+    [SerializeField] MeshRenderer meshPumpBar;
+    [SerializeField] MeshRenderer meshPumpHand; 
+    bool _usePump;
+    Pump _pumpCode = null;
+    [SerializeField] ParticleSystem _smokeParticle;
+
+    [Header("NO SE XD")]
+    [SerializeField] Scene _sceneName;
     Flash _flash;
-   
     Client _client;
-
     public TalksTeme _talkTheme;
-
     public bool help;
 
     private void Awake()
@@ -53,7 +55,15 @@ public class Player : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Vignette no encontrado en el Volume.");
+            Debug.LogWarning("No hay Nada");
+        }
+        if (volume.profile.TryGet(out chromAberration))
+        {
+            Debug.Log("Una Aberración en la mira");
+        }
+        else
+        {
+            Debug.LogWarning("Aca menos");
         }
 
     }
@@ -118,9 +128,17 @@ public class Player : MonoBehaviour
 
         if (vignette != null)
         {
-         vignette.intensity.value = 1f - (_cordura / 100f);// Intensidad inversamente proporcional a la vida
+            float baseVignette = 1f - (_cordura / 100f);// Inversamente proporcional a la vida      
+            float oscillation = Mathf.Sin(Time.time * vignetteOscSpeed) * vignetteOscStrength;
+            vignette.intensity.value = Mathf.Clamp01(baseVignette + oscillation);
         }
+        if (chromAberration != null)
+        {
+            float baseAberration = 1f - (_cordura / 100f);// Inversamente proporcional a la vida  
+            float oscillation = Mathf.Sin(Time.time * aberrationOscSpeed) * aberrationOscStrength;
 
+            chromAberration.intensity.value = Mathf.Clamp01(baseAberration + oscillation);
+        }
 
     }
 
