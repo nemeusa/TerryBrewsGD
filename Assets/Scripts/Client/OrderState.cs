@@ -14,6 +14,8 @@ public class OrderState : MonoBehaviour, State
 
     public void OnEnter()
     {
+        _client.textOrder.gameObject.SetActive(true);
+        _client.textCharla.gameObject.SetActive(true);
         _client.colorDrink();
         _client.textOrder.gameObject.SetActive(true);
         _client.textOrder.text = _client.currentRequest;
@@ -23,6 +25,7 @@ public class OrderState : MonoBehaviour, State
     {
         //Debug.Log("Order");
         _client.chair.Ocuppy();
+        _client.TextColor();
         _client.transform.forward = new Vector3 (0, 0, 0);
         if (_client.goodOrder)
         {

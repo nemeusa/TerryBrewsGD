@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Drawing;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 
 public class Client : MonoBehaviour
@@ -117,7 +118,6 @@ public class Client : MonoBehaviour
 
             charla = charlaGood[Random.Range(0, charlaGood.Length)];
             textCharla.text = charla;
-            textCharla.color = UnityEngine.Color.green;
             //Debug.Log(charla);
 
         }
@@ -128,9 +128,20 @@ public class Client : MonoBehaviour
 
             charla = charlaBad[Random.Range(0, charlaBad.Length)];
             textCharla.text = charla;
-            textCharla.color = UnityEngine.Color.red;
         }
 
+    }
+
+
+    public void TextColor()
+    {
+        if (player.help)
+        {
+            if (!imposter) textCharla.color = UnityEngine.Color.green;
+            else textCharla.color = UnityEngine.Color.red;
+        }
+
+        else textCharla.color = UnityEngine.Color.white;
     }
 
     public void colorDrink()

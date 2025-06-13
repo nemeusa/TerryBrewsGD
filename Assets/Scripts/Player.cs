@@ -34,6 +34,8 @@ public class Player : MonoBehaviour
 
     Client _client;
 
+    public bool help;
+
     private void Awake()
     {
         _flash = GetComponent<Flash>();
@@ -95,7 +97,7 @@ public class Player : MonoBehaviour
 
         }
 
-
+        if (Input.GetKeyDown(KeyCode.A)) help = !help;
     }
 
     public void EntregarBebida(Client client)
