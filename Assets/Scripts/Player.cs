@@ -4,6 +4,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour
     [SerializeField] TMP_Text _scoreText;
     [SerializeField] TMP_Text _selectionText;
     [SerializeField] TMP_Text _corduraText;
+    public Image _corduraImageFill;
 
     [Header("Vignette")]
     [SerializeField] Volume volume;
@@ -116,6 +118,8 @@ public class Player : MonoBehaviour
             }
         }
 
+        
+
         if (_score < 0) _score = 0;
         _scoreText.text = "$ " + _score;
         _selectionText.text = "Tienes: " + _selectedDrink;
@@ -135,7 +139,11 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A)) help = !help;
 
-        vinetta();
+        vinetta(); 
+
+
+        _corduraImageFill.fillAmount = _cordura / 100f;
+
     }
 
     void vinetta()
