@@ -52,6 +52,8 @@ public class Player : MonoBehaviour
     //public BarManager barManager;
     public bool help;
 
+    MoveDrinks _moveDrinks;
+
     private void Awake()
     {
         _flash = GetComponent<Flash>();
@@ -87,38 +89,46 @@ public class Player : MonoBehaviour
 
             if (Physics.Raycast(ray, out RaycastHit hit, 100f, _beverageLayer))
             {
-                Beverage drinkType = hit.collider.GetComponent<Beverage>();
+                MoveDrinks moveDrinks = hit.collider.GetComponent<MoveDrinks>();
+                _moveDrinks = moveDrinks;
                 Pump pump = hit.collider.GetComponent<Pump>();
                 _pumpCode = pump;
 
-                if (drinkType != null)
+                if (_moveDrinks != null)
+                if (_moveDrinks.isDraggingDrink)
                 {
-                    _selectedDrink = drinkType.drinkType.ToString();
+                    //_moveDrinks.drinkName = _moveDrinks._currentRequest;
                     PumpOff();
                     _pumpCode = null;
                 }
+
                 if (_pumpCode != null)
                 {
-                    PumpOn();
-                    _selectedDrink = null;
+                    if (!_usePump)
+                    {
+                        PumpOn();
+                    }
+                    else PumpOff();
+
                 }
             }
             else if (Physics.Raycast(ray, out hit, 100f, _clientLayer))
             {
                 Client client = hit.collider.GetComponent<Client>();
 
-                if (client != null)
-                { 
-                    //client.player = this;
-                    currentRequest = client.currentRequest.ToString();
-                    //Debug.Log("pide : " + currentRequest);
-                }
+                //if (client != null)
+                //{ 
+                //    //client.player = this;
+                //    currentRequest = client.currentRequest.ToString();
+                //    //Debug.Log("pide : " + currentRequest);
+                //}
 
                 EntregarBebida(client);
             }
+          
         }
 
-        
+
 
         if (_score < 0) _score = 0;
         _scoreText.text = "$ " + _score;
@@ -188,9 +198,9 @@ public class Player : MonoBehaviour
             PumpOff();
         }
 
-        if (_selectedDrink == null) return;
+        //if (_selectedDrink == null) return;
 
-        if (_selectedDrink == currentRequest)
+        if (client.goodOrder)
         {
             Debug.Log("pedido correcto");
             if (!client.imposter)
@@ -206,16 +216,16 @@ public class Player : MonoBehaviour
                 _cordura -= 30;
                 StartCoroutine(_flash.PostActive());
             }
-            client.goodOrder = true;
         }
-        else
+        else if (client.badOrder)
         {
             StartCoroutine(Incorrect());
 
-            _score -= 50;        
+            _score -= 50;
+            client.badOrder = false;       
         }
 
-        _selectedDrink = null;
+        //_selectedDrink = null;
     }
 
     void PumpOn()
@@ -223,6 +233,7 @@ public class Player : MonoBehaviour
         meshPumpBar.enabled = false;
         meshPumpHand.enabled = true;
         _usePump = true;
+        _selectedDrink = null;
     }
 
     void PumpOff()

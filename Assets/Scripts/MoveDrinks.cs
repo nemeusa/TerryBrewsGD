@@ -1,72 +1,88 @@
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class MoveDrinks : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
+public class MoveDrinks : MonoBehaviour
 {
-    private Rigidbody _objectRb;
-    [SerializeField] private float _lerpSpeed = 5f;
-    private bool _isDragging = false;
-
-    private Vector3 _worldPosition;
-
-    private void Awake()
-    {
-        _objectRb = GetComponent<Rigidbody>();
-        if (_objectRb == null)
-        {
-            Debug.LogError("No Rigidbody found on the object. Adding Rigidbody...");
-            _objectRb = gameObject.AddComponent<Rigidbody>();
-            _objectRb.freezeRotation = true;
-        }
-    }
+    public bool isDraggingDrink = false;
+    private Vector3 _offset;
+    private Vector3 _position;
+    private float _zCoord;
+    public string _currentRequest;
+    Beverage drinkType;
+    public string drinkName;
 
     private void Start()
     {
-        // Verificar si el objeto tiene un Collider.
-        if (GetComponent<Collider>() == null)
+        drinkType = GetComponent<Beverage>();
+        _position = transform.position;
+    }
+
+    //void OnMouseDown()
+    //{
+    //    drinkName = drinkType.drinkType.ToString();
+    //    isDraggingDrink = true;
+    //    _zCoord = Camera.main.WorldToScreenPoint(transform.position).z;
+    //    _offset = transform.position - GetMouseWorldPos();
+    //    //0.47f
+    //}
+
+    void OnMouseDown()
+    {
+        drinkName = drinkType.drinkType.ToString();
+        isDraggingDrink = true;
+
+        // Obtenemos la distancia Z actual al hacer clic
+        _zCoord = Camera.main.WorldToScreenPoint(transform.position).z;
+
+        // Acercamos un poco la bebida a la cámara (esto es lo que pediste)
+        _zCoord -= 0.2f;
+
+        _offset = transform.position - GetMouseWorldPos();
+    }
+
+    void OnMouseUp()
+    {
+        // Ray ray = Camera.main.ScreenPointToRay(transform.position);
+
+
+        if (Physics.Raycast(transform.position, -transform.forward, out RaycastHit hit, 5f))
         {
-            Debug.LogError("No Collider found on the object! Please add a Collider.");
+            Client client = hit.collider.GetComponent<Client>();
+            if (client != null)
+            {
+                _currentRequest = client.currentRequest.ToString();
+                if (drinkName == _currentRequest) client.goodOrder = true;
+                else client.badOrder = true;
+                _currentRequest = null;
+            }
         }
 
-        _objectRb.useGravity = false;
-        _objectRb.isKinematic = true;
+        isDraggingDrink = false;
+        transform.position = _position;
+        drinkName = null;
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    void Update()
     {
-        Debug.Log("OnPointerDown triggered");
-        _isDragging = true;
-        _objectRb.useGravity = false;
-        _objectRb.isKinematic = true;
-    }
-
-    public void OnDrag(PointerEventData eventData)
-    {
-        if (_isDragging)
+        if (isDraggingDrink)
         {
-            Debug.Log("OnDrag triggered");
-            // Convertir la posición del ratón a coordenadas del mundo.
-            float z = Camera.main.WorldToScreenPoint(transform.position).z;
-            Vector3 pointPosition = new Vector3(eventData.position.x, eventData.position.y, z);
-            _worldPosition = Camera.main.ScreenToWorldPoint(pointPosition);
+            Vector3 targetPos = GetMouseWorldPos() + _offset;
+            transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * 10f);
 
-            // Mover el objeto de forma suave.
-            Vector3 newPosition = Vector3.Lerp(transform.position, _worldPosition, Time.deltaTime * _lerpSpeed);
-            _objectRb.MovePosition(newPosition);
         }
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    Vector3 GetMouseWorldPos()
     {
-        Debug.Log("OnPointerUp triggered");
-        _isDragging = false;
-        _objectRb.useGravity = true;
-        _objectRb.isKinematic = false;
+        Vector3 mousePoint = Input.mousePosition;
+        mousePoint.z = _zCoord;
+        return Camera.main.ScreenToWorldPoint(mousePoint);
     }
-
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, new Vector3(1, 1, 1)); // Para ver el collider en la escena.
+        //Gizmos.color = Color.red;
+        //Gizmos.DrawWireCube(transform.position, new Vector3(1, 1, 1)); // Para ver el collider en la escena.
+        Debug.DrawRay(transform.position, -transform.forward * 5f, Color.red);
+
     }
 }

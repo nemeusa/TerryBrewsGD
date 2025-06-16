@@ -38,7 +38,7 @@ public class Client : MonoBehaviour
 
     public bool ocuppy;
 
-    public bool goodOrder;
+    public bool goodOrder, badOrder;
 
     public bool imposter;
     public bool isDeath;

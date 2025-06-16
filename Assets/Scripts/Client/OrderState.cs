@@ -39,11 +39,14 @@ public class OrderState : MonoBehaviour, State
 
     public void OnUpdate()
     {
+        var dir = _client.player.transform.position - _client.transform.position;
+        _client.transform.forward = dir;
+
         _client.colorDrink();
         //Debug.Log("Order");
         _client.chair.Ocuppy();
         _client.TextColor();
-        _client.transform.forward = new Vector3 (0, 0, 0.01f);
+        //_client.transform.forward = new Vector3 (0, 0, 0.01f);
         if (_client.goodOrder)
         {
             if (_client.imposter) _fsm.ChangeState(TypeFSM.Attack);

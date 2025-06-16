@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731715, g: 0.13414735, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -142,7 +142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &40187294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,7 +279,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &72052352
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6211,7 +6211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &410087040
 Light:
   m_ObjectHideFlags: 0
@@ -6419,7 +6419,6 @@ GameObject:
   - component: {fileID: 591308492}
   - component: {fileID: 591308491}
   - component: {fileID: 591308494}
-  - component: {fileID: 591308495}
   m_Layer: 3
   m_Name: Gaseosa
   m_TagString: Untagged
@@ -6528,21 +6527,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drinkType: 3
---- !u!114 &591308495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 591308488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53fafc7ce76c3614384fc17ecc314218, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isDraggingDrink: 0
-  _currentRequest: 
-  drinkName: 
 --- !u!1 &636176472
 GameObject:
   m_ObjectHideFlags: 0
@@ -6997,7 +6981,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &756463637
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7114,7 +7098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &815615511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7163,7 +7147,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &832575518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7628,7 +7612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &862242079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7736,7 +7720,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &881523709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7940,8 +7924,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.030000012, y: 0.045621984, z: 0.028531708}
-  m_Center: {x: 0.000000016298145, y: -0.0048870225, z: -0.000000005122274}
+  m_Size: {x: 0.053025953, y: 0.045621984, z: 0.028531708}
+  m_Center: {x: 0.0012765517, y: -0.004887022, z: -0.0000000056749423}
 --- !u!23 &911509690
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8403,7 +8387,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1098288790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8755,7 +8739,6 @@ GameObject:
   - component: {fileID: 1345699105}
   - component: {fileID: 1345699104}
   - component: {fileID: 1345699107}
-  - component: {fileID: 1345699108}
   m_Layer: 3
   m_Name: Agua
   m_TagString: Untagged
@@ -8864,21 +8847,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drinkType: 0
---- !u!114 &1345699108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345699101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53fafc7ce76c3614384fc17ecc314218, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isDraggingDrink: 0
-  _currentRequest: 
-  drinkName: 
 --- !u!1001 &1463424419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8994,7 +8962,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1483362352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9281,7 +9249,6 @@ GameObject:
   - component: {fileID: 1560596700}
   - component: {fileID: 1560596702}
   - component: {fileID: 1560596703}
-  - component: {fileID: 1560596704}
   m_Layer: 3
   m_Name: Cerveza
   m_TagString: Untagged
@@ -9390,21 +9357,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.012852872, y: 0.014951901, z: 0.01631619}
   m_Center: {x: -0.01644858, y: 0.0004210182, z: -0.00022919613}
---- !u!114 &1560596704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1560596696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53fafc7ce76c3614384fc17ecc314218, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isDraggingDrink: 0
-  _currentRequest: 
-  drinkName: 
 --- !u!1 &1565586587
 GameObject:
   m_ObjectHideFlags: 0
@@ -11210,7 +11162,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1885648116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11515,7 +11467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1985695564
 Transform:
   m_ObjectHideFlags: 0
@@ -11625,7 +11577,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2033944699
 Transform:
   m_ObjectHideFlags: 0
@@ -11903,7 +11855,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &543450651631846663
 Transform:
   m_ObjectHideFlags: 0
@@ -12024,7 +11976,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &919132147909451709
 GameObject:
   m_ObjectHideFlags: 0
@@ -12036,6 +11988,7 @@ GameObject:
   - component: {fileID: 543450651631846663}
   - component: {fileID: 3469287837696232098}
   - component: {fileID: 1711813855042567784}
+  - component: {fileID: 3469287837696232099}
   m_Layer: 0
   m_Name: Barra 1
   m_TagString: Untagged
@@ -12337,6 +12290,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132147909451709}
   m_Mesh: {fileID: 5302568919011541938, guid: c5efbf14cc72f6f469bfd78429d3d43a, type: 3}
+--- !u!65 &3469287837696232099
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147909451709}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.050331157, y: 0.026067477, z: 0.09152115}
+  m_Center: {x: 0.007274012, y: -0.0021142785, z: -0.0007029154}
 --- !u!1 &3469682409600331578
 GameObject:
   m_ObjectHideFlags: 0
