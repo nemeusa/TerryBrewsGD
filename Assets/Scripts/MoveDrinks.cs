@@ -10,6 +10,8 @@ public class MoveDrinks : MonoBehaviour
     public string _currentRequest;
     Beverage drinkType;
     public string drinkName;
+    [SerializeField] LayerMask _beverageLayer;
+    [SerializeField] float _agarre;
 
     private void Start()
     {
@@ -42,10 +44,10 @@ public class MoveDrinks : MonoBehaviour
 
     void OnMouseUp()
     {
-        // Ray ray = Camera.main.ScreenPointToRay(transform.position);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
 
-        if (Physics.Raycast(transform.position, -transform.forward, out RaycastHit hit, 5f))
+        if (Physics.Raycast(ray, out RaycastHit hit, 100f, _beverageLayer))
         {
             Client client = hit.collider.GetComponent<Client>();
             if (client != null)
@@ -67,7 +69,7 @@ public class MoveDrinks : MonoBehaviour
         if (isDraggingDrink)
         {
             Vector3 targetPos = GetMouseWorldPos() + _offset;
-            transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * 10f);
+            transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * _agarre);
 
         }
     }

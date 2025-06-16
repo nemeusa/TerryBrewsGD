@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
+using UnityEditor.PackageManager;
 
 public class Player : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class Player : MonoBehaviour
 
     [Header("Puntos y Cordura")]
     public int _score = 0;
-    private int _cordura = 100;
+    public int _cordura = 100;
     [SerializeField] TMP_Text _scoreText;
     [SerializeField] TMP_Text _selectionText;
     [SerializeField] TMP_Text _corduraText;
@@ -46,7 +47,7 @@ public class Player : MonoBehaviour
 
     [Header("NO SE XD")]
     [SerializeField] Scene _sceneName;
-    Flash _flash;
+    public Flash flash;
     [HideInInspector] public Client _client;
     public TalksTeme _talkTheme;
     //public BarManager barManager;
@@ -56,7 +57,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        _flash = GetComponent<Flash>();
+        flash = GetComponent<Flash>();
 
         if (volume.profile.TryGet(out vignette))
         {
@@ -94,13 +95,14 @@ public class Player : MonoBehaviour
                 Pump pump = hit.collider.GetComponent<Pump>();
                 _pumpCode = pump;
 
-                if (_moveDrinks != null)
-                if (_moveDrinks.isDraggingDrink)
-                {
-                    //_moveDrinks.drinkName = _moveDrinks._currentRequest;
-                    PumpOff();
-                    _pumpCode = null;
-                }
+                if (moveDrinks != null)
+                    if (moveDrinks.isDraggingDrink)
+                    {
+                        //_moveDrinks.drinkName = _moveDrinks._currentRequest;
+                        PumpOff();
+                        _pumpCode = null;
+                    }
+
 
                 if (_pumpCode != null)
                 {
@@ -116,6 +118,8 @@ public class Player : MonoBehaviour
             {
                 Client client = hit.collider.GetComponent<Client>();
 
+                _client = client;
+
                 //if (client != null)
                 //{ 
                 //    //client.player = this;
@@ -123,10 +127,14 @@ public class Player : MonoBehaviour
                 //    //Debug.Log("pide : " + currentRequest);
                 //}
 
-                EntregarBebida(client);
+                Pump();
+
             }
           
         }
+
+        if(_client != null)
+        EntregarBebida(_client);
 
 
 
@@ -175,14 +183,13 @@ public class Player : MonoBehaviour
 
     }
 
-    public void EntregarBebida(Client client)
+    void Pump()
     {
-        _client = client;
 
         if (_usePump)
         {
-            client.isDeath = true;
-            if (client.imposter)
+            _client.isDeath = true;
+            if (_client.imposter)
             {
                 _score += 50;
                 _cordura += 10;
@@ -198,32 +205,38 @@ public class Player : MonoBehaviour
             PumpOff();
         }
 
+    }
+
+    public void EntregarBebida(Client client)
+    {
+
         //if (_selectedDrink == null) return;
 
-        if (client.goodOrder)
-        {
-            Debug.Log("pedido correcto");
-            if (!client.imposter)
-            {
-                StartCoroutine(correct());
-                _score += 100;
-                _cordura += 5;
-            }
-            else
-            {
-                StartCoroutine(Incorrect());
-                _score -= 50;
-                _cordura -= 30;
-                StartCoroutine(_flash.PostActive());
-            }
-        }
-        else if (client.badOrder)
-        {
-            StartCoroutine(Incorrect());
+        //if (client.goodOrder)
+        //{
+        //    Debug.Log("pedido correcto");
+        //    if (!client.imposter)
+        //    {
+        //        StartCoroutine(correct());
+        //        _score += 100;
+        //        _cordura += 5;
+        //    }
+        //    else
+        //    {
+        //        StartCoroutine(Incorrect());
+        //        _score -= 50;
+        //        _cordura -= 30;
+        //        StartCoroutine(flash.PostActive());
+        //    }
+        //    client.goodOrder = false;
+        //}
+        //if (client.badOrder)
+        //{
+        //    StartCoroutine(Incorrect());
 
-            _score -= 50;
-            client.badOrder = false;       
-        }
+        //    _score -= 50;
+        //    client.badOrder = false;       
+        //}
 
         //_selectedDrink = null;
     }

@@ -15,7 +15,9 @@ public class AttackState : State
 
     public void OnEnter()
     {
-
+        _client.player._score -= 50;
+        _client.player._cordura -= 30;
+        _client.player.StartCoroutine(_client.player.flash.PostActive());
     }
 
     public void OnUpdate()

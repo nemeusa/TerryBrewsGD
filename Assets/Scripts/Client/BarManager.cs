@@ -11,7 +11,9 @@ public class BarManager : MonoBehaviour
     GameObject _currentClientPrefab;
     public List<Chair> allChairs;
     [SerializeField] Transform spawnPoint;
+    [SerializeField] Transform spawnPointRight;
     [SerializeField] Transform _altureChair;
+    Vector3 _spawn;
 
     int clientsCounter;
     private float _randomEnter;
@@ -43,14 +45,18 @@ public class BarManager : MonoBehaviour
     {
         Chair freeChair = allChairs.FirstOrDefault(c => !c.isOcupped);
         //Vector3 spawn = new Vector3(spawnPoint.position.x * _randomEnter, _altureChair.position.y, spawnPoint.position.z);
-        Vector3 spawn = new Vector3(spawnPoint.position.x, _altureChair.position.y, spawnPoint.position.z);
+
+        //if(Random.Range(0, 100) <= 50)
+        _spawn = new Vector3(spawnPoint.position.x, _altureChair.position.y, spawnPoint.position.z);
+        //else
+        //_spawn = new Vector3(spawnPointRight.position.x, _altureChair.position.y, spawnPointRight.position.z);
 
         if (freeChair != null)
         {
 
             clientsCounter++;
             Debug.Log(clientsCounter);
-            GameObject clientObj = Instantiate(_currentClientPrefab, spawn, Quaternion.identity);
+            GameObject clientObj = Instantiate(_currentClientPrefab, _spawn, Quaternion.identity);
             Client client = clientObj.GetComponent<Client>();
             //gameManager.client = client;
             //NuevaPeticion();

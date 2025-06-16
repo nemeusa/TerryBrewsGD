@@ -1,5 +1,6 @@
 using System.Collections;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class OrderState : MonoBehaviour, State
@@ -57,6 +58,12 @@ public class OrderState : MonoBehaviour, State
                 _fsm.ChangeState(TypeFSM.ExitBar);
             }
             //StartCoroutine(niceOrder());
+        }
+
+        if (_client.badOrder)
+        {
+            _client.player._score -= 50;
+            _client.badOrder = false;
         }
 
         if (_client.isDeath)

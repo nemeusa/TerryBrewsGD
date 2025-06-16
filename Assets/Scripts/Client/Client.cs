@@ -218,7 +218,7 @@ public class Client : MonoBehaviour
 
             textCharla.text = "Probando: " + Theme;
 
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.01f);
 
         } 
         while (Theme != player._talkTheme.currentTheme[player._talkTheme._indexTheme]);
@@ -236,7 +236,7 @@ public class Client : MonoBehaviour
 
             textCharla.text = "Probando: " + Theme;
 
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.01f);
 
         } 
         while (Theme == player._talkTheme.currentTheme[player._talkTheme._indexTheme]);

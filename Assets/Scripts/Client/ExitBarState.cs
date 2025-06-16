@@ -18,6 +18,8 @@ public class ExitBarState : State
     {
         _dir = (Random.Range(0, 2) == 0) ? Vector3.left : Vector3.right;
         _client.visor.GetComponent<MeshRenderer>().material.color = Color.green;
+        _client.player._score += 100;
+        _client.player._cordura += 5;
     }
 
     public void OnUpdate()
