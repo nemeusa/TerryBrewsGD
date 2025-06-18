@@ -13,6 +13,9 @@ public class MoveDrinks : MonoBehaviour
     [SerializeField] LayerMask _beverageLayer;
     [SerializeField] float _agarre;
 
+    private float _contador = 0f;
+    private bool _contando = false;
+
     private void Start()
     {
         drinkType = GetComponent<Beverage>();
@@ -30,16 +33,18 @@ public class MoveDrinks : MonoBehaviour
 
     void OnMouseDown()
     {
+
+        _contando = true;
+
         drinkName = drinkType.drinkType.ToString();
         isDraggingDrink = true;
 
-        // Obtenemos la distancia Z actual al hacer clic
         _zCoord = Camera.main.WorldToScreenPoint(transform.position).z;
 
-        // Acercamos un poco la bebida a la cámara (esto es lo que pediste)
         _zCoord -= 0.2f;
 
         _offset = transform.position - GetMouseWorldPos();
+
     }
 
     void OnMouseUp()
@@ -52,16 +57,22 @@ public class MoveDrinks : MonoBehaviour
             Client client = hit.collider.GetComponent<Client>();
             if (client != null)
             {
-                _currentRequest = client.currentRequest.ToString();
-                if (drinkName == _currentRequest) client.goodOrder = true;
-                else client.badOrder = true;
-                _currentRequest = null;
+                if (_contador >= 0.15f)
+                {
+                    _currentRequest = client.currentRequest.ToString();
+                    if (drinkName == _currentRequest) client.goodOrder = true;
+                    else client.badOrder = true;
+                    _currentRequest = null;
+                }
             }
         }
 
         isDraggingDrink = false;
         transform.position = _position;
         drinkName = null;
+
+        _contando = false;
+        _contador = 0f;
     }
 
     void Update()
@@ -72,6 +83,11 @@ public class MoveDrinks : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * _agarre);
 
         }
+
+        if (_contando)
+        {
+            _contador += Time.deltaTime;
+        }    
     }
 
     Vector3 GetMouseWorldPos()
