@@ -85,7 +85,7 @@ public class MoveDrinks : MonoBehaviour
     {
         if (isDraggingDrink)
         {
-            StartCoroutine(ScaleAnimation());
+            //  StartCoroutine(ScaleAnimation());
             Vector3 targetPos = GetMouseWorldPos() + _offset;
             transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * _agarre);
 
@@ -94,48 +94,48 @@ public class MoveDrinks : MonoBehaviour
         if (_contando)
         {
             _contador += Time.deltaTime;
-        }    
+        }
     }
 
-    IEnumerator ScaleAnimation()
-    {
-        //yield return new WaitForSeconds(0.6f);
-        //Vector3 scale = transform.localScale;
-        //transform.localScale -= scale * 0.6f * Time.deltaTime;
-        //Debug.Log("chitito");
-        //yield return new WaitForSeconds(0.6f);
-        //transform.localScale += scale * 0.6f * Time.deltaTime;
-        //Debug.Log("gramde");
+    //IEnumerator ScaleAnimation()
+    //{
+    //yield return new WaitForSeconds(0.6f);
+    //Vector3 scale = transform.localScale;
+    //transform.localScale -= scale * 0.6f * Time.deltaTime;
+    //Debug.Log("chitito");
+    //yield return new WaitForSeconds(0.6f);
+    //transform.localScale += scale * 0.6f * Time.deltaTime;
+    //Debug.Log("gramde");
 
-        Vector3 originalScale = transform.localScale;
-        float elapsedTime = 0f;
-        float scaleDuration = 0.6f; // El tiempo que tarda en cambiar la escala.
+    //  Vector3 originalScale = transform.localScale;
+    //float elapsedTime = 0f;
+    //float scaleDuration = 0.6f; // El tiempo que tarda en cambiar la escala.
 
-        // Reduce el tamaño
-        while (elapsedTime < scaleDuration)
-        {
-            transform.localScale = Vector3.Lerp(originalScale, originalScale * 0.6f, elapsedTime / scaleDuration);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-        transform.localScale = originalScale * 0.6f; // Asegúrate de que se haya alcanzado el tamaño reducido.
+    // Reduce el tamaño
+    //while (elapsedTime < scaleDuration)
+    //{
+    //  transform.localScale = Vector3.Lerp(originalScale, originalScale * 0.6f, elapsedTime / scaleDuration);
+    //    elapsedTime += Time.deltaTime;
+    //      yield return null;
+    // }
+    //  transform.localScale = originalScale * 0.6f; // Asegúrate de que se haya alcanzado el tamaño reducido.
 
-        // Espera antes de aumentar el tamaño
-        yield return new WaitForSeconds(0.6f);
+    // Espera antes de aumentar el tamaño
+    //  yield return new WaitForSeconds(0.6f);
 
-        elapsedTime = 0f;
+    //  elapsedTime = 0f;
+    // 
+    // Aumenta el tamaño de vuelta al original
+    //   while (elapsedTime < scaleDuration)
+    //    {
+    //   transform.localScale = Vector3.Lerp(originalScale * 0.6f, originalScale, elapsedTime / scaleDuration);
+    //  elapsedTime += Time.deltaTime;
+    //   yield return null;
+    //      }
+    //  transform.localScale = originalScale; // Asegúrate de que se haya alcanzado el tamaño original.
 
-        // Aumenta el tamaño de vuelta al original
-        while (elapsedTime < scaleDuration)
-        {
-            transform.localScale = Vector3.Lerp(originalScale * 0.6f, originalScale, elapsedTime / scaleDuration);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-        transform.localScale = originalScale; // Asegúrate de que se haya alcanzado el tamaño original.
-
-        Debug.Log("Latido completado");
-    }
+    //  Debug.Log("Latido completado");
+    // }
 
     Vector3 GetMouseWorldPos()
     {
