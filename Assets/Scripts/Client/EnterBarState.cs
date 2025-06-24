@@ -1,7 +1,5 @@
 using System;
-using System.Drawing;
 using UnityEngine;
-using UnityEngine.Timeline;
 
 public class EnterBarState : State
 {
@@ -15,7 +13,7 @@ public class EnterBarState : State
 
     public void OnEnter()
     {
-        _client.Charla();
+        //_client.Charla();
         _client.textOrder.gameObject.SetActive(false);
         _client.textCharla.gameObject.SetActive(false);
     }

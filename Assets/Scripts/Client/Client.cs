@@ -55,10 +55,14 @@ public class Client : MonoBehaviour
 
     public bool talkThemes;
 
+    public Dialogue dialogue; 
+
     void Awake()
     {
         if (!_onlyGood && !_onlyImposter)
             RandomImposter();
+
+        //dialogue = GetComponent<ClientDialogue>();
 
         _fsm = new FSM<TypeFSM>();
         _fsm.AddState(TypeFSM.EnterBar, new EnterBarState(_fsm, this));
@@ -121,54 +125,83 @@ public class Client : MonoBehaviour
        // Charla();
     }
 
+    #region Charla
     public void Charla()
     {
         if (!imposter)
         {
-          
-            if (UnityEngine.Random.Range(0, 101) <= 50)
-            {
-                string charla;
 
-                charla = charlaGood[UnityEngine.Random.Range(0, charlaGood.Length)];
-                Debug.Log("charla normal");
-                textCharla.text = charla;
-                currentDialogue = charla;
-            }
-            else
-            {
-                talkThemes = true;
-                StartCoroutine(CharlaThemeGoodCoroutine());
-                //CharlaThemeGood();
-                Debug.Log("charla tema");
-                currentDialogue = Theme;
 
-            }
-            //Debug.Log(charla);
+            string charla;
+
+            charla = charlaGood[UnityEngine.Random.Range(0, charlaGood.Length)];
+            Debug.Log("charla normal good");
+            textCharla.text = charla;
+            currentDialogue = charla;
+
         }
 
         else
         {
+            string charla;
 
-            if (UnityEngine.Random.Range(0, 101) <= 50)
-            {
-                string charla;
-
-                charla = charlaBad[UnityEngine.Random.Range(0, charlaBad.Length)];
-                textCharla.text = charla;
-                currentDialogue = charla;
-            }
-            else
-            {
-                talkThemes = true;
-                StartCoroutine(CharlaThemeBadCoroutine());
-                //CharlaThemeBad();
-                currentDialogue = Theme;
-            }
+            charla = charlaBad[UnityEngine.Random.Range(0, charlaBad.Length)];
+            Debug.Log("charla normal bad");
+            textCharla.text = charla;
+            currentDialogue = charla;
         }
 
     }
 
+    //public void Charla()
+    //{
+    //    if (!imposter)
+    //    {
+
+    //        if (UnityEngine.Random.Range(0, 101) <= 50)
+    //        {
+    //            string charla;
+
+    //            charla = charlaGood[UnityEngine.Random.Range(0, charlaGood.Length)];
+    //            Debug.Log("charla normal good");
+    //            textCharla.text = charla;
+    //            currentDialogue = charla;
+    //        }
+    //        else
+    //        {
+    //            talkThemes = true;
+    //            StartCoroutine(CharlaThemeGoodCoroutine());
+    //            //CharlaThemeGood();
+    //            Debug.Log("charla tema good");
+    //            currentDialogue = Theme;
+
+    //        }
+    //        //Debug.Log(charla);
+    //    }
+
+    //    else
+    //    {
+
+    //        if (UnityEngine.Random.Range(0, 101) <= 50)
+    //        {
+    //            string charla;
+
+    //            charla = charlaBad[UnityEngine.Random.Range(0, charlaBad.Length)];
+    //            Debug.Log("charla normal bad");
+    //            textCharla.text = charla;
+    //            currentDialogue = charla;
+    //        }
+    //        else
+    //        {
+    //            talkThemes = true;
+    //            StartCoroutine(CharlaThemeBadCoroutine());
+    //            //CharlaThemeBad();
+    //            Debug.Log("charla tema bad");
+    //            currentDialogue = Theme;
+    //        }
+    //    }
+
+    //}
 
     //public void CharlaThemeBad()
     //{
@@ -281,6 +314,8 @@ public class Client : MonoBehaviour
             textOrder.color = gaseosa;
         }
     }
+
+    #endregion
 
 }
 

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8985918851535115524}
   - component: {fileID: 80842431327447635}
   - component: {fileID: 5929659609626681198}
+  - component: {fileID: -3077246110108954780}
   m_Layer: 6
   m_Name: client Good
   m_TagString: Untagged
@@ -132,6 +133,7 @@ MonoBehaviour:
   textOrder: {fileID: 6911244728761325680}
   textCharla: {fileID: 3633504704470610632}
   currentRequest: 
+  currentDialogue: 
   charlaGood:
   - Oli
   - '*Balatreando*'
@@ -196,13 +198,17 @@ MonoBehaviour:
   gaseosa: {r: 1, g: 0, b: 0.2546935, a: 1}
   ocuppy: 0
   goodOrder: 0
+  badOrder: 0
   imposter: 0
   isDeath: 0
   _goodClientParticles: {fileID: 4030324384528410208}
   visor: {fileID: 2939783058530435608}
   _onlyGood: 1
   _onlyImposter: 0
+  Theme: 
   bloodPartycles: {fileID: 4153642617205985453}
+  talkThemes: 0
+  dialogue: {fileID: -3077246110108954780}
 --- !u!54 &5929659609626681198
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -230,6 +236,34 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-3077246110108954780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083364825804263593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f4fe539dfc1eeb45b20b5f44811e8dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  themeDialogues:
+  - theme: 0
+    phrases:
+    - me cago de frio
+  - theme: 1
+    phrases:
+    - que calor de mierda
+  - theme: 2
+    phrases:
+    - un hdrp me rayo todo el auto en la ruta
+  - theme: 3
+    phrases:
+    - estuvo tranki el viaje
+  currentDialogue: 
+  Theme: 
+  _client: {fileID: 80842431327447635, guid: b9e1f070c49758c4f877a0c87600c02a, type: 3}
 --- !u!1 &2939783058530435608
 GameObject:
   m_ObjectHideFlags: 0

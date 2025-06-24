@@ -16,6 +16,7 @@ public class OrderState : MonoBehaviour, State
 
     public void OnEnter()
     {
+        _client.dialogue.Charla();
         //if(_client.talkThemes)
         //{
         //    if (!_client.imposter)

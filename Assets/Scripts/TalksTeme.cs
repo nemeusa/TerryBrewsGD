@@ -19,7 +19,7 @@ public class TalksTeme : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.V)) RandomTheme();
-        TalkTheme();
+        //TalkTheme();
     }
 
     void TalkTheme()

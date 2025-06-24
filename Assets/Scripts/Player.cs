@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
-using UnityEditor.PackageManager;
 
 public class Player : MonoBehaviour
 {
@@ -61,23 +60,23 @@ public class Player : MonoBehaviour
 
         if (volume.profile.TryGet(out vignette))
         {
-            Debug.Log("Viñeta Encontrada");
+           // Debug.Log("Viñeta Encontrada");
         }
         else
         {
-            Debug.LogWarning("No hay Nada");
+          //  Debug.LogWarning("No hay Nada");
         }
         if (volume.profile.TryGet(out chromAberration))
         {
-            Debug.Log("Una Aberración en la mira");
+         //   Debug.Log("Una Aberración en la mira");
         }
         else
         {
-            Debug.LogWarning("Aca menos");
+        //    Debug.LogWarning("Aca menos");
         }
         if (volume.profile.TryGet(out depthOfField))
         {
-            Debug.Log("mira");
+         //   Debug.Log("mira");
         }
 
     }
