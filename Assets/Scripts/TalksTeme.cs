@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using System.Collections;
 
 public class TalksTeme : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class TalksTeme : MonoBehaviour
     [SerializeField] TMP_Text textTheme;
     public int _indexTheme;
 
+    bool _newChanel;
+
     private void Start()
     {
         InitialTheme();
@@ -18,8 +21,10 @@ public class TalksTeme : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.V)) RandomTheme();
+        //if (Input.GetKeyDown(KeyCode.V)) RandomTheme();
         //TalkTheme();
+        if (!_newChanel)
+        StartCoroutine(CambiaCanal());
     }
 
     void TalkTheme()
@@ -64,6 +69,14 @@ public class TalksTeme : MonoBehaviour
 
         currentClima = clima[UnityEngine.Random.Range(0, clima.Length)];
         currentEventos = eventos[UnityEngine.Random.Range(0, eventos.Length)];
+    }
+
+    IEnumerator CambiaCanal()
+    {
+        _newChanel = true;
+        yield return new WaitForSeconds(2);
+        RandomTheme();
+        _newChanel = false;
     }
 }
 

@@ -252,9 +252,14 @@ MonoBehaviour:
   - theme: 0
     phrases:
     - me cago de frio
+    - che, no tendras una estufa?
+    - toy helao
+    - lpm me olvide la campera
   - theme: 1
     phrases:
     - que calor de mierda
+    - '**abre la ventana**'
+    - 
   - theme: 2
     phrases:
     - un hdrp me rayo todo el auto en la ruta
