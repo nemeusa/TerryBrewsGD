@@ -4,7 +4,6 @@ using System.Collections;
 
 public class TalksTeme : MonoBehaviour
 {
-    Talks _talks;
     public string currentClima;
     public string currentEventos;
     public string[] currentTheme;
@@ -25,29 +24,6 @@ public class TalksTeme : MonoBehaviour
         //TalkTheme();
         if (!_newChanel)
         StartCoroutine(CambiaCanal());
-    }
-
-    void TalkTheme()
-    {
-        if(_talks == Talks.Frio)
-        {
-            Debug.Log("hace frio");
-        }
-
-        if (_talks == Talks.Calor) 
-        {
-            Debug.Log("hace calor");
-        }
-
-        if (_talks == Talks.Transito)
-        {
-            Debug.Log("no hay transito");
-        }
-
-        if (_talks == Talks.Despejado)
-        {
-            Debug.Log("esta despejado");
-        }
     }
 
     void RandomTheme()
@@ -80,10 +56,8 @@ public class TalksTeme : MonoBehaviour
     }
 }
 
-public enum Talks
+public enum ThemeType
 {
-    Frio,
-    Calor,
-    Transito,
-    Despejado
+    Clima,
+    Evento
 }

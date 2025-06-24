@@ -55,12 +55,9 @@ public class BarManager : MonoBehaviour
         {
 
             clientsCounter++;
-            Debug.Log(clientsCounter);
+           // Debug.Log(clientsCounter);
             GameObject clientObj = Instantiate(_currentClientPrefab, _spawn, Quaternion.identity);
             Client client = clientObj.GetComponent<Client>();
-            //gameManager.client = client;
-            //NuevaPeticion();
-            //client.GetComponent<NPCRequest>().requestedItem = currentRequest;
             _player._client = client;
             client.player = _player;
             client.AssignChair(freeChair);

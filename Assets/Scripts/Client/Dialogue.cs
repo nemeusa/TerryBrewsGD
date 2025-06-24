@@ -14,20 +14,28 @@ public class Dialogue : MonoBehaviour
 
     [SerializeField] Client _client;
 
+    bool useTheme;
+
+    string temaString;
+    TalkTheme currentTheme;
+    TalkTheme themeToUse;
+
     private void Awake()
     {
+        useTheme = Random.Range(0, 101) > 50;
+        //useTheme = true;
         _client = GetComponent<Client>();
     }
 
     public void Charla()
     {
-        bool useTheme = Random.Range(0, 101) > 50;
+       // bool useTheme = Random.Range(0, 101) > 50;
 
         if (useTheme)
         {
-            string temaString = _client.player._talkTheme.currentTheme[_client.player._talkTheme._indexTheme];
-            TalkTheme currentTheme = (TalkTheme)System.Enum.Parse(typeof(TalkTheme), temaString);
-            TalkTheme themeToUse;
+            temaString = _client.player._talkTheme.currentTheme[_client.player._talkTheme._indexTheme];
+            currentTheme = (TalkTheme)System.Enum.Parse(typeof(TalkTheme), temaString);
+            //themeToUse;
 
             if (!_client.imposter)
             {
@@ -50,13 +58,37 @@ public class Dialogue : MonoBehaviour
             currentDialogue = frase;
             Theme = themeToUse.ToString();
 
-            Debug.Log($"Tema: {Theme} - Impostor: {_client.imposter}");
+            //Debug.Log($"Tema: {Theme} - Impostor: {_client.imposter}");
         }
         else
         {
             // Frase neutral
             _client.Charla();
         }
+            Debug.Log("Tema" + themeToUse + "Impostor" + currentTheme);
+    }
+
+    public void Verification()
+    {
+        if ( useTheme)
+        {
+            if (_client.imposter && themeToUse == currentTheme)
+            {
+                Debug.Log("haciendolo malo");
+
+            }
+
+
+
+            else if (!_client.imposter && themeToUse != currentTheme)
+            {
+                Debug.Log("haciendolo bueno");
+
+            }
+             //   Debug.Log("verificacion");
+
+        }
+
     }
 
     private string GetPhraseByTheme(TalkTheme theme)
@@ -79,6 +111,7 @@ public class Dialogue : MonoBehaviour
 public class ThemeDialogue
 {
     public TalkTheme theme;
+    public ThemeType type;
     [TextArea(2, 5)] public string[] phrases;
 }
 

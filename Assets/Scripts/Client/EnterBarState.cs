@@ -41,7 +41,6 @@ public class EnterBarState : State
 
     public void OnExit()
     {
-
     }
 
 

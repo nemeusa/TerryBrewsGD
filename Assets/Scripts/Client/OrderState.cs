@@ -15,20 +15,6 @@ public class OrderState : MonoBehaviour, State
     public void OnEnter()
     {
         _client.dialogue.Charla();
-        //if(_client.talkThemes)
-        //{
-        //    if (!_client.imposter)
-        //    {
-        //        if (_client.Theme != _client.player._talkTheme.currentTheme[_client.player._talkTheme._indexTheme])
-        //        _client.StartCoroutine(_client.CharlaThemeGoodCoroutine());
-
-        //    }
-        //    else
-        //    {
-        //        if (_client.Theme == _client.player._talkTheme.currentTheme[_client.player._talkTheme._indexTheme])
-        //        _client.StartCoroutine(_client.CharlaThemeBadCoroutine());
-        //    }
-        //}
         NuevaPeticion();
         _client.textOrder.gameObject.SetActive(true);
         _client.textCharla.gameObject.SetActive(true);
@@ -39,6 +25,7 @@ public class OrderState : MonoBehaviour, State
 
     public void OnUpdate()
     {
+        _client.dialogue.Verification();
         var dir = _client.player.transform.position - _client.transform.position;
         _client.transform.forward = dir;
 

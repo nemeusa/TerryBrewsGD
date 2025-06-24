@@ -24,7 +24,7 @@ public class ExitBarState : State
 
     public void OnUpdate()
     {
-        Debug.Log("Exit");
+       // Debug.Log("Exit");
         _client.GetComponent<MeshRenderer>().material.color = Color.green;
         //var dir = _client.chair.transform.position + _client.transform.position;
         _client.transform.forward = _dir;
