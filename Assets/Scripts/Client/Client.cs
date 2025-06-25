@@ -55,7 +55,7 @@ public class Client : MonoBehaviour
 
     public bool talkThemes;
 
-    public Dialogue dialogue; 
+    public Dialogue dialogue;
 
     void Awake()
     {
