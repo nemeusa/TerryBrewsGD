@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Outliner_coca
+  m_Name: Outliner_Gen
   m_Shader: {fileID: -6465566751694194690, guid: 41fc324023b98e342b26641774510194,
     type: 3}
   m_Parent: {fileID: 0}
@@ -50,16 +50,16 @@ Material:
     - _DstBlend: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Scale: 1.13
+    - _Scale: 1.11
     - _SrcBlend: 2
     - _Surface: 1
     - _ZTest: 4
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _Color: {r: 0.735849, g: 0.0034709943, b: 0.033986628, a: 1}
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &8240200158562918686
+--- !u!114 &7481954740329727982
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
