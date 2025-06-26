@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
 
     [Header("SHOTGUN")]
     [SerializeField] MeshRenderer meshPumpBar;
-    [SerializeField] MeshRenderer meshPumpHand; 
+    [SerializeField] MeshRenderer meshPumpHand;
     bool _usePump;
     Pump _pumpCode = null;
     [SerializeField] ParticleSystem _smokeParticle;
@@ -54,8 +54,14 @@ public class Player : MonoBehaviour
 
     MoveDrinks _moveDrinks;
 
+    public URP urp;
+
+    [SerializeField] Animator _pumpHandAni, _pumpBarAni;
+
     private void Awake()
     {
+        //_pumpBarAni.SetBool("Bar gets it", true);
+
         flash = GetComponent<Flash>();
 
         if (volume.profile.TryGet(out vignette))
@@ -132,10 +138,6 @@ public class Player : MonoBehaviour
           
         }
 
-        if(_client != null)
-        EntregarBebida(_client);
-
-
 
         if (_score < 0) _score = 0;
         _scoreText.text = "$ " + _score;
@@ -187,6 +189,7 @@ public class Player : MonoBehaviour
 
         if (_usePump)
         {
+            urp.StartCoroutine(urp.ShootURP());
             _client.isDeath = true;
             if (_client.imposter)
             {
@@ -201,57 +204,27 @@ public class Player : MonoBehaviour
                 StartCoroutine(Incorrect());
             }
             StartCoroutine(Shoot());
-            PumpOff();
+            //PumpOff();
         }
 
     }
 
-    public void EntregarBebida(Client client)
-    {
-
-        //if (_selectedDrink == null) return;
-
-        //if (client.goodOrder)
-        //{
-        //    Debug.Log("pedido correcto");
-        //    if (!client.imposter)
-        //    {
-        //        StartCoroutine(correct());
-        //        _score += 100;
-        //        _cordura += 5;
-        //    }
-        //    else
-        //    {
-        //        StartCoroutine(Incorrect());
-        //        _score -= 50;
-        //        _cordura -= 30;
-        //        StartCoroutine(flash.PostActive());
-        //    }
-        //    client.goodOrder = false;
-        //}
-        //if (client.badOrder)
-        //{
-        //    StartCoroutine(Incorrect());
-
-        //    _score -= 50;
-        //    client.badOrder = false;       
-        //}
-
-        //_selectedDrink = null;
-    }
-
     void PumpOn()
     {
-        meshPumpBar.enabled = false;
-        meshPumpHand.enabled = true;
+        _pumpHandAni.SetBool("Hand gets it", true);
+       // meshPumpBar.enabled = false;
+        _pumpBarAni.SetBool("Bar gets it", false);
+        //meshPumpHand.enabled = true;
         _usePump = true;
         _selectedDrink = null;
     }
 
     void PumpOff()
     {
-        meshPumpBar.enabled = true;
-        meshPumpHand.enabled = false;
+        _pumpHandAni.SetBool("Hand gets it", false);
+        //meshPumpBar.enabled = true;
+        _pumpBarAni.SetBool("Bar gets it", true);
+        //meshPumpHand.enabled = false;
         _usePump = false;
         _pumpCode = null;
     }
@@ -261,16 +234,13 @@ public class Player : MonoBehaviour
         _smokeParticle.Play();
         yield return new WaitForSeconds(0.1f);
         ActivateDepthOfField(3f, 0.5f);
-        yield return new WaitForSeconds(0.3f);
-        
-        PumpOff ();
-        meshPumpHand.enabled = false;
+        PumpOff();
     }
 
     private void ActivateDepthOfField(float duration, float startDistance)
     {
         if (depthOfField == null) return;
-        StopAllCoroutines();
+        //StopAllCoroutines();
         StartCoroutine(Activate(duration, startDistance));
     }
 
