@@ -8,9 +8,7 @@ public class TransicionEscenasUI : MonoBehaviour
     public static TransicionEscenasUI Instance;
     
     [Header ("Disolver")]
-
     public CanvasGroup disolverCanvasGroup;
-
     public float tiempoDisolverEntrada;
 
     private void Awake()
