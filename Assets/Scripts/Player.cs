@@ -143,7 +143,11 @@ public class Player : MonoBehaviour
         _scoreText.text = "$ " + _score;
         _selectionText.text = "Tienes: " + _selectedDrink;
 
-        if (_cordura <= 0) SceneManager.LoadScene("Lose");
+        if (_cordura <= 0) 
+        {
+            StopAllCoroutines();
+            SceneManager.LoadScene("Lose");
+        }
         if (_cordura > 100) _cordura = 100;
         _corduraText.text = "Cordura: " + _cordura;
 
@@ -151,6 +155,7 @@ public class Player : MonoBehaviour
         {
             //void LoadScene(string sceneName)
             //{
+               StopAllCoroutines();
                SceneManager.LoadScene("Win");
             //}
 
@@ -212,9 +217,9 @@ public class Player : MonoBehaviour
     void PumpOn()
     {
         _pumpHandAni.SetBool("Hand gets it", true);
-       // meshPumpBar.enabled = false;
+      // meshPumpBar.enabled = false;
         _pumpBarAni.SetBool("Bar gets it", false);
-        //meshPumpHand.enabled = true;
+        meshPumpHand.enabled = true;
         _usePump = true;
         _selectedDrink = null;
     }

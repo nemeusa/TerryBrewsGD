@@ -36,8 +36,6 @@ public class Pausa : MonoBehaviour
 
     public void Reanudar()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
             if (pausa == true)
             {
                 ObjetoMenuPausa.SetActive(false);
@@ -47,12 +45,11 @@ public class Pausa : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
 
             }
-        }
-
     }
 
     public void Menu()
     {
+        Reanudar();
         SceneManager.LoadScene("Menu");
     }
     public void Salir()

@@ -27,8 +27,13 @@ public class URP : MonoBehaviour
 
         _damageURP.SetActive(true);
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.6f);
 
+        _damageURP.SetActive(false);
+    }
+    void URPOff() 
+    {
+        _shootURP.SetActive(false);
         _damageURP.SetActive(false);
     }
 }

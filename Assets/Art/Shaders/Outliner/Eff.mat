@@ -43,6 +43,7 @@ Material:
     - _FillAmount: 26.84
     - _Fresnel_Fade: 12.29
     - _Fresnel_Length: 11.26
+    - _QueueControl: 0
     - _WobbleX: 9.85
     m_Colors:
     - _BackFaceColor: {r: 0.23584908, g: 0.03893734, b: 0.054690268, a: 1}

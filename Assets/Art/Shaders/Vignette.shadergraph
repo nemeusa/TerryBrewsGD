@@ -40,9 +40,6 @@
             "m_Id": "3685265739b14eb3a67506eb0733751d"
         },
         {
-            "m_Id": "d86795f13e064c149893c162db01332b"
-        },
-        {
             "m_Id": "95603fe0dfdf4221a8ad46c6a1e91d3c"
         },
         {
@@ -1097,21 +1094,6 @@
 {
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
-    "m_ObjectId": "83c2949e00574f9e8c6846c388baa6a8",
-    "m_Id": 0,
-    "m_DisplayName": "Out",
-    "m_SlotType": 1,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Out",
-    "m_StageCapability": 3,
-    "m_Value": 0.0,
-    "m_DefaultValue": 0.0,
-    "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "859bc8621fdc4516bee6433423749b1f",
     "m_Id": 0,
     "m_DisplayName": "Time",
@@ -1796,44 +1778,6 @@
     "m_RangeValues": {
         "x": 0.0,
         "y": 1.0
-    }
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.SliderNode",
-    "m_ObjectId": "d86795f13e064c149893c162db01332b",
-    "m_Group": {
-        "m_Id": ""
-    },
-    "m_Name": "Slider",
-    "m_DrawState": {
-        "m_Expanded": true,
-        "m_Position": {
-            "serializedVersion": "2",
-            "x": -2296.000244140625,
-            "y": 491.99981689453127,
-            "width": 232.000244140625,
-            "height": 146.0
-        }
-    },
-    "m_Slots": [
-        {
-            "m_Id": "83c2949e00574f9e8c6846c388baa6a8"
-        }
-    ],
-    "synonyms": [],
-    "m_Precision": 0,
-    "m_PreviewExpanded": true,
-    "m_DismissedVersion": 0,
-    "m_PreviewMode": 0,
-    "m_CustomColors": {
-        "m_SerializableColors": []
-    },
-    "m_Value": {
-        "x": 96.0,
-        "y": 0.0,
-        "z": 10000.0
     }
 }
 
