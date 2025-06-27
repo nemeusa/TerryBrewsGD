@@ -17,7 +17,7 @@ public class AttackState : State
     {
         _client.player.urp.StartCoroutine(_client.player.urp.damageURP());
         _client.player._score -= 50;
-        _client.player._cordura -= 30;
+        _client.player._cordura -= _client.player.getDamage;
         _client.player.StartCoroutine(_client.player.flash.PostActive());
     }
 

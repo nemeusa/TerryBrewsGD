@@ -57,10 +57,10 @@ public class Client : MonoBehaviour
 
     public Dialogue dialogue;
 
+    public bool randomBlock;
+
     void Awake()
     {
-        if (!_onlyGood && !_onlyImposter)
-            RandomImposter();
 
         //dialogue = GetComponent<ClientDialogue>();
 
@@ -72,8 +72,7 @@ public class Client : MonoBehaviour
         _fsm.AddState(TypeFSM.Death, new DeathState(_fsm, this));
         _fsm.AddState(TypeFSM.VIP, new VIPState(_fsm, this));
 
-        _fsm.ChangeState(TypeFSM.EnterBar);
-
+        StartCoroutine(StartVars());
 
         //else Charla();
     }
@@ -116,6 +115,15 @@ public class Client : MonoBehaviour
     public void InstantDestroy()
     { 
         Destroy(gameObject);
+    }
+
+    IEnumerator StartVars()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        if (randomBlock) RandomImposter();
+        _fsm.ChangeState(TypeFSM.EnterBar);
+
     }
 
     void RandomImposter()

@@ -8,6 +8,9 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    //..- -. .- / .--. .. .--- .- / -.. . / -.-. --- -.. .. --. --- .-.-. 
+
+
     [Header("Audio")]
     [SerializeField] AudioSource _shotgunAudioSource;
     [SerializeField] AudioClip _shotgunSound;
@@ -21,6 +24,8 @@ public class Player : MonoBehaviour
     [Header("Puntos y Cordura")]
     public int _score = 0;
     public int _cordura = 100;
+    public int _corduraDanio = 10;
+    public int _corduraMatarCliente = 15;
     [SerializeField] TMP_Text _scoreText;
     [SerializeField] TMP_Text _selectionText;
     [SerializeField] TMP_Text _corduraText;
@@ -62,9 +67,16 @@ public class Player : MonoBehaviour
 
     [SerializeField] Animator _pumpHandAni, _pumpBarAni;
 
+    [SerializeField] string _sceneLose, _sceneWin;
+    [SerializeField] int _cashCondition = 1000;
+
+    public int getDamage = 10;
+
     private void Awake()
     {
         //_pumpBarAni.SetBool("Bar gets it", true);
+        //_sceneLose = "Lose";
+        //_sceneWin = "Win";
 
         flash = GetComponent<Flash>();
 
@@ -149,18 +161,19 @@ public class Player : MonoBehaviour
 
         if (_cordura <= 0) 
         {
-            StopAllCoroutines();
-            SceneManager.LoadScene("Lose");
+            //StopAllCoroutines();
+            StartCoroutine(Defeat());
+
+
         }
         if (_cordura > 100) _cordura = 100;
         _corduraText.text = "Cordura: " + _cordura;
 
-        if (_score >= 1000)
+        if (_score >= _cashCondition)
         {
             //void LoadScene(string sceneName)
             //{
-               StopAllCoroutines();
-               SceneManager.LoadScene("Win");
+           
             //}
 
         }
@@ -174,7 +187,23 @@ public class Player : MonoBehaviour
 
     }
 
-    void vinetta()
+    IEnumerator Defeat()
+    {
+        yield return new WaitForSeconds(0.7f);
+        urp._shootURP.SetActive(false);
+        urp._damageURP.SetActive(false);
+        SceneManager.LoadScene(_sceneLose);
+    }
+
+    IEnumerator Win()
+    {
+        yield return new WaitForSeconds(0.25f);
+        urp._shootURP.SetActive(false);
+        urp._damageURP.SetActive(false);
+        SceneManager.LoadScene(_sceneWin);
+    }
+
+        void vinetta()
     {
 
         if (vignette != null)
@@ -207,13 +236,13 @@ public class Player : MonoBehaviour
             if (_client.imposter)
             {
                 _score += 50;
-                _cordura += 10;
+                _cordura += _corduraDanio;
                 StartCoroutine(correct());
             }
             else
             {
                 _score -= 200;
-                _cordura -= 15;
+                _cordura -= _corduraMatarCliente;
                 StartCoroutine(Incorrect());
             }
             StartCoroutine(Shoot());

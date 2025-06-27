@@ -166,6 +166,8 @@ MonoBehaviour:
   currentRequest: 
   _score: 0
   _cordura: 100
+  _corduraDanio: 10
+  _corduraMatarCliente: 15
   _scoreText: {fileID: 1584064048}
   _selectionText: {fileID: 1101734399}
   _corduraText: {fileID: 1519293704}
@@ -188,6 +190,10 @@ MonoBehaviour:
   urp: {fileID: 1355828398}
   _pumpHandAni: {fileID: 1756600672}
   _pumpBarAni: {fileID: 756463642}
+  _sceneLose: Lose
+  _sceneWin: Win
+  _cashCondition: 2000
+  getDamage: 10
 --- !u!23 &40187295
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25262,10 +25268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9c82dbc82997084eaa7faa635a59662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clientPrefab: {fileID: 2083364825804263593, guid: b9e1f070c49758c4f877a0c87600c02a,
-    type: 3}
-  clientGoodPrefab: {fileID: 2083364825804263593, guid: dc49da3589a9cc941aa4771e883fecc8,
-    type: 3}
+  _clientPrefab: {fileID: 0}
   allChairs:
   - {fileID: 848163340}
   - {fileID: 1844072800}
@@ -25273,6 +25276,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 72052354}
   spawnPointRight: {fileID: 1957372162}
   _altureChair: {fileID: 1879261662}
+  _goodClients: 2
   _player: {fileID: 40187294}
 --- !u!4 &1483362353
 Transform:

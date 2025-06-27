@@ -8,8 +8,14 @@ using UnityEngine.Rendering;
 public class URP : MonoBehaviour
 {
     [Header("Renderer Features")]
-    [SerializeField] private ScriptableRendererFeature _shootURP;
-    [SerializeField] private ScriptableRendererFeature _damageURP;
+    public ScriptableRendererFeature _shootURP;
+    public ScriptableRendererFeature _damageURP;
+
+    private void Awake()
+    {   
+        _shootURP.SetActive(false);
+        _damageURP.SetActive(false);
+    }
 
     public IEnumerator ShootURP()
     {

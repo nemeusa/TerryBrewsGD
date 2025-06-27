@@ -6,14 +6,16 @@ using UnityEngine;
 
 public class BarManager : MonoBehaviour
 {
-    [SerializeField] GameObject clientPrefab;
-    [SerializeField] GameObject clientGoodPrefab;
-    GameObject _currentClientPrefab;
+    [SerializeField] GameObject _clientPrefab;
+   // [SerializeField] GameObject clientGoodPrefab;
+   // GameObject _currentClientPrefab;
     public List<Chair> allChairs;
     [SerializeField] Transform spawnPoint;
     [SerializeField] Transform spawnPointRight;
     [SerializeField] Transform _altureChair;
     Vector3 _spawn;
+
+    [SerializeField] int _goodClients;
 
     int clientsCounter;
     private float _randomEnter;
@@ -31,13 +33,13 @@ public class BarManager : MonoBehaviour
     {
         _randomEnter = Random.Range(0, 2) == 0 ? -1 : 1;
         StartCoroutine(SpawnRoutine());
-        _currentClientPrefab = clientGoodPrefab;
+        //_currentClientPrefab = clientGoodPrefab;
         //NuevaPeticion();
     }
 
     private void Update()
     {
-        if (clientsCounter == 3) _currentClientPrefab = clientPrefab;
+        //if (clientsCounter >= _goodClients) client.randomBlock = true;
            
     }
 
@@ -56,8 +58,9 @@ public class BarManager : MonoBehaviour
 
             clientsCounter++;
            // Debug.Log(clientsCounter);
-            GameObject clientObj = Instantiate(_currentClientPrefab, _spawn, Quaternion.identity);
+            GameObject clientObj = Instantiate(_clientPrefab, _spawn, Quaternion.identity);
             Client client = clientObj.GetComponent<Client>();
+            if (clientsCounter >= _goodClients) client.randomBlock = true;
             _player._client = client;
             client.player = _player;
             client.AssignChair(freeChair);
