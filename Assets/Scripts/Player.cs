@@ -8,6 +8,10 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    [Header("Audio")]
+    [SerializeField] AudioSource _shotgunAudioSource;
+    [SerializeField] AudioClip _shotgunSound;
+
     [Header("Bebidas y clientes")]
     [SerializeField] LayerMask _beverageLayer;
     [SerializeField] LayerMask _clientLayer;
@@ -196,6 +200,10 @@ public class Player : MonoBehaviour
         {
             urp.StartCoroutine(urp.ShootURP());
             _client.isDeath = true;
+
+            if (_shotgunAudioSource != null && _shotgunSound != null)
+                _shotgunAudioSource.PlayOneShot(_shotgunSound);
+
             if (_client.imposter)
             {
                 _score += 50;
