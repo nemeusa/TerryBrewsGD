@@ -5830,7 +5830,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 915044eb5d54ca64f8c44b92092c7058,
         type: 3}
       propertyPath: m_Name
-      value: gLOBUX
+      value: Globux
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11834,6 +11834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a03093adc0b8f0a419c24e3c19bea3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveDrinks: {fileID: 0}
   shakeDuration: 0.1
   shakeMagnitude: 0.025
   shakeSpeed: 5
@@ -18451,6 +18452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a03093adc0b8f0a419c24e3c19bea3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveDrinks: {fileID: 0}
   shakeDuration: 0.1
   shakeMagnitude: 0.025
   shakeSpeed: 5
@@ -19891,6 +19893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a03093adc0b8f0a419c24e3c19bea3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveDrinks: {fileID: 0}
   shakeDuration: 0.1
   shakeMagnitude: 0.025
   shakeSpeed: 5
@@ -25099,6 +25102,90 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc01c67d42991224c9e6a62db2922c77, type: 3}
+--- !u!1 &1472841867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1472841868}
+  - component: {fileID: 1472841870}
+  - component: {fileID: 1472841869}
+  m_Layer: 0
+  m_Name: VidrioRoto
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1472841868
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472841867}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.160201, y: -1.068, z: 0.149}
+  m_LocalScale: {x: 371.64438, y: 63.40499, z: 41.384167}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2050098937}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1472841869
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472841867}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 1e2d0ea32a1b64a4289f856af3230861, type: 2}
+  - {fileID: 2100000, guid: 6b0d0a387447e9940a2d065a2aafe2b1, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1472841870
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472841867}
+  m_Mesh: {fileID: 4068373912626513877, guid: 8ab0d43386abcd748a0a948b7111cee8, type: 3}
 --- !u!1 &1483362351
 GameObject:
   m_ObjectHideFlags: 0
@@ -25267,6 +25354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a03093adc0b8f0a419c24e3c19bea3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveDrinks: {fileID: 0}
   shakeDuration: 1.22
   shakeMagnitude: 0.1
   shakeSpeed: 3.52
@@ -25531,6 +25619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a03093adc0b8f0a419c24e3c19bea3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveDrinks: {fileID: 0}
   shakeDuration: 0.1
   shakeMagnitude: 0.025
   shakeSpeed: 5
@@ -33103,6 +33192,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2124632467}
+  - {fileID: 1472841868}
   - {fileID: 1333889310}
   - {fileID: 1098288793}
   - {fileID: 756463640}

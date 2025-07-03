@@ -23,15 +23,6 @@ public class MoveDrinks : MonoBehaviour
         _position = transform.position;
     }
 
-    //void OnMouseDown()
-    //{
-    //    drinkName = drinkType.drinkType.ToString();
-    //    isDraggingDrink = true;
-    //    _zCoord = Camera.main.WorldToScreenPoint(transform.position).z;
-    //    _offset = transform.position - GetMouseWorldPos();
-    //    //0.47f
-    //}
-
     void OnMouseDown()
     {
 
@@ -85,7 +76,6 @@ public class MoveDrinks : MonoBehaviour
     {
         if (isDraggingDrink)
         {
-            //  StartCoroutine(ScaleAnimation());
             Vector3 targetPos = GetMouseWorldPos() + _offset;
             transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * _agarre);
 
@@ -96,47 +86,6 @@ public class MoveDrinks : MonoBehaviour
             _contador += Time.deltaTime;
         }
     }
-
-    //IEnumerator ScaleAnimation()
-    //{
-    //yield return new WaitForSeconds(0.6f);
-    //Vector3 scale = transform.localScale;
-    //transform.localScale -= scale * 0.6f * Time.deltaTime;
-    //Debug.Log("chitito");
-    //yield return new WaitForSeconds(0.6f);
-    //transform.localScale += scale * 0.6f * Time.deltaTime;
-    //Debug.Log("gramde");
-
-    //  Vector3 originalScale = transform.localScale;
-    //float elapsedTime = 0f;
-    //float scaleDuration = 0.6f; // El tiempo que tarda en cambiar la escala.
-
-    // Reduce el tamaño
-    //while (elapsedTime < scaleDuration)
-    //{
-    //  transform.localScale = Vector3.Lerp(originalScale, originalScale * 0.6f, elapsedTime / scaleDuration);
-    //    elapsedTime += Time.deltaTime;
-    //      yield return null;
-    // }
-    //  transform.localScale = originalScale * 0.6f; // Asegúrate de que se haya alcanzado el tamaño reducido.
-
-    // Espera antes de aumentar el tamaño
-    //  yield return new WaitForSeconds(0.6f);
-
-    //  elapsedTime = 0f;
-    // 
-    // Aumenta el tamaño de vuelta al original
-    //   while (elapsedTime < scaleDuration)
-    //    {
-    //   transform.localScale = Vector3.Lerp(originalScale * 0.6f, originalScale, elapsedTime / scaleDuration);
-    //  elapsedTime += Time.deltaTime;
-    //   yield return null;
-    //      }
-    //  transform.localScale = originalScale; // Asegúrate de que se haya alcanzado el tamaño original.
-
-    //  Debug.Log("Latido completado");
-    // }
-
     Vector3 GetMouseWorldPos()
     {
         Vector3 mousePoint = Input.mousePosition;
@@ -145,8 +94,7 @@ public class MoveDrinks : MonoBehaviour
     }
     private void OnDrawGizmos()
     {
-        //Gizmos.color = Color.red;
-        //Gizmos.DrawWireCube(transform.position, new Vector3(1, 1, 1)); // Para ver el collider en la escena.
+       
         Debug.DrawRay(transform.position, -transform.forward * 5f, Color.red);
 
     }

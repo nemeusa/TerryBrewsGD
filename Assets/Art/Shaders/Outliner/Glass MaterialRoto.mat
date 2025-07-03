@@ -38,23 +38,23 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _InnerGlowPower: 0.16
-    - _InnerGlowSmoothness: 0.124
+    - _InnerGlowPower: 0.307
+    - _InnerGlowSmoothness: 0.577
     - _LightSpecCutoff: 0.866
-    - _LightSpecSmoothness: 0
+    - _LightSpecSmoothness: 1
     - _LuzDistancia: 0.22
     - _LuzSmoothness: 0.47
     - _QueueControl: 0
     - _QueueOffset: 1
-    - _RimPower: 1
+    - _RimPower: 12.79
     - _RimSmoothness: 0.364
-    - _ViewSpecCutoff: 0.97
+    - _ViewSpecCutoff: 1
     - _ViewSpecSmoothness: 0.05
     m_Colors:
     - _GlassMainColor: {r: 0.51584196, g: 0.6792453, b: 0.6746424, a: 0.3254902}
-    - _InnerGlowColor: {r: 0.30184227, g: 0.5377358, b: 0.5377358, a: 0.34117648}
-    - _RimColor: {r: 0.3063813, g: 0.7476243, b: 0.8018868, a: 1}
-    - _SpecularColor: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 0.03529412}
+    - _InnerGlowColor: {r: 0.30184224, g: 0.53773576, b: 0.53773576, a: 0.09019608}
+    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &7777281061469588256
 MonoBehaviour:
