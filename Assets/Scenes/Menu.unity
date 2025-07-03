@@ -785,7 +785,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &653841305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1554,7 +1554,7 @@ GameObject:
   - component: {fileID: 1137080463}
   - component: {fileID: 1137080462}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: SceneManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7421,7 +7421,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Day0
+          m_StringArgument: Night0
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1943639867
@@ -8381,6 +8381,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1325897574}
+  - {fileID: 1809983920}
   - {fileID: 335988095}
   - {fileID: 368376326}
   - {fileID: 778642438}
@@ -8394,6 +8395,5 @@ SceneRoots:
   - {fileID: 1987570221}
   - {fileID: 6886553650077102770}
   - {fileID: 1638058447}
-  - {fileID: 1809983920}
   - {fileID: 653841306}
   - {fileID: 1137080463}
