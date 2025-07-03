@@ -22,8 +22,11 @@ public class TalksTeme : MonoBehaviour
     {
         //if (Input.GetKeyDown(KeyCode.V)) RandomTheme();
         //TalkTheme();
-        if (!_newChanel)
-        StartCoroutine(CambiaCanal());
+        //if (!_newChanel)
+        //StartCoroutine(CambiaCanal());
+
+        if (Input.GetKeyDown(KeyCode.Q))
+            CambiarCanal();
     }
 
     void RandomTheme()
@@ -41,7 +44,7 @@ public class TalksTeme : MonoBehaviour
     void InitialTheme()
     {
         string[] clima = { "Frio", "Calor" };
-        string[] eventos = { "Trafico", "Despejado" };
+        string[] eventos = { "Trafico", "Carretera_Libre" };
 
         currentClima = clima[UnityEngine.Random.Range(0, clima.Length)];
         currentEventos = eventos[UnityEngine.Random.Range(0, eventos.Length)];
@@ -51,6 +54,13 @@ public class TalksTeme : MonoBehaviour
     {
         _newChanel = true;
         yield return new WaitForSeconds(2);
+        RandomTheme();
+        _newChanel = false;
+    }
+
+    void CambiarCanal()
+    {
+        _newChanel = true;
         RandomTheme();
         _newChanel = false;
     }
