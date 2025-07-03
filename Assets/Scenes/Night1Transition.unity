@@ -231,8 +231,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.6415094, g: 0.57845706, b: 0.4266643, a: 1}
-  m_Intensity: 26.39
+  m_Color: {r: 0.5377358, g: 0.47968864, b: 0.3381986, a: 1}
+  m_Intensity: 23.74
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -263,7 +263,7 @@ Light:
       e32: 0
       e33: 1
     m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 2800000, guid: e8af36af237e8844b8fdbbb0f970e8d4, type: 3}
+  m_Cookie: {fileID: 2800000, guid: 7731217063e503b4d84bbf92e7b1ef91, type: 3}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
   m_RenderMode: 0
@@ -919,17 +919,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f62443fb9739718419ab5df446862514,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.4095
+      value: 0.38
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f62443fb9739718419ab5df446862514,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.0223
+      value: 1.036
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f62443fb9739718419ab5df446862514,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.1101
+      value: -0.109
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f62443fb9739718419ab5df446862514,
         type: 3}
@@ -1165,7 +1165,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Day1
+          m_StringArgument: Night1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1769703787
@@ -1573,7 +1573,7 @@ Transform:
   m_GameObject: {fileID: 346883307001160012}
   serializedVersion: 2
   m_LocalRotation: {x: -0.18000706, y: 0.07960177, z: 0.013285704, w: 0.9803492}
-  m_LocalPosition: {x: -0.446, y: 0.88, z: 0.102}
+  m_LocalPosition: {x: -0.461, y: 0.88, z: 0.104}
   m_LocalScale: {x: 0.27991372, y: 0.10594847, z: 0.101715095}
   m_ConstrainProportionsScale: 0
   m_Children:

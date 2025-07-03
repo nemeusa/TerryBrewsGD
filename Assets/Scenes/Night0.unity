@@ -11834,7 +11834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a03093adc0b8f0a419c24e3c19bea3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeDuration: 1
+  shakeDuration: 0.1
   shakeMagnitude: 0.025
   shakeSpeed: 5
 --- !u!1 &636176472
@@ -18451,7 +18451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a03093adc0b8f0a419c24e3c19bea3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeDuration: 1
+  shakeDuration: 0.1
   shakeMagnitude: 0.025
   shakeSpeed: 5
 --- !u!1 &937810323
@@ -19891,7 +19891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a03093adc0b8f0a419c24e3c19bea3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeDuration: 1
+  shakeDuration: 0.1
   shakeMagnitude: 0.025
   shakeSpeed: 5
 --- !u!1 &1355828397
@@ -25531,7 +25531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a03093adc0b8f0a419c24e3c19bea3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeDuration: 1
+  shakeDuration: 0.1
   shakeMagnitude: 0.025
   shakeSpeed: 5
 --- !u!1 &1565586587
@@ -26562,7 +26562,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
   Mute: 0

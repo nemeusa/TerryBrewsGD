@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ShakeMouseOver : MonoBehaviour
 {
+    [SerializeField] private MoveDrinks moveDrinks;
+
     [Header("Configuración del sacudido")]
     [SerializeField] private float shakeDuration = 1f;
     [SerializeField] private float shakeMagnitude = 0.05f;
@@ -16,10 +18,17 @@ public class ShakeMouseOver : MonoBehaviour
     private void Start()
     {
         originalPosition = transform.localPosition;
+        originalPosition = transform.localPosition;
+        moveDrinks = GetComponent<MoveDrinks>();
     }
 
     private void Update()
     {
+        if (moveDrinks != null && moveDrinks.isDraggingDrink)
+        {
+            return;
+        }
+
         DetectMouseHover();
 
         if (isShaking)
@@ -34,8 +43,7 @@ public class ShakeMouseOver : MonoBehaviour
             }
             else
             {
-                isShaking = false;
-                transform.localPosition = originalPosition;
+                StopShaking();
             }
         }
     }
@@ -47,9 +55,19 @@ public class ShakeMouseOver : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            if (hit.transform == transform && !isShaking)
+            if (hit.transform == transform)
             {
-                StartShaking();
+                // Si se está haciendo clic sobre ESTE objeto, detener el sacudido
+                if (Input.GetMouseButton(0))
+                {
+                    StopShaking();
+                    return;
+                }
+
+                if (!isShaking)
+                {
+                    StartShaking();
+                }
             }
         }
     }
@@ -59,5 +77,11 @@ public class ShakeMouseOver : MonoBehaviour
         isShaking = true;
         shakeTimer = shakeDuration;
         originalPosition = transform.localPosition;
+    }
+
+    private void StopShaking()
+    {
+        isShaking = false;
+        transform.localPosition = originalPosition;
     }
 }

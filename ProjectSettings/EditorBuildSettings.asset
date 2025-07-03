@@ -9,21 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 08682307573f46a4e94138f1fcb00aa8
   - enabled: 1
-    path: Assets/Scenes/Day2.unity
-    guid: e0ba9956aeac8334f87ad6216c4456c1
-  - enabled: 1
-    path: Assets/Scenes/Lose.unity
-    guid: a04448e4fc645a24abace7137a15d0f5
-  - enabled: 1
-    path: Assets/Scenes/Win.unity
-    guid: 19415a15588c7ae47ab3ecfebbc20207
-  - enabled: 1
-    path: Assets/Scenes/Night2.unity
-    guid: 09634d43f894ad14ebe950100c1fb297
+    path: Assets/Scenes/Night0.unity
+    guid: 138c1794e85e27a4eb0ce8a7c7cf803b
   - enabled: 1
     path: Assets/Scenes/Night1Transition.unity
     guid: 40479733a0ce2324689c6b12d7979850
   - enabled: 1
-    path: Assets/Scenes/Day1.unity
-    guid: 720694236f7d45b48897a59fa030793e
+    path: Assets/Scenes/Win.unity
+    guid: 19415a15588c7ae47ab3ecfebbc20207
+  - enabled: 1
+    path: Assets/Scenes/Lose.unity
+    guid: a04448e4fc645a24abace7137a15d0f5
   m_configObjects: {}
