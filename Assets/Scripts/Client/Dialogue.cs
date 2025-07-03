@@ -120,5 +120,5 @@ public enum TalkTheme
     Frio,
     Calor,
     Trafico,
-    Despejado
+    Carretera_Libre
 }
