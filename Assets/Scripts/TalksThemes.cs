@@ -10,16 +10,23 @@ public class TalksThemes : MonoBehaviour
     [SerializeField] TMP_Text textTheme;
     public int _indexTheme;
     [SerializeField] private TVManager tvManagerVideo;
+    public GameObject _boton;
+    
 
     [Header("Canales Extras")]
     [SerializeField] private TVManager tvManagerVideos;
 
     bool _newChanel;
+    private Color originalColor;
+
 
     private void Start()
     {
         InitialTheme();
         RandomTheme();
+
+        originalColor = textTheme.color;
+
     }
 
     private void Update()
@@ -28,7 +35,7 @@ public class TalksThemes : MonoBehaviour
             CambiarCanal();
     }
 
-    void RandomTheme()
+    public void RandomTheme()
     {
         currentTheme = new string[] { currentClima, currentEventos };
 
@@ -79,14 +86,24 @@ public class TalksThemes : MonoBehaviour
     }
 
     public string GetCurrentThemeSafe()
-    {
-        // si el index actual supera el tamaño, vuelve al primero
+    {        
         if (_indexTheme >= currentTheme.Length || _indexTheme < 0)
             return currentTheme[0];
         else
             return currentTheme[_indexTheme];
     }
+    public void ChangeColorToRed()
+    {
+        StartCoroutine(ChangeColorCoroutine());
+    }
 
+    private IEnumerator ChangeColorCoroutine()
+    {
+        _boton.GetComponent<MeshRenderer>().material.color = Color.red;
+        yield return new WaitForSeconds(1);
+        _boton.GetComponent<MeshRenderer>().material.color = originalColor;
+
+    }
 }
 
 public enum ThemeType
@@ -94,3 +111,4 @@ public enum ThemeType
     Clima,
     Evento
 }
+
