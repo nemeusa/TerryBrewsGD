@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 16066959}
   - component: {fileID: 16066958}
   m_Layer: 0
-  m_Name: pCylinder1
+  m_Name: Bicho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -279,6 +279,9 @@ MonoBehaviour:
   - {fileID: 1947994612}
   - {fileID: 929019159}
   - {fileID: 263649397}
+  _blockDurationAfterShot: 2
+  _doubleShotCooldown: 5
+  _corduraPenalty: 20
   aberrationOscStrength: 0.03
   aberrationOscSpeed: 1
   volume: {fileID: 815615511}
@@ -294,8 +297,8 @@ MonoBehaviour:
   help: 0
   _pumpHandAni: {fileID: 1756600672}
   _pumpBarAni: {fileID: 756463642}
-  _sceneLose: ComicDay0
-  _sceneWin: ComicDay0
+  _sceneLose: Lose
+  _sceneWin: Night2Transition
   _cashCondition: 1000
   getDamage: 100
 --- !u!23 &40187295
@@ -31765,6 +31768,7 @@ MonoBehaviour:
     type: 3}
   allChairs:
   - {fileID: 1844072800}
+  - {fileID: 702410741}
   spawnPoint: {fileID: 72052354}
   spawnPointRight: {fileID: 1957372162}
   _altureChair: {fileID: 1879261662}

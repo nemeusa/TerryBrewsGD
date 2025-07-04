@@ -390,7 +390,7 @@ MonoBehaviour:
   _selectionText: {fileID: 1101734399}
   _corduraText: {fileID: 10758033}
   _corduraImageFill: {fileID: 2001976423}
-  _corduraMinEscopeta: 25
+  _corduraMinEscopeta: 75
   _shotgunUnlockFeedback: {fileID: 2124632466}
   _fallDistance: -2
   _fallOffset: {x: 0, y: -2, z: 0}
@@ -404,6 +404,9 @@ MonoBehaviour:
   meshPumpHand: {fileID: 1756600669}
   _smokeParticle: {fileID: 136390891}
   _ammoVisuals: []
+  _blockDurationAfterShot: 1
+  _doubleShotCooldown: 5
+  _corduraPenalty: 10
   aberrationOscStrength: 0.03
   aberrationOscSpeed: 1
   volume: {fileID: 815615511}
@@ -419,7 +422,7 @@ MonoBehaviour:
   help: 0
   _pumpHandAni: {fileID: 1756600672}
   _pumpBarAni: {fileID: 756463642}
-  _sceneLose: Night0Transition
+  _sceneLose: LoseNight0
   _sceneWin: Night0Transition
   _cashCondition: 1000
   getDamage: 75
@@ -25457,7 +25460,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 72052354}
   spawnPointRight: {fileID: 1957372162}
   _altureChair: {fileID: 1879261662}
-  _goodClients: 4
+  _goodClients: 9
   _player: {fileID: 40187294}
 --- !u!4 &1483362353
 Transform:
@@ -25491,6 +25494,8 @@ MonoBehaviour:
   currentTheme: []
   textTheme: {fileID: 718854814}
   _indexTheme: 0
+  tvManagerVideo: {fileID: 0}
+  tvManagerVideos: {fileID: 0}
 --- !u!1 &1486476486
 GameObject:
   m_ObjectHideFlags: 0
@@ -26048,7 +26053,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}

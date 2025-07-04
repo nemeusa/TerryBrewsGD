@@ -52,6 +52,12 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject[] _ammoVisuals;
     private int _currentAmmo = 10;
     private const int _maxAmmo = 10;
+    private bool _isBlocked = false;
+    [SerializeField] private float _blockDurationAfterShot = 1f;
+    [SerializeField] private float _doubleShotCooldown = 5f; 
+    [SerializeField] private int _corduraPenalty = 10;      
+    private float _lastShotTime = -Mathf.Infinity;           
+
 
     [Header("URP")]
     private ChromaticAberration chromAberration;
@@ -119,8 +125,10 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if (_isBlocked) return;
         if (Input.GetMouseButtonDown(0))
         {
+
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out RaycastHit hit, 100f, _beverageLayer))
@@ -259,10 +267,20 @@ public class Player : MonoBehaviour
         {
             if (_currentAmmo > 0)
             {
+                float currentTime = Time.time;
+                float timeSinceLastShot = currentTime - _lastShotTime;
+                _lastShotTime = currentTime;
+
+                float blockDuration = _blockDurationAfterShot;
+
+                if (timeSinceLastShot < _doubleShotCooldown)
+                {
+                    _cordura -= _corduraPenalty;
+                    blockDuration *= 2f; // Doble castigo
+                }
+
                 _currentAmmo--;
-
                 UpdateAmmoVisuals();
-
                 urp.StartCoroutine(urp.ShootURP());
                 _client.isDeath = true;
 
@@ -283,6 +301,7 @@ public class Player : MonoBehaviour
                 }
 
                 StartCoroutine(Shoot());
+                StartCoroutine(BlockPlayerInput(blockDuration));
             }
             else
             {
@@ -293,6 +312,7 @@ public class Player : MonoBehaviour
             }
         }
     }
+
 
     void PumpOn()
     {
@@ -327,7 +347,12 @@ public class Player : MonoBehaviour
             UpdateAmmoVisuals();
         }
     }
-
+    IEnumerator BlockPlayerInput(float duration)
+    {
+        _isBlocked = true;
+        yield return new WaitForSeconds(duration);
+        _isBlocked = false;
+    }
     private void UpdateAmmoVisuals()
     {
         for (int i = 0; i < _ammoVisuals.Length; i++)
