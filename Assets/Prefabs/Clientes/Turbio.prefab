@@ -295,9 +295,11 @@ MonoBehaviour:
   currentRequest: 
   currentDialogue: "Me dan miedo las ara\xF1as"
   charlaGood:
-  - Oli
+  - 
+  - 
   charlaBad:
-  - "O\xF1a"
+  - 
+  - 
   agua: {r: 0.31764707, g: 0.7607844, b: 0.7607844, a: 1}
   jugo: {r: 1, g: 0.20784314, b: 0, a: 1}
   cerveza: {r: 0.97938144, g: 1, b: 0, a: 1}

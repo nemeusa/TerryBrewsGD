@@ -160,6 +160,7 @@ Transform:
   - {fileID: 3992715627172947588}
   - {fileID: 3638271112972515833}
   - {fileID: 354476514639305618}
+  - {fileID: 4046105086405091399}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5777193134198357389
@@ -190,7 +191,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f6464a849e78275409b347473feaa68c, type: 2}
+  - {fileID: 2100000, guid: ac06e3beb9510e84aac92db3b18e0f8a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -286,8 +287,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b83e12ba04fca84ea035b90e6745289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  exitSpeed: 17
+  speed: 4
+  exitSpeed: 14
   chair: {fileID: 0}
   player: {fileID: 0}
   textOrder: {fileID: 6911244728761325680}
@@ -295,9 +296,57 @@ MonoBehaviour:
   currentRequest: 
   currentDialogue: "Me dan miedo las ara\xF1as"
   charlaGood:
-  - Oli
+  - "Los juegos deber\xEDan ser del jugardor"
+  - Warzone pesa demasiado. Ya no tengo espacio
+  - Jueguen The Saviour
+  - Jueguen Untill Sunshine Meet Us
+  - UBISOFT REVIVAN A RAYMAN
+  - Me gustan los RTS
+  - Tenes alguna maquinita en el bar?
+  - '*Balatreando*'
+  - Queremos Battlefront 3
+  - "Tengo que irme r\xE1pido. Me faltan 2 logros para platinarme Terraria."
+  - "R\xE1pido, tengo que seguir grindeando."
+  - "Ayer termin\xE9 mi granja automatica de Hierro. Ahora genero 2300 stack por
+    hora."
+  - "Estoy buscando gente para una Raid. \xBFSabes si alguno se copa?"
+  - No puedo esperar para llegar a mi casa y jugar Terribrews
+  - No puedo esperar para llegar a mi casa y jugar Terribrews
+  - Me gusta mucho Crash Bandicoot
+  - Jueguen cub.E
   charlaBad:
-  - "O\xF1a"
+  - League of Legends
+  - Los desarrolladores son todos unos vagos
+  - Los programadores son todos unos vagos
+  - Los artistas son todos unos vagos
+  - Xbox esta ganando la guerra de consolas
+  - "Ayer jugu\xE9 Hytale"
+  - Siempre compro en Epic Games Store
+  - Creo que un juego a 100 USD es poco. Las empresas deberian determinar el precio.
+  - "Albion online es un mmorpg no lineal en el que escribes tu propia historia sin
+    limitarte a seguir un camino prefijado, explora un amplio mundo abierto con cinco
+    biomas unicos, todo cuanto hagas tendra su repercus\xEDon en el mundo, con su
+    economia orientada al jugador de albion los jugadores crean practicamente todo
+    el equipo a partir de los recursos que consiguen, el equipo que llevas define
+    quien eres, cambia de arma y armadura para pasar de caballero a mago o juego
+    como una mezcla de ambas clases, aventurate en el mundo abierto y haz frente
+    a los habitantes y las criaturas de albion, inicia expediciones o adentrate en
+    mazmorras en las que encontraras enemigos aun mas dificiles, enfrentate a otros
+    jugadores en encuentros en el mundo abierto, lucha por los territorios o por
+    ciudades enteras en batallas tacticas, relajate en tu isla privada donde podras
+    construir un hogar, cultivar cosechas, criar animales, unete a un gremio, todo
+    es mejor cuando se trabaja en grupo [musica] adentrate ya en el mundo de albion
+    y escribe tu propia historia."
+  - "La industria muri\xF3 en Reach"
+  - "\xBFDisculpa tenes para jugar al Golum?"
+  - '*Concordeando*'
+  - "Deber\xEDan remasterizar ET de Atari"
+  - 'Warzone pesa muy poco. '
+  - Ya estoy esperando el siguente FIFA
+  - Los mejores exclusivos, solamente en Playstation.
+  - Ayer vino Miyasaki
+  - Ayer vino Kojima
+  - Mi hijo genera ingresos pasivos en Roblox
   agua: {r: 0.31764707, g: 0.7607844, b: 0.7607844, a: 1}
   jugo: {r: 1, g: 0.20784314, b: 0, a: 1}
   cerveza: {r: 0.97938144, g: 1, b: 0, a: 1}
@@ -10429,6 +10478,111 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &5811646600620893727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4046105086405091399}
+  - component: {fileID: 7436205095500520005}
+  - component: {fileID: 4021905306158310068}
+  - component: {fileID: 6285363210883215385}
+  m_Layer: 6
+  m_Name: shirt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4046105086405091399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5811646600620893727}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.056, z: 0}
+  m_LocalScale: {x: 1.1134, y: 0.41606328, z: 1.2262}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5207650852976784881}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &7436205095500520005
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5811646600620893727}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &4021905306158310068
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5811646600620893727}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 8042a7530d361f9468b59d70183a27a1, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6285363210883215385
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5811646600620893727}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7158213159262602800
 GameObject:
   m_ObjectHideFlags: 0

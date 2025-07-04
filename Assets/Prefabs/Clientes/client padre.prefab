@@ -249,28 +249,29 @@ MonoBehaviour:
   - theme: 0
     type: 0
     phrases:
-    - me cago de frio
-    - che, no tendras una estufa?
-    - toy helao
-    - lpm me olvide la campera
+    - "Acaso estamos en el polo Norte?? Me muero de Fr\xEDo\t"
+    - "Uy loco no tendr\xE1s una estufa?"
+    - Me siento un Super Gridito
+    - "Hace Fr\xEDo. Y estoy lejos de casa."
   - theme: 1
     type: 0
     phrases:
-    - que calor de mierda
-    - '**abre la ventana**'
-    - estoy sudadisimo
-    - un ventilador quedaria piola
+    - 'Wacho '
+    - "PREND\xC9 EL AIRE"
+    - "Se me derriten las bolas\t"
+    - "Wacho, hace tanto calor que voy a empezar a hablar \xE1rabe"
   - theme: 2
     type: 0
     phrases:
-    - un hdrp me rayo todo el auto en la ruta
-    - no se puede manegar con este trafico
-    - vivo a 2 cuadras, 3 horas para llegar aca en auto
+    - "Un hijo de mil me ray\xF3 todo el auto\t"
+    - "Hay tantos autos que esto parece la India\t"
+    - Wacho, 5 horas por cuadra
   - theme: 3
     type: 0
     phrases:
-    - estuvo tranki el viaje
-    - llegue en 10 minutardos, piola
+    - Un viajecito tranquilo
+    - 'Por suerte no hay transito '
+    - "Sal\xED hace 5 minutos y ya estoy ac\xE1"
   currentDialogue: 
   Theme: 
   _client: {fileID: 80842431327447635}
@@ -295,7 +296,7 @@ MonoBehaviour:
   currentRequest: 
   currentDialogue: "Me dan miedo las ara\xF1as"
   charlaGood:
-  - Oli
+  - Hola
   - '*Balatreando*'
   - Buenos dias
   - VAMO MESSI
@@ -312,10 +313,10 @@ MonoBehaviour:
   - Tengo sed
   - "Me dan miedo las ara\xF1as"
   - Tengo una roca mascota. Se llama Gaspacho
-  - Dame todo lo que tengas.
   - Bichito clicker es god
+  - Apoyemos la industria nacional
   charlaBad:
-  - "O\xF1a"
+  - Ola
   - Tonto
   - '*molesta*'
   - Skibidi
@@ -339,9 +340,8 @@ MonoBehaviour:
   - DEFINITIVAMENTE no soy impostor.-.
   - Juego brawl stars
   - Tengo 3 cafeteras
-  - "\u041F\u0440\u0438\u0432\u0435\u0442, \u044F \u0438\u043C\u043C\u0438\u0433\u0440\u0430\u043D\u0442
-    :3"
-  - Gago fue lo mejor que le paso a boca
+  - "Atendeme r\xE1pido o te rompo todo el bar"
+  - Dale, haceme un descuento
   - Este bar no tiene nada bueno
   - Esto es un robo. Dame todo lo que tengas
   - Hola no soy el dev
@@ -369,6 +369,7 @@ MonoBehaviour:
   bloodPartycles: {fileID: 8100349769328370902}
   talkThemes: 0
   dialogue: {fileID: -5661129051114604936}
+  randomBlock: 0
 --- !u!1 &2939783058530435608
 GameObject:
   m_ObjectHideFlags: 0

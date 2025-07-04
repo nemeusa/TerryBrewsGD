@@ -160,6 +160,7 @@ Transform:
   - {fileID: 3992715627172947588}
   - {fileID: 3638271112972515833}
   - {fileID: 354476514639305618}
+  - {fileID: 1819814603472707797}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5777193134198357389
@@ -190,7 +191,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f6464a849e78275409b347473feaa68c, type: 2}
+  - {fileID: 2100000, guid: 941191ca9f627374ea333eef8fed877e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -295,9 +296,38 @@ MonoBehaviour:
   currentRequest: 
   currentDialogue: "Me dan miedo las ara\xF1as"
   charlaGood:
-  - Oli
+  - Me djieron que hoy llegaron los aliens
+  - "Sabes que los Alienigenas construyer\xF3n las antiguas piramides? Es verdad.
+    Me lo dijo un extraterrestre"
+  - ESTAN ESCUCHANDONOS. ESTAN EN TODAS PARTES.
+  - El gobierno nos esta envenenando el agua. Nos estan volviendo Comounstristas!!
+  - Las bebidas carbonatadas causan Mounstrismo
+  - "\xBFSabias que las ara\xF1as tienen un reino subterraneo dominado por hormigas?
+    Estan en tus paredes, observando tus movimientos con cautela. Ellas saben cuando
+    atacar... y saben donde duele.... "
+  - "Creo que ese monstruo me esta mirando hace mucho tiempo... \xA1Debe ser uno
+    de ellos!"
+  - "\xA1\xA1Ayer vi un monstruo convertirse en Hombre!!"
+  - "Las antiguas antenas de telefon\xEDa propagan mensajes para volvernos salvajes "
+  - "\xBFSabes que este bar esta financiado por humanos?? Se esconden en las estrellas"
+  - "\xA1\xA1LOS MONSTRUOS FUERON CREADOS POR DOS ALUMNOS DE UNIVERSIDAD!!"
+  - "\xA1\xA1VIVIMOS EN UNA SIMULACI\xD3N!!"
+  - "\xA1\xA1SOMOS PARTE DE UN VIDEOJUEGO!!"
+  - "\xBFSabes que antiguamente este lugar se llamaba \"America\"?"
+  - ANTES DE LOS HOMBRES DINOSAURIOS CAMINABAN ESTE PLANETA
+  - EL GOBIERNO ME BUSCA
+  - YO SE QUE ME ESTAS ESCUCHAS PROFESOR
   charlaBad:
-  - "O\xF1a"
+  - Los hombres dejaron este planeta hace mucho tiempo
+  - No hay evidencia de que las vacunas generen Monstrismo
+  - Los aliens son constructos sociales para no sentirnos solos en este universo
+  - Quiero una bebida carbonatada
+  - Debes de confiar en el gobierno
+  - Los sitios publicos estan libres de influencias externas
+  - "Las ara\xF1as no son ningun dispositivo de vigilancia. Esas son tonterias"
+  - 'La gente habla mucho sin informarse... '
+  - Hay mucha evidencia que respalda el hecho de que el planeta es esferico
+  - "Siento mucha tranquilidad al estar aqu\xED"
   agua: {r: 0.31764707, g: 0.7607844, b: 0.7607844, a: 1}
   jugo: {r: 1, g: 0.20784314, b: 0, a: 1}
   cerveza: {r: 0.97938144, g: 1, b: 0, a: 1}
@@ -570,6 +600,111 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 3911870001161253364}
   m_maskType: 0
+--- !u!1 &4171639188539797225
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1819814603472707797}
+  - component: {fileID: 7596055806598566752}
+  - component: {fileID: 4446765567221928786}
+  - component: {fileID: 900886410958116681}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1819814603472707797
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4171639188539797225}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.009, y: 0.53, z: 0.1798405}
+  m_LocalScale: {x: 0.9966605, y: 0.18544443, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5207650852976784881}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &7596055806598566752
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4171639188539797225}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &4446765567221928786
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4171639188539797225}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 1e7e753eb2296cf4c879dbd1ca93e56b, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &900886410958116681
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4171639188539797225}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4332376015907647103
 GameObject:
   m_ObjectHideFlags: 0
