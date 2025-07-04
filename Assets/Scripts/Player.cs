@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
     [SerializeField] Scene _sceneName;
     public Flash flash;
     [HideInInspector] public Client _client;
-    public TalksTeme _talkTheme;
+    public TalksThemes _talkTheme;
     //public BarManager barManager;
     public bool help;
 
