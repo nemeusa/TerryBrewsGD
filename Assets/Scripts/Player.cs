@@ -197,6 +197,9 @@ public class Player : MonoBehaviour
         _scoreText.text = "$ " + _score;
         _selectionText.text = "Tienes: " + _selectedDrink;
 
+        if (_score == 1000)
+            StartCoroutine(Win());
+
         if (_cordura <= 0) 
         {
             //StopAllCoroutines();
@@ -239,7 +242,7 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(0.25f);
         urp._shootURP.SetActive(false);
         urp._damageURP.SetActive(false);
-        SceneManager.LoadScene(_sceneWin);
+        SceneManager.LoadScene("Win");
     }
 
         void vinetta()
