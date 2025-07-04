@@ -30,20 +30,18 @@ public class Player : MonoBehaviour
     [SerializeField] TMP_Text _corduraText;
     public Image _corduraImageFill;
 
-    [Header("Vignette")]
-    [SerializeField] Volume volume;
-    [SerializeField] Vignette vignette;
-    [SerializeField] private float vignetteOscStrength = 0.03f;
-    [SerializeField] private float vignetteOscSpeed = 1f;
-
-    [Header("Aberration")]
-    private ChromaticAberration chromAberration;
-    [SerializeField] private float aberrationOscStrength = 0.03f;
-    [SerializeField] private float aberrationOscSpeed = 1f;
-
-    [Header("Depth of Field")]
-    private DepthOfField depthOfField;
-    private Coroutine depthCoroutine;
+    [Header("Condición para usar escopeta")]
+    [SerializeField] private int _corduraMinEscopeta = 100;
+    [SerializeField] private GameObject _shotgunUnlockFeedback; //feedback de confirmación
+    [SerializeField] private float _fallDistance = 2f;
+    [SerializeField] private Vector3 _fallOffset = new Vector3(0, 2f, 0); 
+    [SerializeField] private float _fallDuration = 0.5f;
+    private bool _shotgunUsable = false;
+    [SerializeField] private GameObject _objetoAActivar;
+    [SerializeField] private GameObject _objetoADesactivar;
+    [SerializeField] private AudioClip _soundDesbloqueoEscopeta;
+    [SerializeField] private AudioSource _audioSourceFeedback;
+    private bool _hasPlayedShotgunSound = false;
 
     [Header("SHOTGUN")]
     [SerializeField] MeshRenderer meshPumpBar;
@@ -51,11 +49,21 @@ public class Player : MonoBehaviour
     bool _usePump;
     Pump _pumpCode = null;
     [SerializeField] ParticleSystem _smokeParticle;
-
-    [Header("Munición")]
     [SerializeField] private GameObject[] _ammoVisuals;
     private int _currentAmmo = 10;
     private const int _maxAmmo = 10;
+
+    [Header("URP")]
+    private ChromaticAberration chromAberration;
+    [SerializeField] private float aberrationOscStrength = 0.03f;
+    [SerializeField] private float aberrationOscSpeed = 1f;
+    [SerializeField] Volume volume;
+    [SerializeField] Vignette vignette;
+    [SerializeField] private float vignetteOscStrength = 0.03f;
+    [SerializeField] private float vignetteOscSpeed = 1f;
+    private DepthOfField depthOfField;
+    private Coroutine depthCoroutine;
+    public URP urp;
 
     [Header("NO SE XD")]
     [SerializeField] Scene _sceneName;
@@ -66,8 +74,6 @@ public class Player : MonoBehaviour
     public bool help;
 
     MoveDrinks _moveDrinks;
-
-    public URP urp;
 
     [SerializeField] Animator _pumpHandAni, _pumpBarAni;
 
@@ -135,46 +141,49 @@ public class Player : MonoBehaviour
 
                 if (_pumpCode != null)
                 {
-                    if (!_usePump)
+                    if (_cordura <= _corduraMinEscopeta) 
                     {
-                        if (_currentAmmo > 0)
+                        if (!_usePump)
                         {
-                            PumpOn();
+                            if (_currentAmmo > 0)
+                            {
+                                PumpOn();
+                            }
+                            else
+                            {
+                                if (_shotgunAudioSource != null && _emptyShotSound != null)
+                                {
+                                    _shotgunAudioSource.PlayOneShot(_emptyShotSound);
+                                }
+                            }
                         }
                         else
                         {
-                            if (_shotgunAudioSource != null && _emptyShotSound != null)
-                            {
-                                _shotgunAudioSource.PlayOneShot(_emptyShotSound);
-                            }
+                            PumpOff();
                         }
                     }
-                    else
-                    {
-                        PumpOff();
-                    }
                 }
-
+                if (!_shotgunUsable && _cordura <= _corduraMinEscopeta)
+                {
+                    _shotgunUsable = true;
+                    StartCoroutine(ShowShotgunUnlockFeedback());
+                }
             }
             else if (Physics.Raycast(ray, out hit, 100f, _clientLayer))
             {
                 Client client = hit.collider.GetComponent<Client>();
 
                 _client = client;
-
                 //if (client != null)
                 //{ 
                 //    //client.player = this;
                 //    currentRequest = client.currentRequest.ToString();
                 //    //Debug.Log("pide : " + currentRequest);
                 //}
-
                 Pump();
 
-            }
-          
+            }   
         }
-
 
         if (_score < 0) _score = 0;
         _scoreText.text = "$ " + _score;
@@ -184,8 +193,6 @@ public class Player : MonoBehaviour
         {
             //StopAllCoroutines();
             StartCoroutine(Defeat());
-
-
         }
         if (_cordura > 100) _cordura = 100;
         _corduraText.text = "Cordura: " + _cordura;
@@ -193,10 +200,8 @@ public class Player : MonoBehaviour
         if (_score >= _cashCondition)
         {
             //void LoadScene(string sceneName)
-            //{
-           
+            //{           
             //}
-
         }
 
         if (Input.GetKeyDown(KeyCode.A)) help = !help;
@@ -206,6 +211,11 @@ public class Player : MonoBehaviour
 
         _corduraImageFill.fillAmount = _cordura / 100f;
 
+        if (!_shotgunUsable && _cordura <= _corduraMinEscopeta)
+        {
+            _shotgunUsable = true;
+            StartCoroutine(ShowShotgunUnlockFeedback());
+        }
     }
 
     IEnumerator Defeat()
@@ -288,11 +298,25 @@ public class Player : MonoBehaviour
     {
 
         _pumpHandAni.SetBool("Hand gets it", true);
-      // meshPumpBar.enabled = false;
         _pumpBarAni.SetBool("Bar gets it", false);
+      
+        meshPumpBar.enabled = false;
         meshPumpHand.enabled = true;
+
         _usePump = true;
         _selectedDrink = null;
+
+        if (!_hasPlayedShotgunSound && _audioSourceFeedback != null && _soundDesbloqueoEscopeta != null)
+        {
+            _audioSourceFeedback.PlayOneShot(_soundDesbloqueoEscopeta);
+            _hasPlayedShotgunSound = true;
+
+            if (_objetoAActivar != null)
+                _objetoAActivar.SetActive(true);
+
+            if (_objetoADesactivar != null)
+                _objetoADesactivar.SetActive(false);
+        }
     }
 
     void ReloadOneBullet()
@@ -315,11 +339,35 @@ public class Player : MonoBehaviour
     void PumpOff()
     {
         _pumpHandAni.SetBool("Hand gets it", false);
-        //meshPumpBar.enabled = true;
         _pumpBarAni.SetBool("Bar gets it", true);
-        //meshPumpHand.enabled = false;
+        
+        meshPumpBar.enabled = true;
+        meshPumpHand.enabled = false;
+
         _usePump = false;
         _pumpCode = null;
+    }
+    IEnumerator ShowShotgunUnlockFeedback()
+    {
+        if (_shotgunUnlockFeedback == null) yield break;
+
+        _shotgunUnlockFeedback.SetActive(true);
+
+        Vector3 startPos = _shotgunUnlockFeedback.transform.position + Vector3.down * _fallDistance;
+        Vector3 targetPos = _shotgunUnlockFeedback.transform.position;
+        _shotgunUnlockFeedback.transform.position = startPos;
+
+        float elapsed = 0f;
+        while (elapsed < _fallDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / _fallDuration);
+            _shotgunUnlockFeedback.transform.position = Vector3.Lerp(startPos, targetPos, t);
+            yield return null;
+        }
+        
+        yield return new WaitForSeconds(2f);
+        _shotgunUnlockFeedback.SetActive(false);
     }
 
     IEnumerator Shoot()
