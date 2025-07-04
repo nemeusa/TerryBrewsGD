@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class BarManager : MonoBehaviour
 {
-    [SerializeField] GameObject _clientPrefab;
-   // [SerializeField] GameObject clientGoodPrefab;
-   // GameObject _currentClientPrefab;
+    //[SerializeField] GameObject _clientPrefab;
+    // [SerializeField] GameObject clientGoodPrefab;
+    [SerializeField] GameObject[] _currentClientPrefab;
     public List<Chair> allChairs;
     [SerializeField] Transform spawnPoint;
     [SerializeField] Transform spawnPointRight;
@@ -58,7 +58,7 @@ public class BarManager : MonoBehaviour
 
             clientsCounter++;
            // Debug.Log(clientsCounter);
-            GameObject clientObj = Instantiate(_clientPrefab, _spawn, Quaternion.identity);
+            GameObject clientObj = Instantiate(_currentClientPrefab[UnityEngine.Random.Range(0, _currentClientPrefab.Length)], _spawn, Quaternion.identity);
             Client client = clientObj.GetComponent<Client>();
             if (clientsCounter >= _goodClients) client.randomBlock = true;
             _player._client = client;

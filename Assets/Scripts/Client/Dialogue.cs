@@ -33,7 +33,8 @@ public class Dialogue : MonoBehaviour
 
         if (useTheme)
         {
-            temaString = _client.player._talkTheme.currentTheme[_client.player._talkTheme._indexTheme];
+            //temaString = _client.player._talkTheme.currentTheme[_client.player._talkTheme._indexTheme];
+            temaString = _client.player._talkTheme.GetCurrentThemeSafe();
             currentTheme = (TalkTheme)System.Enum.Parse(typeof(TalkTheme), temaString);
             //themeToUse;
 

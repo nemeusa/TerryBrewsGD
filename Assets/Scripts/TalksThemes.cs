@@ -77,6 +77,16 @@ public class TalksThemes : MonoBehaviour
         RandomTheme();
         _newChanel = false;
     }
+
+    public string GetCurrentThemeSafe()
+    {
+        // si el index actual supera el tamaño, vuelve al primero
+        if (_indexTheme >= currentTheme.Length || _indexTheme < 0)
+            return currentTheme[0];
+        else
+            return currentTheme[_indexTheme];
+    }
+
 }
 
 public enum ThemeType

@@ -18040,7 +18040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &718854814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18139,7 +18139,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718854813}
-  m_CullTransparentMesh: 1
+  m_CullTransparentMesh: 0
 --- !u!224 &718854816
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31764,8 +31764,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9c82dbc82997084eaa7faa635a59662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _clientPrefab: {fileID: 2083364825804263593, guid: b9e1f070c49758c4f877a0c87600c02a,
-    type: 3}
+  _currentClientPrefab:
+  - {fileID: 2083364825804263593, guid: b9e1f070c49758c4f877a0c87600c02a, type: 3}
+  - {fileID: 2083364825804263593, guid: 256baa1e70a5a0a44855fe1b77c37e3f, type: 3}
+  - {fileID: 2083364825804263593, guid: a4bc9eca41a1b6c4786518eda8915031, type: 3}
+  - {fileID: 2083364825804263593, guid: bc1bb5758228f9b448b9cffbbbcac701, type: 3}
+  - {fileID: 2083364825804263593, guid: 322fc08ac23108a4dbb6d7f6d66d60a2, type: 3}
   allChairs:
   - {fileID: 1844072800}
   - {fileID: 702410741}
@@ -40609,6 +40613,11 @@ PrefabInstance:
       propertyPath: tvManagerVideos
       value: 
       objectReference: {fileID: 720217878638382157}
+    - target: {fileID: 8260636306521220205, guid: 0c559bcbc482c52429474cc37e165227,
+        type: 3}
+      propertyPath: currentTheme.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8650165884985360745, guid: 0c559bcbc482c52429474cc37e165227,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -251,7 +251,7 @@ public class Client : MonoBehaviour
 
     public IEnumerator CharlaThemeGoodCoroutine()
     {
-        string[] blabla = { "Frio", "Calor", "Trafico", "Despejado" };
+        string[] blabla = { "Frio", "Calor", "Trafico", "Carretera_Libre" };
 
         do
         {
@@ -269,7 +269,7 @@ public class Client : MonoBehaviour
 
     public IEnumerator CharlaThemeBadCoroutine()
     {
-        string[] blabla = { "Frio", "Calor", "Trafico", "Despejado" };
+        string[] blabla = { "Frio", "Calor", "Trafico", "Carretera_Libre" };
 
         do
         {

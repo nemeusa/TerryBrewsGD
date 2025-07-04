@@ -25453,8 +25453,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9c82dbc82997084eaa7faa635a59662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _clientPrefab: {fileID: 2083364825804263593, guid: b9e1f070c49758c4f877a0c87600c02a,
-    type: 3}
+  _currentClientPrefab:
+  - {fileID: 2083364825804263593, guid: b9e1f070c49758c4f877a0c87600c02a, type: 3}
   allChairs:
   - {fileID: 1844072800}
   spawnPoint: {fileID: 72052354}
