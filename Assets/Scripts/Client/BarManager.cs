@@ -16,6 +16,7 @@ public class BarManager : MonoBehaviour
     Vector3 _spawn;
 
     [SerializeField] int _goodClients;
+    [SerializeField] int _badClients;
 
     int clientsCounter;
     private float _randomEnter;
@@ -61,6 +62,11 @@ public class BarManager : MonoBehaviour
             GameObject clientObj = Instantiate(_currentClientPrefab[UnityEngine.Random.Range(0, _currentClientPrefab.Length)], _spawn, Quaternion.identity);
             Client client = clientObj.GetComponent<Client>();
             if (clientsCounter >= _goodClients) client.randomBlock = true;
+            if (clientsCounter == _goodClients)
+            {
+                client.randomBlock = true;
+                client.imposter = true;
+            }
             _player._client = client;
             client.player = _player;
             client.AssignChair(freeChair);

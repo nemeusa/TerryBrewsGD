@@ -67,9 +67,13 @@ public class TalksThemes : MonoBehaviour
         string[] eventos = { "Trafico", "Carretera_Libre" };
 
         currentClima = clima[UnityEngine.Random.Range(0, clima.Length)];
-        currentEventos = eventos[UnityEngine.Random.Range(0, eventos.Length)];
-    }
 
+        do
+        {
+            currentEventos = eventos[UnityEngine.Random.Range(0, eventos.Length)];
+        }
+        while (currentEventos == currentClima);
+    }
     IEnumerator CambiaCanal()
     {
         _newChanel = true;
