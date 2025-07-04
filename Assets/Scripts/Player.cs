@@ -9,11 +9,10 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     //..- -. .- / .--. .. .--- .- / -.. . / -.-. --- -.. .. --. --- .-.-. 
-
-
     [Header("Audio")]
     [SerializeField] AudioSource _shotgunAudioSource;
     [SerializeField] AudioClip _shotgunSound;
+    [SerializeField] private AudioClip _emptyShotSound;
 
     [Header("Bebidas y clientes")]
     [SerializeField] LayerMask _beverageLayer;
@@ -52,6 +51,11 @@ public class Player : MonoBehaviour
     bool _usePump;
     Pump _pumpCode = null;
     [SerializeField] ParticleSystem _smokeParticle;
+
+    [Header("Munición")]
+    [SerializeField] private GameObject[] _ammoVisuals;
+    private int _currentAmmo = 10;
+    private const int _maxAmmo = 10;
 
     [Header("NO SE XD")]
     [SerializeField] Scene _sceneName;
@@ -102,6 +106,10 @@ public class Player : MonoBehaviour
         }
 
     }
+    private void Start()
+    {
+        UpdateAmmoVisuals();
+    }
 
     private void Update()
     {
@@ -129,11 +137,24 @@ public class Player : MonoBehaviour
                 {
                     if (!_usePump)
                     {
-                        PumpOn();
+                        if (_currentAmmo > 0)
+                        {
+                            PumpOn();
+                        }
+                        else
+                        {
+                            if (_shotgunAudioSource != null && _emptyShotSound != null)
+                            {
+                                _shotgunAudioSource.PlayOneShot(_emptyShotSound);
+                            }
+                        }
                     }
-                    else PumpOff();
-
+                    else
+                    {
+                        PumpOff();
+                    }
                 }
+
             }
             else if (Physics.Raycast(ray, out hit, 100f, _clientLayer))
             {
@@ -224,41 +245,71 @@ public class Player : MonoBehaviour
 
     void Pump()
     {
-
         if (_usePump)
         {
-            urp.StartCoroutine(urp.ShootURP());
-            _client.isDeath = true;
-
-            if (_shotgunAudioSource != null && _shotgunSound != null)
-                _shotgunAudioSource.PlayOneShot(_shotgunSound);
-
-            if (_client.imposter)
+            if (_currentAmmo > 0)
             {
-                _score += 50;
-                _cordura += _corduraDanio;
-                StartCoroutine(correct());
+                _currentAmmo--;
+
+                UpdateAmmoVisuals();
+
+                urp.StartCoroutine(urp.ShootURP());
+                _client.isDeath = true;
+
+                if (_shotgunAudioSource != null && _shotgunSound != null)
+                    _shotgunAudioSource.PlayOneShot(_shotgunSound);
+
+                if (_client.imposter)
+                {
+                    _score += 50;
+                    _cordura += _corduraDanio;
+                    StartCoroutine(correct());
+                }
+                else
+                {
+                    _score -= 200;
+                    _cordura -= _corduraMatarCliente;
+                    StartCoroutine(Incorrect());
+                }
+
+                StartCoroutine(Shoot());
             }
             else
             {
-                _score -= 200;
-                _cordura -= _corduraMatarCliente;
-                StartCoroutine(Incorrect());
+                if (_shotgunAudioSource != null && _emptyShotSound != null)
+                {
+                    _shotgunAudioSource.PlayOneShot(_emptyShotSound);
+                }
             }
-            StartCoroutine(Shoot());
-            //PumpOff();
         }
-
     }
 
     void PumpOn()
     {
+
         _pumpHandAni.SetBool("Hand gets it", true);
       // meshPumpBar.enabled = false;
         _pumpBarAni.SetBool("Bar gets it", false);
         meshPumpHand.enabled = true;
         _usePump = true;
         _selectedDrink = null;
+    }
+
+    void ReloadOneBullet()
+    {
+        if (_currentAmmo < _maxAmmo)
+        {
+            _currentAmmo++;
+            UpdateAmmoVisuals();
+        }
+    }
+
+    private void UpdateAmmoVisuals()
+    {
+        for (int i = 0; i < _ammoVisuals.Length; i++)
+        {
+            _ammoVisuals[i].SetActive(i < _currentAmmo);
+        }
     }
 
     void PumpOff()
