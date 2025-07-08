@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1064171454557895007
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 411869427038499029}
+  - component: {fileID: 5596159200354331654}
+  - component: {fileID: 8403633842230151011}
+  m_Layer: 0
+  m_Name: Bar manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &411869427038499029
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064171454557895007}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.276172, y: 1.6340647, z: -0.2621646}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5596159200354331654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064171454557895007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c82dbc82997084eaa7faa635a59662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentClientPrefab:
+  - {fileID: 2083364825804263593, guid: b9e1f070c49758c4f877a0c87600c02a, type: 3}
+  - {fileID: 2083364825804263593, guid: 256baa1e70a5a0a44855fe1b77c37e3f, type: 3}
+  - {fileID: 2083364825804263593, guid: a4bc9eca41a1b6c4786518eda8915031, type: 3}
+  - {fileID: 2083364825804263593, guid: bc1bb5758228f9b448b9cffbbbcac701, type: 3}
+  - {fileID: 2083364825804263593, guid: 322fc08ac23108a4dbb6d7f6d66d60a2, type: 3}
+  allChairs:
+  - {fileID: 0}
+  - {fileID: 0}
+  spawnPoint: {fileID: 0}
+  spawnPointRight: {fileID: 0}
+  _altureChair: {fileID: 0}
+  _goodClients: 0
+  _badClients: 0
+  _player: {fileID: 0}
+  tutorial: 0
+  indexGood: 0
+  indexBad: 0
+--- !u!114 &8403633842230151011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064171454557895007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9927bdb6c06de048a6f613f249ca104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentClima: 
+  currentEventos: 
+  currentTheme: []
+  textTheme: {fileID: 0}
+  _indexTheme: 0
+  tvManagerVideo: {fileID: 0}
+  _boton: {fileID: 0}
+  tvManagerVideos: {fileID: 0}

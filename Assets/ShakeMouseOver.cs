@@ -15,11 +15,23 @@ public class ShakeMouseOver : MonoBehaviour
     private Vector3 originalPosition;
     private float shakeTimer;
 
-    private void Start()
+    [SerializeField] private Renderer objectRenderer;
+    [SerializeField] private Color glowColor = Color.yellow;
+    [SerializeField] private float emissionIntensity = 2f;
+
+    private Material originalMaterial;
+    private bool isMouseOver = false;
+
+    void Start()
     {
         originalPosition = transform.localPosition;
-        originalPosition = transform.localPosition;
         moveDrinks = GetComponent<MoveDrinks>();
+
+        if (objectRenderer == null)
+            objectRenderer = GetComponent<Renderer>();
+
+        if (objectRenderer != null)
+            originalMaterial = objectRenderer.material;
     }
 
     private void Update()
@@ -57,7 +69,12 @@ public class ShakeMouseOver : MonoBehaviour
         {
             if (hit.transform == transform)
             {
-                // Si se está haciendo clic sobre ESTE objeto, detener el sacudido
+                if (!isMouseOver)
+                {
+                    isMouseOver = true;
+                    EnableGlow();
+                }
+
                 if (Input.GetMouseButton(0))
                 {
                     StopShaking();
@@ -68,7 +85,31 @@ public class ShakeMouseOver : MonoBehaviour
                 {
                     StartShaking();
                 }
+
+                return;
             }
+        }
+
+        if (isMouseOver)
+        {
+            isMouseOver = false;
+            DisableGlow();
+        }
+    }
+    private void EnableGlow()
+    {
+        if (objectRenderer != null)
+        {
+            objectRenderer.material.EnableKeyword("_EMISSION");
+            objectRenderer.material.SetColor("_EmissionColor", glowColor * emissionIntensity);
+        }
+    }
+
+    private void DisableGlow()
+    {
+        if (objectRenderer != null)
+        {
+            objectRenderer.material.SetColor("_EmissionColor", Color.black);
         }
     }
 
