@@ -22,6 +22,7 @@ public class ExitBarState : State
             _client._goodClientParticles.Play();
             _client.GetComponent<MeshRenderer>().material.color = Color.green;
             _client.player._score += 100;
+            _client.player.contador.MostrarGanancia(100);
             _client.player._cordura += 5;
         }
         else if (_client.badOrder)
@@ -29,6 +30,7 @@ public class ExitBarState : State
             _client._badClientParticles.Play();
             _client.GetComponent<MeshRenderer>().material.color = Color.red;
             _client.player._score -= 50;
+            _client.player.contador.DescontarGanancia(50);
         }
     }
 

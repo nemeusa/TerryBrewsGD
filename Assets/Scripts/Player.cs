@@ -88,6 +88,8 @@ public class Player : MonoBehaviour
 
     public int getDamage = 10;
 
+    public SpawnContador contador;
+
     private void Awake()
     {
         //_pumpBarAni.SetBool("Bar gets it", true);
@@ -293,12 +295,14 @@ public class Player : MonoBehaviour
                 if (_client.imposter)
                 {
                     _score += 50;
+                    contador.MostrarGanancia(50);
                     _cordura += _corduraDanio;
                     StartCoroutine(correct());
                 }
                 else
                 {
                     _score -= 200;
+                    contador.DescontarGanancia(200);
                     _cordura -= _corduraMatarCliente;
                     StartCoroutine(Incorrect());
                 }
