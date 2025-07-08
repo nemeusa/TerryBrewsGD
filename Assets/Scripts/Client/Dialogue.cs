@@ -15,81 +15,89 @@ public class Dialogue : MonoBehaviour
     [SerializeField] Client _client;
 
     bool useTheme;
-
-    string temaString;
-    TalkTheme currentTheme;
     TalkTheme themeToUse;
+    ThemeType themeTypeToUse;
 
     private void Awake()
     {
-        useTheme = Random.Range(0, 101) > 50;
-        //useTheme = true;
         _client = GetComponent<Client>();
     }
 
     public void Charla()
     {
-       // bool useTheme = Random.Range(0, 101) > 50;
+       // useTheme = Random.Range(0, 101) > 50;
+        useTheme = true;
 
         if (useTheme)
         {
-            //temaString = _client.player._talkTheme.currentTheme[_client.player._talkTheme._indexTheme];
-            temaString = _client.player._talkTheme.GetCurrentThemeSafe();
-            currentTheme = (TalkTheme)System.Enum.Parse(typeof(TalkTheme), temaString);
-            //themeToUse;
-
-            if (!_client.imposter)
-            {
-                themeToUse = currentTheme; // Cliente bueno dice el tema actual
-            }
-            else
-            {
-                // Impostor elige un tema distinto
-                List<TalkTheme> posibles = System.Enum.GetValues(typeof(TalkTheme))
-                    .Cast<TalkTheme>()
-                    .Where(t => t != currentTheme)
-                    .ToList();
-
-                themeToUse = posibles[Random.Range(0, posibles.Count)];
-            }
+            PrepareDialogue();
 
             string frase = GetPhraseByTheme(themeToUse);
-            //textCharla.text = frase;
             _client.textCharla.text = frase;
             currentDialogue = frase;
             Theme = themeToUse.ToString();
 
-            //Debug.Log($"Tema: {Theme} - Impostor: {_client.imposter}");
+            Debug.Log($" Cliente habló sobre: {Theme} | Tipo: {themeTypeToUse} | Impostor: {_client.imposter}");
         }
         else
         {
-            // Frase neutral
-            _client.Charla();
+            _client.Charla(); // diálogo neutral
         }
-            Debug.Log("Tema" + themeToUse + "Impostor" + currentTheme);
+    }
+
+    void PrepareDialogue()
+    {
+        // Elegir un tipo de tema (Clima, Evento, etc.)
+        var tipos = System.Enum.GetValues(typeof(ThemeType)).Cast<ThemeType>().ToList();
+        themeTypeToUse = tipos[Random.Range(0, tipos.Count)];
+
+        // Obtener el tema correcto activo en la partida según ese tipo
+        string temaCorrecto = _client.player._talkTheme.currentThemes[themeTypeToUse];
+
+        if (_client.imposter)
+        {
+            // Elegir un tema distinto del correcto dentro del mismo tipo
+            var posibles = themeDialogues
+                .Where(t => t.type == themeTypeToUse && t.theme.ToString() != temaCorrecto)
+                .ToList();
+
+            if (posibles.Count == 0)
+            {
+                Debug.LogWarning("No hay temas incorrectos disponibles, se usará el correcto");
+                themeToUse = (TalkTheme)System.Enum.Parse(typeof(TalkTheme), temaCorrecto);
+            }
+            else
+            {
+                themeToUse = posibles[Random.Range(0, posibles.Count)].theme;
+            }
+        }
+        else
+        {
+            // Cliente bueno dice el tema correcto
+            themeToUse = (TalkTheme)System.Enum.Parse(typeof(TalkTheme), temaCorrecto);
+        }
     }
 
     public void Verification()
     {
-        if ( useTheme)
+        string temaCorrecto = _client.player._talkTheme.currentThemes[themeTypeToUse];
+
+        if (!useTheme) return;
+
+        if (_client.imposter && themeToUse.ToString() == temaCorrecto)
         {
-            if (_client.imposter && themeToUse == currentTheme)
-            {
-                Debug.Log("haciendolo malo");
-
-            }
-
-
-
-            else if (!_client.imposter && themeToUse != currentTheme)
-            {
-                Debug.Log("haciendolo bueno");
-
-            }
-             //   Debug.Log("verificacion");
-
+            Debug.Log(" Impostor acertó el tema (falló la mentira)");
+            Charla();
         }
 
+        else if (!_client.imposter && themeToUse.ToString() != temaCorrecto)
+        {
+            Debug.Log(" Cliente bueno se equivocó de tema");
+            Charla();
+        }
+
+        else
+            Debug.Log("Cliente actuó correctamente");
     }
 
     private string GetPhraseByTheme(TalkTheme theme)

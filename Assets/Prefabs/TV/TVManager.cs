@@ -46,13 +46,13 @@ public class TVManager : MonoBehaviour
 
         if (talksThemes._indexTheme == climaIndex)
         {
-            if (talksThemes.currentClima == "Frio") newClip = clipFrio;
-            else if (talksThemes.currentClima == "Calor") newClip = clipCalor;
+            if (talksThemes.currentThemes[ThemeType.Clima] == "Frio") newClip = clipFrio;
+            else if (talksThemes.currentThemes[ThemeType.Clima] == "Calor") newClip = clipCalor;
         }
         else if (talksThemes._indexTheme == eventoIndex)
         {
-            if (talksThemes.currentEventos == "Trafico") newClip = clipTrafico;
-            else if (talksThemes.currentEventos == "Carretera_Libre") newClip = clipCarreteraLibre;
+            if (talksThemes.currentThemes[ThemeType.Evento] == "Trafico") newClip = clipTrafico;
+            else if (talksThemes.currentThemes[ThemeType.Evento] == "Carretera_Libre") newClip = clipCarreteraLibre;
         }
         else
         {

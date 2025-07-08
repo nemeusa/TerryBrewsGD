@@ -262,13 +262,13 @@ MonoBehaviour:
     - estoy sudadisimo
     - un ventilador quedaria piola
   - theme: 2
-    type: 0
+    type: 1
     phrases:
     - un hdrp me rayo todo el auto en la ruta
     - no se puede manegar con este trafico
     - vivo a 2 cuadras, 3 horas para llegar aca en auto
   - theme: 3
-    type: 0
+    type: 1
     phrases:
     - estuvo tranki el viaje
     - llegue en 10 minutardos, piola

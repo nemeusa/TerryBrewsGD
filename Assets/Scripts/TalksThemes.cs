@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class TalksThemes : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class TalksThemes : MonoBehaviour
 
     [Header("Canales Extras")]
     [SerializeField] private TVManager tvManagerVideos;
+
+    public Dictionary<ThemeType, string> currentThemes = new();
 
     bool _newChanel;
     private Color originalColor;
@@ -37,7 +40,7 @@ public class TalksThemes : MonoBehaviour
 
     public void RandomTheme()
     {
-        currentTheme = new string[] { currentClima, currentEventos };
+        currentTheme = new string[] { currentThemes[ThemeType.Clima], currentThemes[ThemeType.Evento] };
 
         string charla = "";
 
@@ -48,7 +51,7 @@ public class TalksThemes : MonoBehaviour
         }
         else
         {
-            textTheme.text = "";
+            textTheme.text = "canal random";
         }
 
         tvManagerVideo?.UpdateTVVideo();
@@ -66,14 +69,15 @@ public class TalksThemes : MonoBehaviour
         string[] clima = { "Frio", "Calor" };
         string[] eventos = { "Trafico", "Carretera_Libre" };
 
-        currentClima = clima[UnityEngine.Random.Range(0, clima.Length)];
+        //currentClima = clima[UnityEngine.Random.Range(0, clima.Length)];
 
-        do
-        {
-            currentEventos = eventos[UnityEngine.Random.Range(0, eventos.Length)];
-        }
-        while (currentEventos == currentClima);
+        //currentEventos = eventos[UnityEngine.Random.Range(0, eventos.Length)];
+
+        currentThemes[ThemeType.Clima] = clima[Random.Range(0, clima.Length)];
+        currentThemes[ThemeType.Evento] = eventos[Random.Range(0, eventos.Length)];
     }
+
+
     IEnumerator CambiaCanal()
     {
         _newChanel = true;
@@ -89,17 +93,17 @@ public class TalksThemes : MonoBehaviour
         _newChanel = false;
     }
 
-    public string GetCurrentThemeSafe()
-    {        
-        if (_indexTheme >= currentTheme.Length || _indexTheme < 0)
-            return currentTheme[0];
-        else
-            return currentTheme[_indexTheme];
-    }
-    public void ChangeColorToRed()
-    {
-        StartCoroutine(ChangeColorCoroutine());
-    }
+    //public string GetCurrentThemeSafe()
+    //{
+    //    if (_indexTheme >= currentTheme.Length || _indexTheme < 0)
+    //        return currentTheme[0];
+    //    else
+    //        return currentTheme[_indexTheme];
+    //}
+    //public void ChangeColorToRed()
+    //{
+    //    StartCoroutine(ChangeColorCoroutine());
+    //}
 
     private IEnumerator ChangeColorCoroutine()
     {

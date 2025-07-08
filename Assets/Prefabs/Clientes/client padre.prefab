@@ -261,13 +261,13 @@ MonoBehaviour:
     - "Se me derriten las bolas\t"
     - "Wacho, hace tanto calor que voy a empezar a hablar \xE1rabe"
   - theme: 2
-    type: 0
+    type: 1
     phrases:
     - "Un hijo de mil me ray\xF3 todo el auto\t"
     - "Hay tantos autos que esto parece la India\t"
     - Wacho, 5 horas por cuadra
   - theme: 3
-    type: 0
+    type: 1
     phrases:
     - Un viajecito tranquilo
     - 'Por suerte no hay transito '
