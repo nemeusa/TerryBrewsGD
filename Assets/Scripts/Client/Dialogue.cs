@@ -18,6 +18,8 @@ public class Dialogue : MonoBehaviour
     TalkTheme themeToUse;
     ThemeType themeTypeToUse;
 
+    [SerializeField] int _probabilityTheme = 50;
+
     private void Awake()
     {
         _client = GetComponent<Client>();
@@ -25,8 +27,7 @@ public class Dialogue : MonoBehaviour
 
     public void Charla()
     {
-       // useTheme = Random.Range(0, 101) > 50;
-        useTheme = true;
+       useTheme = Random.Range(0, 101) < _probabilityTheme;
 
         if (useTheme)
         {

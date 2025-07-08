@@ -57,10 +57,14 @@ public class TalksThemes : MonoBehaviour
         tvManagerVideo?.UpdateTVVideo();
 
         _indexTheme++;
-        int totalTemas = currentTheme.Length + tvManagerVideo.CanalesFalsosLength;
+        if (tvManagerVideo != null)
+        {
+            int totalTemas = currentTheme.Length + tvManagerVideo.CanalesFalsosLength;
 
-        if (_indexTheme >= totalTemas)
-            _indexTheme = 0;
+            if (_indexTheme >= totalTemas)
+                _indexTheme = 0;
+
+        }
     }
 
 

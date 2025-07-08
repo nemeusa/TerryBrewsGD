@@ -59,6 +59,10 @@ public class Client : MonoBehaviour
 
     public bool randomBlock;
 
+    public BarManager _barManeger;
+
+    bool tutorial;
+
     void Awake()
     {
 
@@ -136,29 +140,55 @@ public class Client : MonoBehaviour
     #region Charla
     public void Charla()
     {
-        if (!imposter)
+        if (!_barManeger.tutorial)
         {
 
 
-            string charla;
+            if (!imposter)
+            {
 
-            charla = charlaGood[UnityEngine.Random.Range(0, charlaGood.Length)];
-            Debug.Log("charla normal good");
-            textCharla.text = charla;
-            currentDialogue = charla;
 
+                string charla;
+
+                charla = charlaGood[UnityEngine.Random.Range(0, charlaGood.Length)];
+                textCharla.text = charla;
+                currentDialogue = charla;
+
+            }
+
+            else
+            {
+                string charla;
+
+                charla = charlaBad[UnityEngine.Random.Range(0, charlaBad.Length)];
+                textCharla.text = charla;
+                currentDialogue = charla;
+            }
         }
-
         else
         {
-            string charla;
 
-            charla = charlaBad[UnityEngine.Random.Range(0, charlaBad.Length)];
-            Debug.Log("charla normal bad");
-            textCharla.text = charla;
-            currentDialogue = charla;
+            if (!imposter)
+            {
+
+
+                string charla;
+                charla = charlaGood[_barManeger.indexGood];
+                _barManeger.indexGood = Mathf.Min(_barManeger.indexGood + 1, charlaGood.Length - 1); // No pasar el límite
+                textCharla.text = charla;
+                currentDialogue = charla;
+
+            }
+
+            else
+            {
+                string charla;
+                charla = charlaBad[_barManeger.indexBad];
+                _barManeger.indexBad = Mathf.Min(_barManeger.indexBad + 1, charlaBad.Length - 1);
+                textCharla.text = charla;
+                currentDialogue = charla;
+            }
         }
-
     }
 
     //public void Charla()

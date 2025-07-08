@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -25454,14 +25454,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentClientPrefab:
-  - {fileID: 2083364825804263593, guid: b9e1f070c49758c4f877a0c87600c02a, type: 3}
+  - {fileID: 2083364825804263593, guid: 8b83ff20591bd4947b51a92a3bb5a2a5, type: 3}
   allChairs:
   - {fileID: 1844072800}
   spawnPoint: {fileID: 72052354}
   spawnPointRight: {fileID: 1957372162}
   _altureChair: {fileID: 1879261662}
   _goodClients: 9
+  _badClients: 0
   _player: {fileID: 40187294}
+  tutorial: 1
+  indexGood: 0
+  indexBad: 0
 --- !u!4 &1483362353
 Transform:
   m_ObjectHideFlags: 0
@@ -25495,6 +25499,7 @@ MonoBehaviour:
   textTheme: {fileID: 718854814}
   _indexTheme: 0
   tvManagerVideo: {fileID: 0}
+  _boton: {fileID: 0}
   tvManagerVideos: {fileID: 0}
 --- !u!1 &1486476486
 GameObject:

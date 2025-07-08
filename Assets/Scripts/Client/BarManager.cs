@@ -28,6 +28,10 @@ public class BarManager : MonoBehaviour
     //private string currentRequest;
     //public TMP_Text requestText;
 
+    [Header("Tutorial")]
+    public bool tutorial;
+    public int indexGood = 0;
+    public int indexBad = 0;
 
 
     private void Start()
@@ -69,6 +73,7 @@ public class BarManager : MonoBehaviour
             }
             _player._client = client;
             client.player = _player;
+            client._barManeger = this;
             client.AssignChair(freeChair);
         }
         else
