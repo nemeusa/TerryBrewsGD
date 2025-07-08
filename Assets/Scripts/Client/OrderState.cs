@@ -40,7 +40,6 @@ public class OrderState : MonoBehaviour, State
 
             else
             {
-                _client._goodClientParticles.Play();
                 _fsm.ChangeState(TypeFSM.ExitBar);
             }
             //StartCoroutine(niceOrder());
@@ -48,8 +47,9 @@ public class OrderState : MonoBehaviour, State
 
         if (_client.badOrder)
         {
-            _client.player._score -= 50;
-            _client.badOrder = false;
+
+            _fsm.ChangeState(TypeFSM.ExitBar);
+            //_client.badOrder = false;
         }
 
         if (_client.isDeath)

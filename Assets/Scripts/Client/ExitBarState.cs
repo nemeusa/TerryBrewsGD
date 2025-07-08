@@ -17,15 +17,24 @@ public class ExitBarState : State
     public void OnEnter()
     {
         _dir = (Random.Range(0, 2) == 0) ? Vector3.left : Vector3.right;
-        _client.visor.GetComponent<MeshRenderer>().material.color = Color.green;
-        _client.player._score += 100;
-        _client.player._cordura += 5;
+        if(_client.goodOrder)
+        {
+            _client._goodClientParticles.Play();
+            _client.GetComponent<MeshRenderer>().material.color = Color.green;
+            _client.player._score += 100;
+            _client.player._cordura += 5;
+        }
+        else if (_client.badOrder)
+        {
+            _client._badClientParticles.Play();
+            _client.GetComponent<MeshRenderer>().material.color = Color.red;
+            _client.player._score -= 50;
+        }
     }
 
     public void OnUpdate()
     {
        // Debug.Log("Exit");
-        _client.GetComponent<MeshRenderer>().material.color = Color.green;
         //var dir = _client.chair.transform.position + _client.transform.position;
         _client.transform.forward = _dir;
         _client.transform.position += _dir * _client.exitSpeed * Time.deltaTime;

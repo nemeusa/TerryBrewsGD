@@ -44,6 +44,7 @@ public class Client : MonoBehaviour
     public bool isDeath;
 
     public ParticleSystem _goodClientParticles;
+    public ParticleSystem _badClientParticles;
 
     public GameObject visor;
 
