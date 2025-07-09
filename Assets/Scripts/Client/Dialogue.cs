@@ -96,9 +96,6 @@ public class Dialogue : MonoBehaviour
             Debug.Log(" Cliente bueno se equivocó de tema");
             Charla();
         }
-
-        else
-            Debug.Log("Cliente actuó correctamente");
     }
 
     private string GetPhraseByTheme(TalkTheme theme)
