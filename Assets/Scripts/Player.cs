@@ -50,8 +50,8 @@ public class Player : MonoBehaviour
     Pump _pumpCode = null;
     [SerializeField] ParticleSystem _smokeParticle;
     [SerializeField] private GameObject[] _ammoVisuals;
-    private int _currentAmmo = 10;
-    private const int _maxAmmo = 10;
+    public int _currentAmmo = 10;
+    public int _maxAmmo = 10;
     private bool _isBlocked = false;
     [SerializeField] private float _blockDurationAfterShot = 1f;
     [SerializeField] private float _doubleShotCooldown = 5f; 
@@ -151,8 +151,8 @@ public class Player : MonoBehaviour
 
                 if (_pumpCode != null)
                 {
-                    if (_cordura <= _corduraMinEscopeta) 
-                    {
+                   // if (_cordura <= _corduraMinEscopeta) 
+                    //{
                         if (!_usePump)
                         {
                             if (_currentAmmo > 0)
@@ -171,7 +171,7 @@ public class Player : MonoBehaviour
                         {
                             PumpOff();
                         }
-                    }
+                   // }
                 }
                 if (!_shotgunUsable && _cordura <= _corduraMinEscopeta)
                 {
@@ -346,7 +346,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void ReloadOneBullet()
+    public void ReloadOneBullet()
     {
         if (_currentAmmo < _maxAmmo)
         {

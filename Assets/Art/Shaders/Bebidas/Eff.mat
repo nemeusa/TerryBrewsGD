@@ -26,14 +26,19 @@ Material:
   m_Parent: {fileID: -876546973899608171, guid: f9487ee56cffe054685f5d99c8da9f19,
     type: 3}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _ALPHAMODULATE_ON
+  - _ALPHATEST_ON
+  - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
+  stringTagMap:
+    RenderType: Transparent
+  disabledShaderPasses:
+  - SHADOWCASTER
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -44,7 +49,9 @@ Material:
     - _Fresnel_Fade: 12.29
     - _Fresnel_Length: 11.26
     - _QueueControl: 0
+    - _SrcBlend: 2
     - _WobbleX: 9.85
+    - _ZWrite: 1
     m_Colors:
     - _BackFaceColor: {r: 0.23584908, g: 0.03893734, b: 0.054690268, a: 1}
     - _Color: {r: 0.4245283, g: 0.09011215, b: 0.11835448, a: 0.5529412}

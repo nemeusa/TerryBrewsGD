@@ -26,7 +26,7 @@ public class TalksThemes : MonoBehaviour
     private void Start()
     {
         InitialTheme();
-        RandomTheme();
+
 
         originalColor = textTheme.color;
 
@@ -34,8 +34,7 @@ public class TalksThemes : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-            CambiarCanal();
+          
     }
 
     public void RandomTheme()
@@ -90,7 +89,7 @@ public class TalksThemes : MonoBehaviour
         _newChanel = false;
     }
 
-    void CambiarCanal()
+    public void CambiarCanal()
     {
         _newChanel = true;
         RandomTheme();

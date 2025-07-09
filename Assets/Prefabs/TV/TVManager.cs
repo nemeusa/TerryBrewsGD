@@ -32,10 +32,17 @@ public class TVManager : MonoBehaviour
 
     private void Awake()
     {
+        talksThemes.RandomTheme();
         if (tvRenderer != null)
         {
             _material = tvRenderer.material;
         }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+            talksThemes.CambiarCanal();
     }
 
     public void UpdateTVVideo()
