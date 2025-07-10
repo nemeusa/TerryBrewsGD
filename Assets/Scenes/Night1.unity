@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -295,7 +295,7 @@ MonoBehaviour:
     m_Handle: 0
   flash: {fileID: 0}
   _client: {fileID: 0}
-  _talkTheme: {fileID: 1483362354}
+  _talkTheme: {fileID: 144251267980114545}
   help: 0
   _pumpHandAni: {fileID: 1756600672}
   _pumpBarAni: {fileID: 756463642}
@@ -29496,7 +29496,7 @@ MonoBehaviour:
   moneyTextPrefab: {fileID: 5584623996781616412, guid: cfb48ee42bdf2f44f850ca0104d06289,
     type: 3}
   spawnPoint: {fileID: 800799324}
-  player: {fileID: 0}
+  player: {fileID: 40187294}
 --- !u!4 &800799324
 Transform:
   m_ObjectHideFlags: 0
@@ -38636,18 +38636,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc01c67d42991224c9e6a62db2922c77, type: 3}
---- !u!114 &1483362354 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8403633842230151011, guid: f80945bda8d998e499aa70895b998213,
-    type: 3}
-  m_PrefabInstance: {fileID: 9105334205872252928}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9927bdb6c06de048a6f613f249ca104, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1486476486
 GameObject:
   m_ObjectHideFlags: 0
@@ -58193,7 +58181,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _boton
       value: 
-      objectReference: {fileID: 1836894700}
+      objectReference: {fileID: 0}
     - target: {fileID: 8260636306521220205, guid: 0c559bcbc482c52429474cc37e165227,
         type: 3}
       propertyPath: textTheme
@@ -59774,21 +59762,6 @@ PrefabInstance:
       propertyPath: allChairs.Array.data[1]
       value: 
       objectReference: {fileID: 702410741}
-    - target: {fileID: 8403633842230151011, guid: f80945bda8d998e499aa70895b998213,
-        type: 3}
-      propertyPath: textTheme
-      value: 
-      objectReference: {fileID: 718854814}
-    - target: {fileID: 8403633842230151011, guid: f80945bda8d998e499aa70895b998213,
-        type: 3}
-      propertyPath: tvManagerVideo
-      value: 
-      objectReference: {fileID: 720217878638382157}
-    - target: {fileID: 8403633842230151011, guid: f80945bda8d998e499aa70895b998213,
-        type: 3}
-      propertyPath: tvManagerVideos
-      value: 
-      objectReference: {fileID: 720217878638382157}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
