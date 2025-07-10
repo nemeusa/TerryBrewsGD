@@ -41,8 +41,8 @@ public class Pausa : MonoBehaviour
                 ObjetoMenuPausa.SetActive(false);
                 pausa = false;
                 Time.timeScale = 1;
-                Cursor.visible = false;
-                Cursor.lockState = CursorLockMode.Locked;
+               // Cursor.visible = false;
+                //Cursor.lockState = CursorLockMode.Locked;
 
             }
     }

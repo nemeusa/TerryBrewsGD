@@ -366,6 +366,11 @@ MonoBehaviour:
   randomBlock: 0
   _barManeger: {fileID: 0}
   soundEfects: {fileID: 0}
+  opciones:
+  - Agua
+  - Jugo
+  - Cerveza
+  - Gaseosa
 --- !u!114 &8876974062738350056
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -70,11 +70,10 @@ public class OrderState : MonoBehaviour, State
 
     public void NuevaPeticion()
     {
-        //string[] opciones = { "<color=blue>Agua</color>", "<color=orange>Jugo</color>", "<color=yellow>Cerveza</color>", "<color=red>Gaseosa</color>" };
-        string[] opciones = { "Agua", "Jugo", "Cerveza", "Gaseosa" };
-        //string a = ("< color = blue > " + opciones + " </ color >");
+       
+       // string[] opciones = { "Agua", "Jugo", "Cerveza", "Gaseosa" };
 
 
-        _client.currentRequest = opciones[UnityEngine.Random.Range(0, opciones.Length)];
+        _client.currentRequest = _client.opciones[UnityEngine.Random.Range(0, _client.opciones.Length)];
     }
 }

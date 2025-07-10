@@ -66,6 +66,8 @@ public class Client : MonoBehaviour
 
     public SoundEfects soundEfects;
 
+    public string[] opciones = { "Agua", "Jugo", "Cerveza", "Gaseosa" };
+
     void Awake()
     {
         soundEfects = GetComponent<SoundEfects>();
