@@ -98,6 +98,12 @@
         },
         {
             "m_Id": "4d9fbb4660bc4add8bc06f4211abbca4"
+        },
+        {
+            "m_Id": "f9f92af48aa142cab33f994f78b40c64"
+        },
+        {
+            "m_Id": "31f9c74a1b7541b49c9dec029906f057"
         }
     ],
     "m_GroupDatas": [],
@@ -371,6 +377,12 @@
             },
             {
                 "m_Id": "03791f36e1fd47719e78a7dbd2ef6e30"
+            },
+            {
+                "m_Id": "f9f92af48aa142cab33f994f78b40c64"
+            },
+            {
+                "m_Id": "31f9c74a1b7541b49c9dec029906f057"
             }
         ]
     },
@@ -649,12 +661,6 @@
         "z": 0.0,
         "w": 0.0
     }
-}
-
-{
-    "m_SGVersion": 2,
-    "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalUnlitSubTarget",
-    "m_ObjectId": "0ec0bf67b3144117b2bb2eaedd1f68d3"
 }
 
 {
@@ -1063,6 +1069,40 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.BlockNode",
+    "m_ObjectId": "31f9c74a1b7541b49c9dec029906f057",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "SurfaceDescription.Specular",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "593fd882d9db414086a945b42a3337d6"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_SerializedDescriptor": "SurfaceDescription.Specular"
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.ScreenPositionMaterialSlot",
     "m_ObjectId": "389646cc290d405cb05c1f82d0706855",
     "m_Id": 1,
@@ -1118,7 +1158,7 @@
     "m_ObjectId": "4184a0e49b6e472fa604245b82139a98",
     "m_Datas": [],
     "m_ActiveSubTarget": {
-        "m_Id": "0ec0bf67b3144117b2bb2eaedd1f68d3"
+        "m_Id": "f456af74b0034ae9a0d57c19cd368fd4"
     },
     "m_AllowMaterialOverride": true,
     "m_SurfaceType": 1,
@@ -1332,6 +1372,36 @@
     },
     "m_Property": {
         "m_Id": "bcca0b9aa5fe4ab2ae4f3f0818dc1232"
+    }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.ColorRGBMaterialSlot",
+    "m_ObjectId": "593fd882d9db414086a945b42a3337d6",
+    "m_Id": 0,
+    "m_DisplayName": "Specular Color",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Specular",
+    "m_StageCapability": 2,
+    "m_Value": {
+        "x": 0.5,
+        "y": 0.5,
+        "z": 0.5
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "m_Labels": [],
+    "m_ColorMode": 0,
+    "m_DefaultColor": {
+        "r": 0.5,
+        "g": 0.5,
+        "b": 0.5,
+        "a": 1.0
     }
 }
 
@@ -2463,6 +2533,30 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.NormalMaterialSlot",
+    "m_ObjectId": "ce8095a1cd874b989331206e167cdeb1",
+    "m_Id": 0,
+    "m_DisplayName": "Normal (Tangent Space)",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "NormalTS",
+    "m_StageCapability": 2,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "m_Labels": [],
+    "m_Space": 3
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicValueMaterialSlot",
     "m_ObjectId": "d221939f231d47dc9449f012fb0cb943",
     "m_Id": 0,
@@ -2826,5 +2920,49 @@
         "z": 0.0,
         "w": 0.0
     }
+}
+
+{
+    "m_SGVersion": 2,
+    "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalLitSubTarget",
+    "m_ObjectId": "f456af74b0034ae9a0d57c19cd368fd4",
+    "m_WorkflowMode": 1,
+    "m_NormalDropOffSpace": 0,
+    "m_ClearCoat": false,
+    "m_BlendModePreserveSpecular": true
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.BlockNode",
+    "m_ObjectId": "f9f92af48aa142cab33f994f78b40c64",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "SurfaceDescription.NormalTS",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "ce8095a1cd874b989331206e167cdeb1"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_SerializedDescriptor": "SurfaceDescription.NormalTS"
 }
 
