@@ -7,6 +7,7 @@ public class SpawnContador : MonoBehaviour
 {
     public GameObject moneyTextPrefab; // arrastrá tu prefab acá
     public Transform spawnPoint; // punto donde aparecerá el texto (puede ser encima de la caja)
+    [SerializeField] Player player;
 
     public void MostrarGanancia(float cantidad)
     {
@@ -24,6 +25,8 @@ public class SpawnContador : MonoBehaviour
        // texto.transform.SetParent(null); // importante si el prefab estaba ligado al canvas en World Space
 
         UnityEngine.Color color = UnityEngine.Color.red;
+
+        if (player._score <= 0) cantidad = 0;
 
         string textoDinero = "- $" + cantidad.ToString("F2");
         texto.GetComponent<ContadorEfect>().SetText(textoDinero, color);

@@ -34,22 +34,17 @@ public class OrderState : MonoBehaviour, State
         _client.chair.Ocuppy();
         _client.TextColor();
         //_client.transform.forward = new Vector3 (0, 0, 0.01f);
-        if (_client.goodOrder)
+        
+
+        if(_client.goodOrder || _client.badOrder)
         {
             if (_client.imposter) _fsm.ChangeState(TypeFSM.Attack);
 
             else
             {
-                _fsm.ChangeState(TypeFSM.ExitBar);
+                if (_client.goodOrder) _fsm.ChangeState(TypeFSM.ExitBar);
+                if (_client.badOrder) _fsm.ChangeState(TypeFSM.ExitBar);
             }
-            //StartCoroutine(niceOrder());
-        }
-
-        if (_client.badOrder)
-        {
-
-            _fsm.ChangeState(TypeFSM.ExitBar);
-            //_client.badOrder = false;
         }
 
         if (_client.isDeath)
