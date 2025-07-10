@@ -45,15 +45,18 @@ Material:
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 3
+    - _BlendModePreserveSpecular: 1
     - _CastShadows: 1
     - _Color: 14.17
     - _Cull: 2
     - _DstBlend: 0
     - _QueueControl: 0
     - _QueueOffset: -44
+    - _ReceiveShadows: 1
     - _Spread: 0.6
     - _SrcBlend: 2
     - _Surface: 1
+    - _WorkflowMode: 1
     - _ZTest: 4
     - _ZWrite: 0
     - _ZWriteControl: 0
