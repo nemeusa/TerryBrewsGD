@@ -7,8 +7,13 @@ public class ShowShop : MonoBehaviour
     public GameObject objetoB;
     public GameObject objetoBExtra; // Nuevo objeto complementario
 
+    SoundEfects soundEfects;
+
+    [SerializeField] LayerMask layerMask; 
+
     void Start()
     {
+        soundEfects = GetComponent<SoundEfects>();
         objetoA.SetActive(true);
         objetoB.SetActive(false);
         objetoBExtra.SetActive(false);
@@ -29,7 +34,7 @@ public class ShowShop : MonoBehaviour
     void DetectarClic()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit))
+        if (Physics.Raycast(ray, out RaycastHit hit, 100f, layerMask))
         {
             GameObject clickeado = hit.collider.gameObject;
 
@@ -45,6 +50,7 @@ public class ShowShop : MonoBehaviour
                 objetoBExtra.SetActive(false);
                 objetoA.SetActive(true);
             }
+            soundEfects.PlaySoundFromGroup(0);
         }
     }
 }

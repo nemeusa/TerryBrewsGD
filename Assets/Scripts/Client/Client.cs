@@ -64,9 +64,11 @@ public class Client : MonoBehaviour
 
     bool tutorial;
 
+    public SoundEfects soundEfects;
+
     void Awake()
     {
-
+        soundEfects = GetComponent<SoundEfects>();
         //dialogue = GetComponent<ClientDialogue>();
 
         _fsm = new FSM<TypeFSM>();

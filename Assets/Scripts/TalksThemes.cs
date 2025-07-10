@@ -108,10 +108,12 @@ public class TalksThemes : MonoBehaviour
     //    StartCoroutine(ChangeColorCoroutine());
     //}
 
+    public void ChangeColor() => StartCoroutine(ChangeColorCoroutine());
+
     private IEnumerator ChangeColorCoroutine()
     {
         _boton.GetComponent<MeshRenderer>().material.color = Color.red;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.3f);
         _boton.GetComponent<MeshRenderer>().material.color = originalColor;
 
     }

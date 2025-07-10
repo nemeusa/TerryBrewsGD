@@ -45,6 +45,12 @@ public class TVManager : MonoBehaviour
             talksThemes.CambiarCanal();
     }
 
+    public void RandomChanel()
+    {
+        if(talksThemes._boton.GetComponent<ActivarTVManagerConQ>().yaActivado)
+        talksThemes.CambiarCanal();
+    }
+
     public void UpdateTVVideo()
     {
         VideoClip newClip = null;

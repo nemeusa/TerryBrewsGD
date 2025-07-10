@@ -6703,7 +6703,7 @@ GameObject:
   - component: {fileID: 239818986}
   - component: {fileID: 239818985}
   - component: {fileID: 239818989}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29474,6 +29474,8 @@ GameObject:
   m_Component:
   - component: {fileID: 800799324}
   - component: {fileID: 800799323}
+  - component: {fileID: 800799326}
+  - component: {fileID: 800799325}
   m_Layer: 0
   m_Name: Spawn credito
   m_TagString: Untagged
@@ -29497,6 +29499,7 @@ MonoBehaviour:
     type: 3}
   spawnPoint: {fileID: 800799324}
   player: {fileID: 40187294}
+  soundEfects: {fileID: 0}
 --- !u!4 &800799324
 Transform:
   m_ObjectHideFlags: 0
@@ -29512,6 +29515,122 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1985695564}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &800799325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800799322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df5e92b96cb145343bf470e98ef4d69c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundGroups:
+  - groupName: sumar
+    clips:
+    - {fileID: 8300000, guid: b283e270d8d7de244b3f8a4f973a4383, type: 3}
+  - groupName: restar
+    clips:
+    - {fileID: 8300000, guid: 5faa8a64cc3136c4aafad96ed7692fec, type: 3}
+    - {fileID: 8300000, guid: 441484922f82c314c99335cb9821f053, type: 3}
+--- !u!82 &800799326
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800799322}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.549
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &815615510
 GameObject:
   m_ObjectHideFlags: 0
@@ -32505,7 +32624,7 @@ GameObject:
   - component: {fileID: 1270652023}
   - component: {fileID: 1270652022}
   - component: {fileID: 1270652021}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TiendaMano
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44271,7 +44390,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b5b6fb9b607a1e74b8a7045ed52afd8c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -55914,6 +56033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TVManager: {fileID: 543338348}
   canvasActivoEnEscena: {fileID: 862242078}
+  yaActivado: 0
 --- !u!1 &1844072798
 GameObject:
   m_ObjectHideFlags: 0
@@ -56268,6 +56388,8 @@ GameObject:
   - component: {fileID: 1859086997}
   - component: {fileID: 1859086996}
   - component: {fileID: 1859086998}
+  - component: {fileID: 1859087000}
+  - component: {fileID: 1859086999}
   m_Layer: 0
   m_Name: YaNoSeQueHacer
   m_TagString: Untagged
@@ -56290,6 +56412,9 @@ MonoBehaviour:
   objetoA: {fileID: 239818984}
   objetoB: {fileID: 1270652020}
   objetoBExtra: {fileID: 192730197}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!4 &1859086997
 Transform:
   m_ObjectHideFlags: 0
@@ -56325,6 +56450,127 @@ MonoBehaviour:
   _medicineText: {fileID: 0}
   objetoA: {fileID: 1270652020}
   _errorParticles: {fileID: 1736715507}
+--- !u!114 &1859086999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859086995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df5e92b96cb145343bf470e98ef4d69c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundGroups:
+  - groupName: papel sound
+    clips:
+    - {fileID: 8300000, guid: 534ccbe8ea22fe6429ef1035c058c748, type: 3}
+  - groupName: buy bullets
+    clips:
+    - {fileID: 8300000, guid: 21f17a2e47bab4d49b8de45d8f434169, type: 3}
+  - groupName: buy medicine
+    clips:
+    - {fileID: 8300000, guid: 21f17a2e47bab4d49b8de45d8f434169, type: 3}
+  - groupName: no te alcanza
+    clips:
+    - {fileID: 8300000, guid: 5faa8a64cc3136c4aafad96ed7692fec, type: 3}
+--- !u!82 &1859087000
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859086995}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1865778131
 GameObject:
   m_ObjectHideFlags: 0
@@ -57338,9 +57584,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 144251267980114545}
-        m_TargetAssemblyTypeName: TalksThemes, Assembly-CSharp
-        m_MethodName: RandomTheme
+      - m_Target: {fileID: 720217878638382157}
+        m_TargetAssemblyTypeName: TVManager, Assembly-CSharp
+        m_MethodName: RandomChanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -57352,7 +57598,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 144251267980114545}
         m_TargetAssemblyTypeName: TalksThemes, Assembly-CSharp
-        m_MethodName: ChangeColorToRed
+        m_MethodName: ChangeColor
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -57399,7 +57645,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1974176405}
-  m_CullTransparentMesh: 1
+  m_CullTransparentMesh: 0
 --- !u!1 &1985695563
 GameObject:
   m_ObjectHideFlags: 0
@@ -58181,7 +58427,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _boton
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1836894700}
     - target: {fileID: 8260636306521220205, guid: 0c559bcbc482c52429474cc37e165227,
         type: 3}
       propertyPath: textTheme

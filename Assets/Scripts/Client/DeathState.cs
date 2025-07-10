@@ -15,6 +15,7 @@ public class DeathState : State
 
     public void OnEnter()
     {
+        _client.soundEfects.PlaySoundFromGroup(1);
         _client.GetComponent<MeshRenderer>().material.color = Color.white;
         _client.bloodPartycles.Play();
     }

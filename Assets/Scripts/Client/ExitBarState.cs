@@ -19,6 +19,7 @@ public class ExitBarState : State
         _dir = (Random.Range(0, 2) == 0) ? Vector3.left : Vector3.right;
         if(_client.goodOrder)
         {
+            _client.soundEfects.PlaySoundFromGroup(3);
             _client._goodClientParticles.Play();
             _client.GetComponent<MeshRenderer>().material.color = Color.green;
             _client.player._score += 100;
@@ -27,6 +28,7 @@ public class ExitBarState : State
         }
         else if (_client.badOrder)
         {
+            _client.soundEfects.PlaySoundFromGroup(4);
             _client._badClientParticles.Play();
             _client.GetComponent<MeshRenderer>().material.color = Color.red;
             _client.player._score -= 50;

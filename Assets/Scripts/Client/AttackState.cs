@@ -15,6 +15,7 @@ public class AttackState : State
 
     public void OnEnter()
     {
+        _client.soundEfects.PlaySoundFromGroup(0);
         _client.player.urp.StartCoroutine(_client.player.urp.damageURP());
         _client.player._score -= 50;
         _client.player._cordura -= _client.player.getDamage;

@@ -6,7 +6,7 @@ public class ActivarTVManagerConQ : MonoBehaviour
     [SerializeField] private GameObject TVManager;
     [SerializeField] private GameObject canvasActivoEnEscena;
 
-    private bool yaActivado = false;
+    public bool yaActivado = false;
 
     private void Update()
     {

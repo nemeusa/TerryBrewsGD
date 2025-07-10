@@ -14,6 +14,7 @@ public class OrderState : MonoBehaviour, State
 
     public void OnEnter()
     {
+        _client.soundEfects.PlaySoundFromGroup(2);
         _client.dialogue.Charla();
         NuevaPeticion();
         _client.textOrder.gameObject.SetActive(true);

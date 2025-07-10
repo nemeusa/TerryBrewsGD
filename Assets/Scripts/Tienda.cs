@@ -11,10 +11,13 @@ public class Tienda : MonoBehaviour
     public GameObject objetoA;
     private Color _originalColor;
     [SerializeField] ParticleSystem _errorParticles;
+
+    SoundEfects _soundEfects;
     private void Start()
     {
-        _bulletText.text = "$" + _bulletPrice;
-        _medicineText.text = "$" + _medicinePrice;
+        _soundEfects = GetComponent<SoundEfects>();
+       // _bulletText.text = "$" + _bulletPrice;
+        //_medicineText.text = "$" + _medicinePrice;
         _originalColor = objetoA.GetComponent<MeshRenderer>().material.color;
 
     }
@@ -23,11 +26,13 @@ public class Tienda : MonoBehaviour
         if (_player._currentAmmo < _player._maxAmmo)
             if (_player._score >= _bulletPrice)
             {
+                _soundEfects.PlaySoundFromGroup(1);
                 _player.ReloadOneBullet();
                 _player._score -= _bulletPrice;
             }
             else
             {
+                _soundEfects.PlaySoundFromGroup(3);
                 TriggerErrorFeedback();
             }
     }
@@ -36,11 +41,13 @@ public class Tienda : MonoBehaviour
         if(_player._cordura < 100)
             if(_player._score >= _medicinePrice)
             {
+                _soundEfects.PlaySoundFromGroup(2);
                 _player._cordura += _medicine;
                 _player._score -= _medicinePrice;
             }
             else
             {
+                _soundEfects.PlaySoundFromGroup(3);
                 TriggerErrorFeedback();
             }
     }

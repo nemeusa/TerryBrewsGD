@@ -9,8 +9,17 @@ public class SpawnContador : MonoBehaviour
     public Transform spawnPoint; // punto donde aparecerá el texto (puede ser encima de la caja)
     [SerializeField] Player player;
 
+    public SoundEfects soundEfects;
+
+    private void Start()
+    {
+        soundEfects = GetComponent<SoundEfects>();
+
+    }
+
     public void MostrarGanancia(float cantidad)
     {
+        soundEfects.PlaySoundFromGroup(0);
         GameObject texto = Instantiate(moneyTextPrefab, spawnPoint.position, Quaternion.identity);
         texto.transform.SetParent(null); // importante si el prefab estaba ligado al canvas en World Space
 
@@ -21,6 +30,7 @@ public class SpawnContador : MonoBehaviour
 
     public void DescontarGanancia(float cantidad)
     {
+        soundEfects.PlaySoundFromGroup(1);
         GameObject texto = Instantiate(moneyTextPrefab, spawnPoint.position, Quaternion.identity);
        // texto.transform.SetParent(null); // importante si el prefab estaba ligado al canvas en World Space
 
