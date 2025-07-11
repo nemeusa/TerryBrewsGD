@@ -25,15 +25,13 @@ public class TVImages : MonoBehaviour
             screenRenderer.material.mainTexture = tvScreens[currentIndex];
     }
 
-    void OnMouseDown() // Solo funciona si hay un collider en el objeto
+    void OnMouseDown() 
     {
         if (tvScreens.Length == 0 || screenRenderer == null) return;
 
-        // Cambiar imagen
         currentIndex = (currentIndex + 1) % tvScreens.Length;
         screenRenderer.material.mainTexture = tvScreens[currentIndex];
 
-        // Sonido
         if (audioSource != null && switchSound != null)
         {
             audioSource.PlayOneShot(switchSound);
