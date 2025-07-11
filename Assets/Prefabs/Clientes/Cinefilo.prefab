@@ -469,38 +469,34 @@ MonoBehaviour:
   currentRequest: 
   currentDialogue: "Me dan miedo las ara\xF1as"
   charlaGood:
-  - "La animaci\xF3n tambien puede ser un metodo para contar historias adultas"
-  - "Cualquier pelicula es buena siempre y cuando gener\xE9 algo en uno"
-  - Quiero ver SuperMonster
-  - Mi Transformer favorito, Bonvolvi
-  - "No todas las sagas de peliculas deber\xEDan continuar"
-  - Lo hacemos por la familia
-  - "El otro d\xEDa v\xED: El Planeta de los Humanos: una obra que demuestra como
-    cambiar\xEDa nuestro planeta si los monstruos dejan de ser la especie dominante. "
-  - Vean Monsters Inc
-  - Godzilla es buenisima
-  - Van Hellsing me da miedo
-  - Vean Breaking Good
-  - 'La mejor serie local: Los simulamonsters'
-  - 'La mejor serie local: Casados con Diablillos'
-  - Pongan Dragon Ball Z
+  - "\xBFHay algo elegante como un cl\xE1sico? "
+  - 'Quiero algo misterioso, como un thriller.  '
+  - "\xBFTienes algo intrigante, como un misterio?  "
+  - 'Quiero algo fuerte, como un villano.  '
+  - "\xBFTienes algo para una noche de pel\xEDcula?  "
+  - 'Quiero algo de suspense, por favor.  '
+  - "\xBFMe haces algo con un giro inesperado?  "
+  - "Necesito algo suave, como una animaci\xF3n.  "
+  - "\xBFMe preparas algo como un romance de cine?  "
+  - "\xBFMe haces algo dulce, como un final feliz?  "
+  - Quiero algo digno de oscar
+  - "Necesito algo cl\xE1sico como una pel\xED de culto."
+  - "\xBFTienes algo tan \xE9pico como una saga de aventuras?"
+  - Quiero un trago que sepa a pantalla grande.
   charlaBad:
-  - Solamente las mentes privilegiadas pueden entender las obras de culto...
-  - "La gente deber\xEDa ver unicamente peliculas profundas y con grandes historias..."
-  - 'El cine se lleno de basuras indeseables... '
-  - "La animaci\xF3n nunca ser\xE1 un metodo para contar historias adultas"
-  - La mejor pelicula de la historia. Black Adam
-  - La Piedra actua muy bien
-  - 'Las sagas de peliculas siempre deben continuar. '
-  - "En el espacio nadie te oir\xE1 gritar "
-  - Yo soy tu hijo
-  - Revivan el Snyderverso
-  - 'Las peliculas se deben ver SOLAMENTE en el cine '
-  - ' Los supermonstruos estan arruinando la industria'
-  - Breaking Good es muy mala
-  - Ya no hay peliculas originales
-  - Saquen Dragon Ball Z
-  - 'Hola soy de Netflix estamos interesados en Terribrews: La Peli '
+  - "Quiero algo como un final, pero sin cl\xEDmax"
+  - Hazme algo sin trama.
+  - "Hazme una pel\xEDcula de arte, pero sin arte."
+  - "Quiero algo como una pel\xEDcula sin desarrollo."
+  - Quiero algo como una protagonista sin desarrollo.
+  - Busco una bebida sin trama.
+  - "Me gustar\xEDa una secuela innecesaria."
+  - Un trago de la Roca.
+  - Hazme algo como sin sentido.
+  - Una bebida digna de Razzi.
+  - "Quiero una adaptaci\xF3n libre."
+  - "Me gustar\xEDa un gui\xF3n obvio."
+  - "Dame lo m\xE1s gen\xE9rico, por favor.  "
   agua: {r: 0.31764707, g: 0.7607844, b: 0.7607844, a: 1}
   jugo: {r: 1, g: 0.20784314, b: 0, a: 1}
   cerveza: {r: 0.97938144, g: 1, b: 0, a: 1}
@@ -522,6 +518,11 @@ MonoBehaviour:
   randomBlock: 0
   _barManeger: {fileID: 0}
   soundEfects: {fileID: 0}
+  opciones:
+  - Agua
+  - Jugo
+  - Cerveza
+  - Gaseosa
 --- !u!114 &2126117079663860971
 MonoBehaviour:
   m_ObjectHideFlags: 0
