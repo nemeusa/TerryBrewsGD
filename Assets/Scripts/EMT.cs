@@ -1,39 +1,45 @@
 using UnityEngine;
 using System.Collections;
 
-public class EMTActivator : MonoBehaviour
+public class EMTActivator3D : MonoBehaviour
 {
-    [Header("Objeto a activar")]
+    [Header("Objeto 3D")]
     [SerializeField] private GameObject targetObject;
+    [SerializeField] private MeshRenderer meshRenderer;
+
+    [Header("Texturas aleatorias")]
+    [SerializeField] private Texture[] textures;
 
     [Header("Animación")]
     [SerializeField] private Vector3 targetScale = new Vector3(1.5f, 1.5f, 1.5f);
     [SerializeField] private float growDuration = 0.5f;
     [SerializeField] private float activeTime = 5f;
 
-    private string code = "EMT";
+    [Header("Código secreto")]
+    [SerializeField] private string code = "EMT";
     private int codeIndex = 0;
-    private Vector3 originalScale;
 
     void Start()
     {
         if (targetObject != null)
         {
             targetObject.SetActive(false);
-            originalScale = targetObject.transform.localScale;
+            targetObject.transform.localScale = Vector3.zero;
         }
+
+        if (meshRenderer == null && targetObject != null)
+            meshRenderer = targetObject.GetComponent<MeshRenderer>();
     }
 
     void Update()
     {
         if (Input.anyKeyDown)
         {
-            string keyPressed = Input.inputString.ToUpper();
+            string key = Input.inputString.ToUpper();
 
-            if (keyPressed == code[codeIndex].ToString())
+            if (key == code[codeIndex].ToString())
             {
                 codeIndex++;
-
                 if (codeIndex >= code.Length)
                 {
                     codeIndex = 0;
@@ -42,20 +48,25 @@ public class EMTActivator : MonoBehaviour
             }
             else
             {
-                codeIndex = 0; // reinicia si se presiona algo incorrecto
+                codeIndex = 0;
             }
         }
     }
 
     void ActivateObject()
     {
-        if (targetObject == null) return;
+        // Cambiar textura aleatoria
+        if (textures.Length > 0 && meshRenderer != null)
+        {
+            int index = Random.Range(0, textures.Length);
+            meshRenderer.material.mainTexture = textures[index];
+        }
 
         StopAllCoroutines();
-        StartCoroutine(GrowAndHide());
+        StartCoroutine(GrowAndShrink());
     }
 
-    IEnumerator GrowAndHide()
+    IEnumerator GrowAndShrink()
     {
         targetObject.transform.localScale = Vector3.zero;
         targetObject.SetActive(true);
@@ -73,7 +84,16 @@ public class EMTActivator : MonoBehaviour
 
         yield return new WaitForSeconds(activeTime);
 
+        elapsed = 0f;
+        while (elapsed < growDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / growDuration;
+            targetObject.transform.localScale = Vector3.Lerp(targetScale, Vector3.zero, t);
+            yield return null;
+        }
+
+        targetObject.transform.localScale = Vector3.zero;
         targetObject.SetActive(false);
-        targetObject.transform.localScale = originalScale;
     }
 }
