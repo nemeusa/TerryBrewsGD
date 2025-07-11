@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -300,8 +300,8 @@ MonoBehaviour:
   _pumpHandAni: {fileID: 1756600672}
   _pumpBarAni: {fileID: 756463642}
   _sceneLose: LoseNight1
-  _sceneWin: Night2Transition
-  _cashCondition: 1000
+  _sceneWin: Menu
+  _cashCondition: 500
   getDamage: 15
   contador: {fileID: 800799323}
 --- !u!23 &40187295
@@ -6837,7 +6837,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &239818985
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13553,7 +13553,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &591308489
 Transform:
   m_ObjectHideFlags: 0
@@ -30930,7 +30930,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &911509687
 Transform:
   m_ObjectHideFlags: 0
@@ -32947,7 +32947,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1270652021
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56713,7 +56713,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1859086996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58591,7 +58591,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2137101947
 RectTransform:
   m_ObjectHideFlags: 0
@@ -58740,6 +58740,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ThemesManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574422499373784804, guid: 0c559bcbc482c52429474cc37e165227,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8260636306521220205, guid: 0c559bcbc482c52429474cc37e165227,
         type: 3}
@@ -59484,6 +59489,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TV
+      objectReference: {fileID: 0}
+    - target: {fileID: 1420604603539987425, guid: 299355ffafaa6b043ad0d1b56ae6bd7d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5470588693555619014, guid: 299355ffafaa6b043ad0d1b56ae6bd7d,
         type: 3}
@@ -60298,6 +60308,11 @@ PrefabInstance:
       objectReference: {fileID: 40187294}
     - target: {fileID: 5596159200354331654, guid: f80945bda8d998e499aa70895b998213,
         type: 3}
+      propertyPath: tutorial
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596159200354331654, guid: f80945bda8d998e499aa70895b998213,
+        type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -60313,9 +60328,19 @@ PrefabInstance:
       objectReference: {fileID: 1879261662}
     - target: {fileID: 5596159200354331654, guid: f80945bda8d998e499aa70895b998213,
         type: 3}
+      propertyPath: _goodClients
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596159200354331654, guid: f80945bda8d998e499aa70895b998213,
+        type: 3}
       propertyPath: spawnPointRight
       value: 
       objectReference: {fileID: 1957372162}
+    - target: {fileID: 5596159200354331654, guid: f80945bda8d998e499aa70895b998213,
+        type: 3}
+      propertyPath: allChairs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5596159200354331654, guid: f80945bda8d998e499aa70895b998213,
         type: 3}
       propertyPath: allChairs.Array.data[0]
@@ -60326,6 +60351,17 @@ PrefabInstance:
       propertyPath: allChairs.Array.data[1]
       value: 
       objectReference: {fileID: 702410741}
+    - target: {fileID: 5596159200354331654, guid: f80945bda8d998e499aa70895b998213,
+        type: 3}
+      propertyPath: _currentClientPrefab.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596159200354331654, guid: f80945bda8d998e499aa70895b998213,
+        type: 3}
+      propertyPath: _currentClientPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 2083364825804263593, guid: 8b83ff20591bd4947b51a92a3bb5a2a5,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -70,10 +70,23 @@ public class OrderState : MonoBehaviour, State
 
     public void NuevaPeticion()
     {
-       
-       // string[] opciones = { "Agua", "Jugo", "Cerveza", "Gaseosa" };
+
+        // string[] opciones = { "Agua", "Jugo", "Cerveza", "Gaseosa" };
+
+        if (_client._barManeger.tutorial)
+        {
+            _client.currentRequest = _client.opciones[_client._barManeger.indexBebida];
 
 
+            // Incrementa el índice y reinicia si se pasa del final
+            _client._barManeger.indexBebida++;
+            if (_client._barManeger.indexBebida >= _client.opciones.Length)
+            {
+                _client._barManeger.indexBebida = 0;
+            }
+        }
+
+        else
         _client.currentRequest = _client.opciones[UnityEngine.Random.Range(0, _client.opciones.Length)];
     }
 }

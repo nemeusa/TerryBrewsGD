@@ -304,8 +304,8 @@ MonoBehaviour:
   - hoy fue un dia duro
   - Buenos dias
   - VAMO MESSI
-  - Juegen Ambidextro
-  - Hechen paja
+  - tengo sed
+  - h
   - El mejor bar de la cuadra
   - 'Exceso de Facha '
   charlaBad:
@@ -368,9 +368,11 @@ MonoBehaviour:
   soundEfects: {fileID: 0}
   opciones:
   - Agua
+  - Cerveza
+  - Agua
   - Jugo
   - Cerveza
-  - Gaseosa
+  - Cerveza
 --- !u!114 &8876974062738350056
 MonoBehaviour:
   m_ObjectHideFlags: 0

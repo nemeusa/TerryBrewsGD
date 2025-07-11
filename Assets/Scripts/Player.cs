@@ -199,8 +199,6 @@ public class Player : MonoBehaviour
         _scoreText.text = "$ " + _score;
         _selectionText.text = "Tienes: " + _selectedDrink;
 
-        if (_score == 1000)
-            StartCoroutine(Win());
 
         if (_cordura <= 0) 
         {
@@ -212,9 +210,7 @@ public class Player : MonoBehaviour
 
         if (_score >= _cashCondition)
         {
-            //void LoadScene(string sceneName)
-            //{           
-            //}
+            StartCoroutine(Win());
         }
 
         if (Input.GetKeyDown(KeyCode.A)) help = !help;
@@ -244,7 +240,7 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(0.25f);
         urp._shootURP.SetActive(false);
         urp._damageURP.SetActive(false);
-        SceneManager.LoadScene("Win");
+        SceneManager.LoadScene(_sceneWin);
     }
 
         void vinetta()
@@ -294,9 +290,9 @@ public class Player : MonoBehaviour
 
                 if (_client.imposter)
                 {
-                    _score += 50;
-                    contador.MostrarGanancia(50);
-                    _cordura += _corduraDanio;
+                    _score += 75;
+                    contador.MostrarGanancia(75);
+                    //_cordura += _corduraDanio;
                     StartCoroutine(correct());
                 }
                 else

@@ -32,6 +32,7 @@ public class BarManager : MonoBehaviour
     public bool tutorial;
     public int indexGood = 0;
     public int indexBad = 0;
+    public int indexBebida = 0;
 
 
     private void Start()
