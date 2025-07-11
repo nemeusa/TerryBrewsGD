@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-
+using static Unity.VisualScripting.Member;
+using UnityEngine.SceneManagement;
 [RequireComponent(typeof(AudioSource))]
 public class AudioManager : MonoBehaviour
 {
@@ -21,21 +22,42 @@ public class AudioManager : MonoBehaviour
     public float MusicVol { get { return _musicVol; } set { _musicVol = value; } }
     private float _sfxVol = 0.0f;
     public float SfxVol { get { return _sfxVol; } set { _sfxVol = value; } }
+  // Agrega esto arriba
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Detiene la música cuando cambia la escena
+        if (_source.isPlaying)
+        {
+            _source.Stop();
+            _source.clip = null;
+        }
+    }
 
     private void Awake()
     {
-        #region Instance
-        if (!Instance)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-        #endregion
-        _source = GetComponent<AudioSource>();
+            #region Instance
+            if (!Instance)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+            #endregion
+            _source = GetComponent<AudioSource>();
     }
 
     public void SetMasterVolume(float value)

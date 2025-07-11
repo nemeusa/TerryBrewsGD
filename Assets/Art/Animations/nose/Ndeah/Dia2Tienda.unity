@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 12505775}
   - component: {fileID: 12505774}
   - component: {fileID: 12505773}
-  - component: {fileID: 12505772}
+  - component: {fileID: 12505776}
   m_Layer: 0
   m_Name: EMT
   m_TagString: Untagged
@@ -142,27 +142,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!65 &12505772
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 12505771}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &12505773
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -213,21 +192,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 12505771}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &12505775
-Transform:
+--- !u!224 &12505775
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 12505771}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.19, y: 4, z: 3.16}
+  m_LocalPosition: {x: 0, y: 0, z: 3.16}
   m_LocalScale: {x: 2.7147, y: -1.9533896, z: -0.9640443}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.19, y: 4}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &12505776
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12505771}
+  m_CullTransparentMesh: 1
 --- !u!1 &16066957
 GameObject:
   m_ObjectHideFlags: 0
@@ -57416,9 +57407,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetObject: {fileID: 12505771}
+  meshRenderer: {fileID: 12505773}
+  textures:
+  - {fileID: 2800000, guid: 37d54c60652565c4eb351fa41835d8c7, type: 3}
+  - {fileID: 2800000, guid: 4ded834a0d5663941b4867b67ef7911a, type: 3}
+  - {fileID: 2800000, guid: d4d37bdaf3ff63942a23c695c7696f89, type: 3}
+  - {fileID: 2800000, guid: 9bce7da6bf6e0eb42b2dfa494c1d925c, type: 3}
+  - {fileID: 2800000, guid: 3170c494a959e1a40b39b407ecc443f4, type: 3}
+  - {fileID: 2800000, guid: e31d125b9eafd394fb9771fb0524f4d8, type: 3}
+  - {fileID: 2800000, guid: b6c0961d298d853498374d86b7a585e6, type: 3}
+  - {fileID: 2800000, guid: 815cff50f11292f4484a4451eeedf5ae, type: 3}
+  - {fileID: 2800000, guid: 62ab3d18f1ef04b4c8d2eefcda33154c, type: 3}
+  - {fileID: 2800000, guid: 2c538e5393e6ad14fa5bbad5d697ce7e, type: 3}
   targetScale: {x: 1.5, y: 1.5, z: 1.5}
-  growDuration: 0.5
-  activeTime: 5
+  growDuration: 1.5
+  activeTime: 3
+  code: EMT
 --- !u!1 &1865778131
 GameObject:
   m_ObjectHideFlags: 0
