@@ -257,6 +257,10 @@ MonoBehaviour:
     - che, no tendras una estufa?
     - toy helao
     - lpm me olvide la campera
+    - el clima aumenta mi escracha
+    - "Me congel\xE9 las manos jugando."
+    - Este clima me pone lento hasta jugando.
+    - Mis manos tiemblan, necesito calor.
   - theme: 1
     type: 0
     phrases:
@@ -264,17 +268,28 @@ MonoBehaviour:
     - '**abre la ventana**'
     - estoy sudadisimo
     - un ventilador quedaria piola
+    - El sudor me molesta al jugar.
+    - Me cuesta pensar con tanto calor.
+    - "Ojal\xE1 tuviera aire acondicionado."
   - theme: 2
     type: 1
     phrases:
     - un hdrp me rayo todo el auto en la ruta
     - no se puede manegar con este trafico
     - vivo a 2 cuadras, 3 horas para llegar aca en auto
+    - "El tr\xE1fico casi me arruina la partida"
+    - "Entre el tr\xE1nsito y el juego, no paro."
+    - "El tr\xE1fico arruin\xF3 mis planes de juego."
+    - "Con tanto tr\xE1fico llegu\xE9 tarde a la partida."
   - theme: 3
     type: 1
     phrases:
     - estuvo tranki el viaje
     - llegue en 10 minutardos, piola
+    - "Me sent\xED tranquilo manejando, ahora a jugar."
+    - El camino despejado es un lujo que agradezco.
+    - "El viaje fue c\xF3modo, nada de estr\xE9s."
+    - ni un alma en la carretera
   currentDialogue: 
   Theme: 
   _client: {fileID: 80842431327447635}
@@ -300,57 +315,27 @@ MonoBehaviour:
   currentRequest: 
   currentDialogue: "Me dan miedo las ara\xF1as"
   charlaGood:
-  - "Los juegos deber\xEDan ser del jugardor"
-  - Warzone pesa demasiado. Ya no tengo espacio
-  - Jueguen The Saviour
-  - Jueguen Untill Sunshine Meet Us
-  - UBISOFT REVIVAN A RAYMAN
-  - Me gustan los RTS
-  - Tenes alguna maquinita en el bar?
-  - '*Balatreando*'
-  - Queremos Battlefront 3
-  - "Tengo que irme r\xE1pido. Me faltan 2 logros para platinarme Terraria."
-  - "R\xE1pido, tengo que seguir grindeando."
-  - "Ayer termin\xE9 mi granja automatica de Hierro. Ahora genero 2300 stack por
-    hora."
-  - "Estoy buscando gente para una Raid. \xBFSabes si alguno se copa?"
-  - No puedo esperar para llegar a mi casa y jugar Terribrews
-  - No puedo esperar para llegar a mi casa y jugar Terribrews
-  - Me gusta mucho Crash Bandicoot
-  - Jueguen cub.E
+  - Hoy tuve una buena racha, vengo a festejar
+  - "\xBFTen\xE9s Wi-Fi en este bar? \xA1Necesito subir mi \xFAltima partida!"
+  - Este bar tiene mejor ping que mi casa
+  - "No hay nada mejor que cerrar el d\xEDa con una bebida tranquila"
+  - Vengo de jugar
+  - "Gan\xE9 con lo justo, qu\xE9 emoci\xF3n."
+  - Estoy mejorando en estrategia.
+  - Lo mejor es cuando todo fluye.
+  - Jugar me ayuda a pensar mejor.
+  - Me gusta mejorar cada partida.
   charlaBad:
-  - League of Legends
-  - Los desarrolladores son todos unos vagos
-  - Los programadores son todos unos vagos
-  - Los artistas son todos unos vagos
-  - Xbox esta ganando la guerra de consolas
-  - "Ayer jugu\xE9 Hytale"
-  - Siempre compro en Epic Games Store
-  - Creo que un juego a 100 USD es poco. Las empresas deberian determinar el precio.
-  - "Albion online es un mmorpg no lineal en el que escribes tu propia historia sin
-    limitarte a seguir un camino prefijado, explora un amplio mundo abierto con cinco
-    biomas unicos, todo cuanto hagas tendra su repercus\xEDon en el mundo, con su
-    economia orientada al jugador de albion los jugadores crean practicamente todo
-    el equipo a partir de los recursos que consiguen, el equipo que llevas define
-    quien eres, cambia de arma y armadura para pasar de caballero a mago o juego
-    como una mezcla de ambas clases, aventurate en el mundo abierto y haz frente
-    a los habitantes y las criaturas de albion, inicia expediciones o adentrate en
-    mazmorras en las que encontraras enemigos aun mas dificiles, enfrentate a otros
-    jugadores en encuentros en el mundo abierto, lucha por los territorios o por
-    ciudades enteras en batallas tacticas, relajate en tu isla privada donde podras
-    construir un hogar, cultivar cosechas, criar animales, unete a un gremio, todo
-    es mejor cuando se trabaja en grupo [musica] adentrate ya en el mundo de albion
-    y escribe tu propia historia."
-  - "La industria muri\xF3 en Reach"
-  - "\xBFDisculpa tenes para jugar al Golum?"
-  - '*Concordeando*'
-  - "Deber\xEDan remasterizar ET de Atari"
-  - 'Warzone pesa muy poco. '
-  - Ya estoy esperando el siguente FIFA
-  - Los mejores exclusivos, solamente en Playstation.
-  - Ayer vino Miyasaki
-  - Ayer vino Kojima
-  - Mi hijo genera ingresos pasivos en Roblox
+  - "Nunca entend\xED qu\xE9 tiene de divertido estar tantas horas frente a una pantalla"
+  - la gente pierde el tiempo con jueguitos
+  - Si pierdo, rompo todo.
+  - "Apagu\xE9 la consola a las pi\xF1as."
+  - "Perd\xED y le pegu\xE9 al teclado. Otra vez"
+  - Yo no juego... yo ataco.
+  - No vine a jugar, vine a descargar bronca
+  - Este juego esta mal hecho.
+  - "Me enoj\xE9 tanto que mord\xED el cable."
+  - '**jumpscare**'
   agua: {r: 0.31764707, g: 0.7607844, b: 0.7607844, a: 1}
   jugo: {r: 1, g: 0.20784314, b: 0, a: 1}
   cerveza: {r: 0.97938144, g: 1, b: 0, a: 1}
