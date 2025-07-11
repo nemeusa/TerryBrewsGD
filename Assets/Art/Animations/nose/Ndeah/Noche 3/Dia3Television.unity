@@ -238,6 +238,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96ad65577b9d01f41b4ca21501f4819a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneLose: LoseN3
+  _sceneWin: Night3Transition
+  _cashCondition: 1250
+  getDamage: 15
+  contador: {fileID: 800799323}
   _shotgunAudioSource: {fileID: 1756600673}
   _shotgunSound: {fileID: 8300000, guid: 1f2ee0dbbda20234a86b8671bb3ebeb3, type: 3}
   _emptyShotSound: {fileID: 8300000, guid: ede821b5f6175fd469389cd79d65aeb7, type: 3}
@@ -279,9 +284,9 @@ MonoBehaviour:
   - {fileID: 1947994612}
   - {fileID: 929019159}
   - {fileID: 263649397}
-  _currentAmmo: 10
+  _currentAmmo: 6
   _maxAmmo: 10
-  _blockDurationAfterShot: 2
+  _blockDurationAfterShot: 1
   _doubleShotCooldown: 5
   _corduraPenalty: 20
   aberrationOscStrength: 0.03
@@ -299,11 +304,6 @@ MonoBehaviour:
   help: 0
   _pumpHandAni: {fileID: 1756600672}
   _pumpBarAni: {fileID: 756463642}
-  _sceneLose: LoseNight1
-  _sceneWin: Night2Transition
-  _cashCondition: 1000
-  getDamage: 15
-  contador: {fileID: 800799323}
 --- !u!23 &40187295
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8410,7 +8410,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 422d20c71b7bb5347b3174fb550a0653, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.217
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -14240,7 +14240,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &642293439
 Transform:
   m_ObjectHideFlags: 0
@@ -33603,7 +33603,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1333889308
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -58958,7 +58958,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2124632467
 Transform:
   m_ObjectHideFlags: 0

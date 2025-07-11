@@ -6,24 +6,51 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: 08682307573f46a4e94138f1fcb00aa8
-  - enabled: 1
-    path: Assets/Scenes/Night0.unity
-    guid: 138c1794e85e27a4eb0ce8a7c7cf803b
-  - enabled: 1
-    path: Assets/Scenes/Night0Transition.unity
-    guid: 40479733a0ce2324689c6b12d7979850
-  - enabled: 1
-    path: Assets/Art/Animations/nose/Ndeah/Dia0Tutorial.unity
+    path: Assets/Art/Animations/nose/Ndeah/Noche 0/Dia0Tutorial.unity
     guid: 1865bdc57cf4aff4f99ba53aafbb359a
   - enabled: 1
-    path: Assets/Scenes/Win.unity
+    path: Assets/Art/Animations/nose/Ndeah/Noche 1/Dia1EscopetaCordura.unity
+    guid: 3eac13b72a34c45438a8fcf1c7efb2f6
+  - enabled: 1
+    path: Assets/Art/Animations/nose/Ndeah/Noche 2/Dia2Tienda.unity
+    guid: 991686539b6c50a47aabce01e4f2e379
+  - enabled: 1
+    path: Assets/Art/Animations/nose/Ndeah/Noche 3/Dia3Television.unity
+    guid: 78bcaa40544cb65468531530d8619fc9
+  - enabled: 1
+    path: Assets/Art/Animations/nose/Ndeah/Noche 4/Dia4TePongo.unity
+    guid: a7101624d05745446965e45c01b1d7b2
+  - enabled: 1
+    path: Assets/Art/Animations/nose/Ndeah/Noche 4/Win.unity
     guid: 19415a15588c7ae47ab3ecfebbc20207
   - enabled: 1
-    path: Assets/Scenes/LoseNight0.unity
+    path: Assets/Art/Animations/nose/Ndeah/Menu.unity
+    guid: 08682307573f46a4e94138f1fcb00aa8
+  - enabled: 1
+    path: Assets/Art/Animations/nose/Ndeah/Noche 0/LoseN.unity
     guid: a04448e4fc645a24abace7137a15d0f5
   - enabled: 1
-    path: Assets/Scenes/LoseNight1.unity
-    guid: be97c725dd033ae4c8c06b2c1fcf984f
+    path: Assets/Art/Animations/nose/Ndeah/Noche 1/LoseN1.unity
+    guid: 289ecd9645102e04fa27f7a1808c7a00
+  - enabled: 1
+    path: Assets/Art/Animations/nose/Ndeah/Noche 2/LoseN2.unity
+    guid: 485485e15274e484eaa8dbbd49f5b98e
+  - enabled: 1
+    path: Assets/Art/Animations/nose/Ndeah/Noche 3/LoseN3.unity
+    guid: 557598b6a4989474d86aff17e321c838
+  - enabled: 1
+    path: Assets/Art/Animations/nose/Ndeah/Noche 4/LoseN4.unity
+    guid: 72cdf4f9839979e4f91d0abfe19a7eb7
+  - enabled: 1
+    path: Assets/Art/Animations/nose/Ndeah/Noche 0/Night0Transition.unity
+    guid: c0670e331782b9044ae62797d592eba2
+  - enabled: 1
+    path: Assets/Art/Animations/nose/Ndeah/Noche 1/Night1Transition.unity
+    guid: 40479733a0ce2324689c6b12d7979850
+  - enabled: 1
+    path: Assets/Art/Animations/nose/Ndeah/Noche 2/Night2Transition.unity
+    guid: 855de3643358e634e9b612829be85678
+  - enabled: 1
+    path: Assets/Art/Animations/nose/Ndeah/Noche 3/Night3Transition.unity
+    guid: 169aa094bdbf90d45b13aaa8ce39fa62
   m_configObjects: {}

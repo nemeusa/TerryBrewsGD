@@ -9,6 +9,12 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     //..- -. .- / .--. .. .--- .- / -.. . / -.-. --- -.. .. --. --- .-.-. 
+    [Header("Scene")]
+    [SerializeField] string _sceneLose, _sceneWin;
+    [SerializeField] int _cashCondition = 1000;
+    public int getDamage = 10;
+
+    public SpawnContador contador;
     [Header("Audio")]
     [SerializeField] AudioSource _shotgunAudioSource;
     [SerializeField] AudioClip _shotgunSound;
@@ -83,12 +89,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] Animator _pumpHandAni, _pumpBarAni;
 
-    [SerializeField] string _sceneLose, _sceneWin;
-    [SerializeField] int _cashCondition = 1000;
-
-    public int getDamage = 10;
-
-    public SpawnContador contador;
+    
 
     private void Awake()
     {
