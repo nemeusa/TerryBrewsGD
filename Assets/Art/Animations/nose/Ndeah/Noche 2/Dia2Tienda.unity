@@ -60981,6 +60981,29 @@ PrefabInstance:
       propertyPath: allChairs.Array.data[1]
       value: 
       objectReference: {fileID: 702410741}
+    - target: {fileID: 5596159200354331654, guid: f80945bda8d998e499aa70895b998213,
+        type: 3}
+      propertyPath: _currentClientPrefab.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596159200354331654, guid: f80945bda8d998e499aa70895b998213,
+        type: 3}
+      propertyPath: _currentClientPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 2083364825804263593, guid: 2593ea1a99f5de544b42c8b23430dc08,
+        type: 3}
+    - target: {fileID: 5596159200354331654, guid: f80945bda8d998e499aa70895b998213,
+        type: 3}
+      propertyPath: _currentClientPrefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 2083364825804263593, guid: 6ea9310be88aa324392c66b015357185,
+        type: 3}
+    - target: {fileID: 5596159200354331654, guid: f80945bda8d998e499aa70895b998213,
+        type: 3}
+      propertyPath: _currentClientPrefab.Array.data[2]
+      value: 
+      objectReference: {fileID: 2083364825804263593, guid: 41216ca2fbb64c647817b5990ae20391,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

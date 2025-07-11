@@ -60737,12 +60737,22 @@ PrefabInstance:
       objectReference: {fileID: 1957372162}
     - target: {fileID: 5596159200354331654, guid: f80945bda8d998e499aa70895b998213,
         type: 3}
+      propertyPath: allChairs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596159200354331654, guid: f80945bda8d998e499aa70895b998213,
+        type: 3}
       propertyPath: allChairs.Array.data[0]
+      value: 
+      objectReference: {fileID: 848163340}
+    - target: {fileID: 5596159200354331654, guid: f80945bda8d998e499aa70895b998213,
+        type: 3}
+      propertyPath: allChairs.Array.data[1]
       value: 
       objectReference: {fileID: 1844072800}
     - target: {fileID: 5596159200354331654, guid: f80945bda8d998e499aa70895b998213,
         type: 3}
-      propertyPath: allChairs.Array.data[1]
+      propertyPath: allChairs.Array.data[2]
       value: 
       objectReference: {fileID: 702410741}
     m_RemovedComponents: []
