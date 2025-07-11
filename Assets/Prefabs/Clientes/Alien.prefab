@@ -280,7 +280,7 @@ MonoBehaviour:
   currentDialogue: 
   Theme: 
   _client: {fileID: 80842431327447635}
-  _probabilityTheme: 50
+  _probabilityTheme: 20
 --- !u!114 &80842431327447635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,34 +302,31 @@ MonoBehaviour:
   currentRequest: 
   currentDialogue: "Me dan miedo las ara\xF1as"
   charlaGood:
-  - "\u03F1\u03F1\u027Fild q\u027F\u03C5d qil"
-  - "\u0258v\u0252n \u0252l \u027F\u0252noi\u0254\u0252\u0248\u01A8\u0258 \u0258\u03C5p
-    o\u03F1n\u0258T \u0252zi\u0252m n\u03C5 \u03B3\u0252\u029C \u0258bnob \u01A8\u0258d\u0252\u01A7"
-  - "\u027F\u0258bil \u03C5\u01A8 no\u0254 \u01A8on\u0252v\u0258l"
-  - Wacho sabes donde queda el Uritorco??
+  - "El l\xEDquido que brilla, por favor."
+  - "\xBFEsto no es Kepler?"
+  - Ahum, sustancia efervescente
+  - Sabes donde queda el Uritorco??
   - AYUDA. ME BUSCA EL GOBIERNO
-  - 'Ling ang Guli lin ga gul I '
-  - "Un ni\xF1o vol\xF3 sobre mi y destruy\xF3 un auto con su rasho laser."
-  - Venden gato?? Willy no me deja comerme a Suertudo
-  - Llamen a casa
-  - "\xBFSabes que nosotros construimos las piramides?"
-  - "\xBFSabes donde cargar la Galaxar? se qued\xF3 sin Clorifricato de Gloxinum"
-  - Imagina que tienes dos vacas. Ahora imagina que yo tengo 2
+  - "Mezcla radiante de forma l\xEDquida."
+  - Deseo sabor de estrellas lejanas.
+  - Bebida que ilumina mi esencia
+  - Llamen a casa.
+  - Deseo sabor de estrellas lejanas.
+  - "\xBFSabes donde cargar la Galaxar? "
+  - 'Imagina que tienes dos vacas. '
+  - Deseo probar sabores humanos
   charlaBad:
   - El ingles es un idioma muy verstil. Lo hablamos hasta en Andromeda.
-  - Venimos en son de paz
-  - We are among us
-  - "Queremos mam\xE1s"
-  - La comida humana es muy deliciosa
-  - "\u0258i\u0254\u0258q\u01A8\u0258 \u03C5 \u0252 \u01A8obiq\u03C5\u0248\u01A8\u0258
-    \u01A8\u0252m n\u0258\u0254\u0252\u029C \u0258\u03C5p \u01A8qi\u029C\u0254 \u01A8om\u0252\u0254i\u027Fd\u0252\u11BF"
-  - Estoy en casa
-  - "Hola querido compatriota terr\xEDcola"
-  - "El Covenant reclamar\xE1 este planeta y a sus habitantes"
-  - "Nadie te oir\xE1 gritar en el espacio"
-  - Te voy a Zipzorgpear
-  - '*Haciendo cosas Humanas*'
-  - "Hola. Deseo liquido de satisfacci\xF3n"
+  - "Esta mezclas son pat\xE9ticas, terr\xEDcola."
+  - Sacrificios para la Reina.
+  - Unete al enjambre.
+  - Estos liquidos son toxicos para la vida.
+  - Este bar pertenece a los Keplitas.
+  - "\xBFEste l\xEDquido los har\xE1 mis esclavos?"
+  - Doblegaremos su voluntad.
+  - ESTAMOS ENTRE USTEDES
+  - "\xA1Exijo tributo para la flota!"
+  - "Te disparar\xE9 con mi Zipparr"
   agua: {r: 0.31764707, g: 0.7607844, b: 0.7607844, a: 1}
   jugo: {r: 1, g: 0.20784314, b: 0, a: 1}
   cerveza: {r: 0.97938144, g: 1, b: 0, a: 1}
@@ -351,6 +348,11 @@ MonoBehaviour:
   randomBlock: 0
   _barManeger: {fileID: 0}
   soundEfects: {fileID: 0}
+  opciones:
+  - Agua
+  - Jugo
+  - Cerveza
+  - Gaseosa
 --- !u!114 &2345098963689230986
 MonoBehaviour:
   m_ObjectHideFlags: 0
