@@ -300,62 +300,49 @@ MonoBehaviour:
   currentRequest: 
   currentDialogue: "Me dan miedo las ara\xF1as"
   charlaGood:
-  - Hola
-  - '*Balatreando*'
-  - Buenos dias
-  - VAMO MESSI
-  - Juegen Ambidextro
-  - Hechen paja
-  - El mejor bar de la cuadra
-  - 'Exceso de Facha '
-  - Dame lo de siempre B)
-  - Lindas fotitos
-  - Hola profe
-  - Buenas Tardes
-  - Juegen The Saviour
-  - Me gustan los gachas
-  - Tengo sed
-  - "Me dan miedo las ara\xF1as"
+  - Hola.
+  - "Me gustar\xEDa algo sorprendente.  "
+  - Buenos dias.
+  - "\xBFCual es el especial de hoy?  "
+  - "\xBFTienen algo dulce para beber?  "
+  - "\xBFAlgo nuevo que probar?  "
+  - El mejor bar de la cuadra.
+  - "\xBFTienes alguna recomendaci\xF3n interesante?  "
+  - Dame lo de siempre.
+  - Lindas fotitos.
+  - Lindo Bar.
+  - Buena Noche.
+  - 'Quiero algo con un toque especial.  '
+  - "Me gustar\xEDa probar todo."
+  - Tengo sed.
+  - "\xBFTienes algo para el calor?  "
   - Tengo una roca mascota. Se llama Gaspacho
-  - Bichito clicker es god
-  - Apoyemos la industria nacional
+  - "Me gustar\xEDa algo suave.  "
+  - Apoyemos la industria nacional.
   charlaBad:
-  - Ola
-  - Tonto
+  - "\xBFNo tienes algo decente?"
+  - "\xA1Ap\xFArate, no tengo tiempo!"
   - '*molesta*'
-  - Skibidi
-  - Gil
-  - Bobalicon
-  - "Albion Online es un mmorpg no lineal, en el que escribes tu propia historia
-    sin limitarte a seguir un camino prefijado. Explora un amplio mundo abierto con
-    5 biomas \xFAnicos, todo cu\xE1nto hagas tendr\xE1 su repercusi\xF3n en el mundo,
-    con la econom\xEDa orientada al jugador de Albion, los jugadores crean pr\xE1cticamente
-    todo el equipo a partir de los recursos que consiguen, el equipo que llevas define
-    qui\xE9n eres, cambia de arma y armadura para pasar de caballero a mago, o juega
-    como una mezcla de ambas clases. Avent\xFArate en el mundo abierto frente a los
-    habitantes y las criaturas de Albion, inicia expediciones o ad\xE9ntrate en mazmorras
-    en las que encontrar\xE1s enemigos a\xFAn m\xE1s dif\xEDciles, enfr\xE9ntate
-    a otros jugadores en encuentros en el mundo abierto, lucha por los territorios
-    o por ciudades enteras en batallas t\xE1cticas, rel\xE1jate en tu isla privada,
-    donde podr\xE1s construir un hogar, cultivar cosechas y criar animales, \xFAnete
-    a un gremio, todo es mejor cuando se trabaja en grupo. Ad\xE9ntrate ya en el
-    mundo de Albion y escribe tu propia historia."
-  - '*lo escupe*'
-  - DEFINITIVAMENTE no soy impostor.-.
-  - Juego brawl stars
-  - Tengo 3 cafeteras
-  - "Atendeme r\xE1pido o te rompo todo el bar"
-  - Dale, haceme un descuento
-  - Este bar no tiene nada bueno
-  - Esto es un robo. Dame todo lo que tengas
-  - Hola no soy el dev
-  - '*Concordeando*'
-  - NO juegen Balatro
-  - Que mal juego
-  - "Ac\xE1 no hay nada bueno "
-  - Los precios son muy altos
+  - "\xBFPor qu\xE9 no sabes qu\xE9 hacer?"
+  - "Dame algo ya. No tengo todo el d\xEDa.  "
+  - Este bar es Horrible.
+  - "\xBFTan complicado es servirme r\xE1pido?  "
+  - "\xA1Dame lo que quiero, r\xE1pido!"
+  - "\xA1Hazlo r\xE1pido, o me voy!"
+  - Te voy a romper todo.
+  - Hay mejores bebidas al lado...
+  - "Atendeme r\xE1pido o te rompo todo el bar."
+  - Dale, haceme un descuento.
+  - Este bar no tiene nada bueno.
+  - Esto es un robo. Dame todo lo que tengas.
+  - "Ap\xFArate, no tengo tiempo."
+  - 'No sigas, o te reviento.  '
+  - Dame algo. Ya me estoy enojando.
+  - Que mal juego.
+  - "Ac\xE1 no hay nada bueno."
+  - Los precios son muy altos.
   - '*Patea la mesa*'
-  - bichito clicker es una mrd
+  - Nunca hay nada bueno.
   agua: {r: 0.31764707, g: 0.7607844, b: 0.7607844, a: 1}
   jugo: {r: 1, g: 0.20784314, b: 0, a: 1}
   cerveza: {r: 0.97938144, g: 1, b: 0, a: 1}
@@ -377,6 +364,11 @@ MonoBehaviour:
   randomBlock: 0
   _barManeger: {fileID: 0}
   soundEfects: {fileID: 0}
+  opciones:
+  - Agua
+  - Jugo
+  - Cerveza
+  - Gaseosa
 --- !u!114 &5046132536428871168
 MonoBehaviour:
   m_ObjectHideFlags: 0
