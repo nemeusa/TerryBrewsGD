@@ -2,6 +2,7 @@ using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Dialogue : MonoBehaviour
 {
@@ -19,13 +20,16 @@ public class Dialogue : MonoBehaviour
     ThemeType themeTypeToUse;
 
     [SerializeField] int _probabilityTheme = 50;
+    BarManager _barManeger;
+    TMP_Text textCharla;
 
     private void Awake()
     {
         _client = GetComponent<Client>();
+        textCharla = _client.textCharla;
     }
 
-    public void Charla()
+    public void CharlaThemes()
     {
        useTheme = Random.Range(0, 101) < _probabilityTheme;
 
@@ -34,7 +38,7 @@ public class Dialogue : MonoBehaviour
             PrepareDialogue();
 
             string frase = GetPhraseByTheme(themeToUse);
-            _client.textCharla.text = frase;
+            textCharla.text = frase;
             currentDialogue = frase;
             Theme = themeToUse.ToString();
 
@@ -42,7 +46,7 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            _client.Charla(); // diálogo neutral
+            Charla(); // diálogo neutral
         }
     }
 
@@ -88,13 +92,13 @@ public class Dialogue : MonoBehaviour
         if (_client.imposter && themeToUse.ToString() == temaCorrecto)
         {
             Debug.Log(" Impostor acertó el tema (falló la mentira)");
-            Charla();
+            CharlaThemes();
         }
 
         else if (!_client.imposter && themeToUse.ToString() != temaCorrecto)
         {
             Debug.Log(" Cliente bueno se equivocó de tema");
-            Charla();
+            CharlaThemes();
         }
     }
 
@@ -111,6 +115,75 @@ public class Dialogue : MonoBehaviour
 
         return "[tema no encontrado]";
     }
+
+    public void Charla()
+    {
+        if(_barManeger == null) _barManeger = _client._barManeger;
+
+        if (!_barManeger.tutorial)
+        {
+
+
+            if (!_client.imposter)
+            {
+
+
+                string charla;
+
+                charla = _client.charlaGood[UnityEngine.Random.Range(0, _client.charlaGood.Length)];
+                textCharla.text = charla;
+                currentDialogue = charla;
+
+            }
+
+            else
+            {
+                string charla;
+
+                charla = _client.charlaBad[UnityEngine.Random.Range(0, _client.charlaBad.Length)];
+                textCharla.text = charla;
+                currentDialogue = charla;
+            }
+        }
+        else
+        {
+
+            if (!_client.imposter)
+            {
+
+
+                string charla;
+                charla = _client.charlaGood[_barManeger.indexGood];
+                _barManeger.indexGood = Mathf.Min(_barManeger.indexGood + 1, _client.charlaGood.Length - 1); // No pasar el límite
+                textCharla.text = charla;
+                currentDialogue = charla;
+
+            }
+
+            else
+            {
+                string charla;
+                charla = _client.charlaBad[_barManeger.indexBad];
+                _barManeger.indexBad = Mathf.Min(_barManeger.indexBad + 1, _client.charlaBad.Length - 1);
+                textCharla.text = charla;
+                currentDialogue = charla;
+            }
+        }
+    }
+
+
+
+    public void TextColor()
+    {
+        if (_client.player.help)
+        {
+            if (!_client.imposter) textCharla.color = UnityEngine.Color.green;
+            else textCharla.color = UnityEngine.Color.red;
+        }
+
+        else textCharla.color = UnityEngine.Color.white;
+    }
+
 }
 
 

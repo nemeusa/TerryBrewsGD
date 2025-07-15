@@ -23,12 +23,11 @@ public class Tienda : MonoBehaviour
     }
     public void BuyBullet()
     {
-        if (_player._currentAmmo < _player._maxAmmo)
-            if (_player._score >= _bulletPrice)
+            if (_player._score >= _bulletPrice && _player._currentAmmo < _player._maxAmmo)
             {
                 _soundEfects.PlaySoundFromGroup(1);
                 _player.ReloadOneBullet();
-                _player._score -= _bulletPrice;
+                _player.LessMoney(_bulletPrice);
             }
             else
             {
@@ -38,12 +37,11 @@ public class Tienda : MonoBehaviour
     }
     public void BuyMedicine()
     {
-        if(_player._cordura < 100)
-            if(_player._score >= _medicinePrice)
+            if(_player._score >= _medicinePrice && _player.cordura < 100)
             {
                 _soundEfects.PlaySoundFromGroup(2);
-                _player._cordura += _medicine;
-                _player._score -= _medicinePrice;
+                _player.cordura += _medicine;
+                _player.LessMoney(_medicinePrice);
             }
             else
             {

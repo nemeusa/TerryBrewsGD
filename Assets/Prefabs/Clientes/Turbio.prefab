@@ -325,6 +325,11 @@ MonoBehaviour:
   randomBlock: 0
   _barManeger: {fileID: 0}
   soundEfects: {fileID: 0}
+  opciones:
+  - Agua
+  - Jugo
+  - Cerveza
+  - Gaseosa
 --- !u!114 &-7806644154668933147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,10 +346,15 @@ MonoBehaviour:
   - groupName: Jumpscare
     clips:
     - {fileID: 8300000, guid: 184d6af86792c844690496d369614fd0, type: 3}
-    - {fileID: 8300000, guid: 3a45bff726d19e24386a372bba546271, type: 3}
+    - {fileID: 8300000, guid: c181dedb66b19cf46a58cc8c0675dd61, type: 3}
+    - {fileID: 8300000, guid: 9c53cd2f0f69c93488febf7809b677f3, type: 3}
+    - {fileID: 8300000, guid: 007623a1158da8a41854a19346fd457b, type: 3}
   - groupName: Death
     clips:
-    - {fileID: 8300000, guid: f598818ea9c7faa4980fa2928d64b95b, type: 3}
+    - {fileID: 8300000, guid: 5860198edc81c7144aa56ddfcc926bb4, type: 3}
+    - {fileID: 8300000, guid: 9f3973e6501b15c46be1187721fcde91, type: 3}
+    - {fileID: 8300000, guid: a25c9d13fa34c8140b3e4ecc966bfa13, type: 3}
+    - {fileID: 8300000, guid: e1742218573ef8549b02b62c1ea901fc, type: 3}
   - groupName: Bla bla
     clips:
     - {fileID: 8300000, guid: 8a597dbd053559d46ab5efb14cbabb5e, type: 3}

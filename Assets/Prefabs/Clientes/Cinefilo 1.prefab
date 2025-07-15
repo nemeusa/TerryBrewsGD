@@ -484,19 +484,11 @@ MonoBehaviour:
   - "\xBFTienes algo tan \xE9pico como una saga de aventuras?"
   - Quiero un trago que sepa a pantalla grande.
   charlaBad:
-  - "Quiero algo como un final, pero sin cl\xEDmax"
+  - El cine es una mrd
   - Hazme algo sin trama.
-  - "Hazme una pel\xEDcula de arte, pero sin arte."
-  - "Quiero algo como una pel\xEDcula sin desarrollo."
-  - Quiero algo como una protagonista sin desarrollo.
   - Busco una bebida sin trama.
   - "Me gustar\xEDa una secuela innecesaria."
-  - Un trago de la Roca.
-  - Hazme algo como sin sentido.
-  - Una bebida digna de Razzi.
-  - "Quiero una adaptaci\xF3n libre."
-  - "Me gustar\xEDa un gui\xF3n obvio."
-  - "Dame lo m\xE1s gen\xE9rico, por favor.  "
+  - Brad pitt actua horrible
   agua: {r: 0.31764707, g: 0.7607844, b: 0.7607844, a: 1}
   jugo: {r: 1, g: 0.20784314, b: 0, a: 1}
   cerveza: {r: 0.97938144, g: 1, b: 0, a: 1}
@@ -539,10 +531,15 @@ MonoBehaviour:
   - groupName: Jumpscare
     clips:
     - {fileID: 8300000, guid: 184d6af86792c844690496d369614fd0, type: 3}
-    - {fileID: 8300000, guid: 3a45bff726d19e24386a372bba546271, type: 3}
+    - {fileID: 8300000, guid: c181dedb66b19cf46a58cc8c0675dd61, type: 3}
+    - {fileID: 8300000, guid: 9c53cd2f0f69c93488febf7809b677f3, type: 3}
+    - {fileID: 8300000, guid: 007623a1158da8a41854a19346fd457b, type: 3}
   - groupName: Death
     clips:
-    - {fileID: 8300000, guid: f598818ea9c7faa4980fa2928d64b95b, type: 3}
+    - {fileID: 8300000, guid: 5860198edc81c7144aa56ddfcc926bb4, type: 3}
+    - {fileID: 8300000, guid: 9f3973e6501b15c46be1187721fcde91, type: 3}
+    - {fileID: 8300000, guid: a25c9d13fa34c8140b3e4ecc966bfa13, type: 3}
+    - {fileID: 8300000, guid: e1742218573ef8549b02b62c1ea901fc, type: 3}
   - groupName: Bla bla
     clips:
     - {fileID: 8300000, guid: 8a597dbd053559d46ab5efb14cbabb5e, type: 3}

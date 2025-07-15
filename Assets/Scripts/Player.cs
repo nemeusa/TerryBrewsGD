@@ -27,13 +27,13 @@ public class Player : MonoBehaviour
     private string _selectedDrink = null;
 
     [Header("Puntos y Cordura")]
-    public int _score = 0;
-    public int _cordura = 100;
+    public int cordura = 100;
     public int _corduraDanio = 10;
     public int _corduraMatarCliente = 15;
     [SerializeField] TMP_Text _scoreText;
     [SerializeField] TMP_Text _selectionText;
     [SerializeField] TMP_Text _corduraText;
+    public int _score { get; private set; } = 0;
     public Image _corduraImageFill;
 
     [Header("Condición para usar escopeta")]
@@ -174,7 +174,7 @@ public class Player : MonoBehaviour
                         }
                    // }
                 }
-                if (!_shotgunUsable && _cordura <= _corduraMinEscopeta)
+                if (!_shotgunUsable && cordura <= _corduraMinEscopeta)
                 {
                     _shotgunUsable = true;
                     StartCoroutine(ShowShotgunUnlockFeedback());
@@ -201,13 +201,13 @@ public class Player : MonoBehaviour
         _selectionText.text = "Tienes: " + _selectedDrink;
 
 
-        if (_cordura <= 0) 
+        if (cordura <= 0) 
         {
             //StopAllCoroutines();
             StartCoroutine(Defeat());
         }
-        if (_cordura > 100) _cordura = 100;
-        _corduraText.text = "Cordura: " + _cordura;
+        if (cordura > 100) cordura = 100;
+        _corduraText.text = "Cordura: " + cordura;
 
         if (_score >= _cashCondition)
         {
@@ -219,9 +219,9 @@ public class Player : MonoBehaviour
         vinetta(); 
 
 
-        _corduraImageFill.fillAmount = _cordura / 100f;
+        _corduraImageFill.fillAmount = cordura / 100f;
 
-        if (!_shotgunUsable && _cordura <= _corduraMinEscopeta)
+        if (!_shotgunUsable && cordura <= _corduraMinEscopeta)
         {
             _shotgunUsable = true;
             StartCoroutine(ShowShotgunUnlockFeedback());
@@ -244,18 +244,18 @@ public class Player : MonoBehaviour
         SceneManager.LoadScene(_sceneWin);
     }
 
-        void vinetta()
+    void vinetta()
     {
 
         if (vignette != null)
         {
-            float baseVignette = 1f - (_cordura / 100f);// Inversamente proporcional a la vida      
+            float baseVignette = 1f - (cordura / 100f);// Inversamente proporcional a la vida      
             float oscillation = Mathf.Sin(Time.time * vignetteOscSpeed) * vignetteOscStrength;
             vignette.intensity.value = Mathf.Clamp01(baseVignette + oscillation);
         }
         if (chromAberration != null)
         {
-            float baseAberration = 1f - (_cordura / 100f);// Inversamente proporcional a la vida  
+            float baseAberration = 1f - (cordura / 100f);// Inversamente proporcional a la vida  
             float oscillation = Mathf.Sin(Time.time * aberrationOscSpeed) * aberrationOscStrength;
 
             chromAberration.intensity.value = Mathf.Clamp01(baseAberration + oscillation);
@@ -269,17 +269,17 @@ public class Player : MonoBehaviour
         {
             if (_currentAmmo > 0)
             {
-                float currentTime = Time.time;
-                float timeSinceLastShot = currentTime - _lastShotTime;
-                _lastShotTime = currentTime;
+                //float currentTime = Time.time;
+                //float timeSinceLastShot = currentTime - _lastShotTime;
+                //_lastShotTime = currentTime;
 
-                float blockDuration = _blockDurationAfterShot;
+                //float blockDuration = _blockDurationAfterShot;
 
-                if (timeSinceLastShot < _doubleShotCooldown)
-                {
-                    _cordura -= _corduraPenalty;
-                    blockDuration *= 2f; // Doble castigo
-                }
+                //if (timeSinceLastShot < _doubleShotCooldown)
+                //{
+                //    cordura -= _corduraPenalty;
+                //    blockDuration *= 2f; // Doble castigo
+                //}
 
                 _currentAmmo--;
                 UpdateAmmoVisuals();
@@ -291,21 +291,18 @@ public class Player : MonoBehaviour
 
                 if (_client.imposter)
                 {
-                    _score += 75;
-                    contador.MostrarGanancia(75);
-                    //_cordura += _corduraDanio;
+                    MoreMoney(100);
                     StartCoroutine(correct());
                 }
                 else
                 {
-                    _score -= 200;
-                    contador.DescontarGanancia(200);
-                    _cordura -= _corduraMatarCliente;
+                    LessMoney(200);
+                    cordura -= _corduraMatarCliente;
                     StartCoroutine(Incorrect());
                 }
 
                 StartCoroutine(Shoot());
-                StartCoroutine(BlockPlayerInput(blockDuration));
+                //StartCoroutine(BlockPlayerInput(blockDuration));
             }
             else
             {
@@ -315,6 +312,18 @@ public class Player : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void MoreMoney(int money)
+    {
+        _score += money;
+        contador.MostrarGanancia(money);
+    }
+
+    public void LessMoney(int money)
+    {
+        _score -= money;
+        contador.DescontarGanancia(money);
     }
 
 

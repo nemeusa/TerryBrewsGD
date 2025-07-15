@@ -5,7 +5,7 @@ using System.Collections;
 public class TVManager : MonoBehaviour
 {
     [Header("Referencias")]
-    [SerializeField] private TalksThemes talksThemes;
+    public TalksThemes talksThemes;
     [SerializeField] private VideoPlayer videoPlayer;
     [SerializeField] private Renderer tvRenderer; // El mesh renderer del cubo
 

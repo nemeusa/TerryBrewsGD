@@ -42,7 +42,7 @@ public class HpBarffects : MonoBehaviour
     {
         if (player == null) return;
 
-        float cordura = Mathf.Clamp(player._cordura, 0f, 100f);
+        float cordura = Mathf.Clamp(player.cordura, 0f, 100f);
         float t = 1f - (cordura / 100f); // t = 0 si tiene 100 de vida, t = 1 si tiene 0
 
         // Gradualmente aumenta la intensidad con t

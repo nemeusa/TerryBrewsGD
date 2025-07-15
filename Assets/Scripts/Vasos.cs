@@ -34,7 +34,7 @@ public class Vasos : MonoBehaviour
     {
         if (player == null) return;
 
-        float currentCordura = Mathf.Clamp(player._cordura, 0f, startingCordura);
+        float currentCordura = Mathf.Clamp(player.cordura, 0f, startingCordura);
 
         for (int i = 0; i < corduraBreaks.Length; i++)
         {

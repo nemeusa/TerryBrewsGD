@@ -31,6 +31,14 @@ public class ActivarTVManagerConQ : MonoBehaviour
         }
     }
 
+    private void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(0) && yaActivado)
+        {
+            TVManager.GetComponent<TVManager>().talksThemes.CambiarCanal();
+        }
+    }
+
     private void ActivarYDesactivarCanvas()
     {
         if (TVManager != null)

@@ -15,7 +15,7 @@ public class OrderState : MonoBehaviour, State
     public void OnEnter()
     {
         _client.soundEfects.PlaySoundFromGroup(2);
-        _client.dialogue.Charla();
+        _client.dialogue.CharlaThemes();
         NuevaPeticion();
         _client.textOrder.gameObject.SetActive(true);
         _client.textCharla.gameObject.SetActive(true);
@@ -33,7 +33,7 @@ public class OrderState : MonoBehaviour, State
         _client.colorDrink();
         //Debug.Log("Order");
         _client.chair.Ocuppy();
-        _client.TextColor();
+        _client.dialogue.TextColor();
         //_client.transform.forward = new Vector3 (0, 0, 0.01f);
         
 
@@ -48,10 +48,7 @@ public class OrderState : MonoBehaviour, State
             }
         }
 
-        if (_client.isDeath)
-        {
-            _fsm.ChangeState(TypeFSM.Death);
-        }
+
     }
 
     public void OnExit()
