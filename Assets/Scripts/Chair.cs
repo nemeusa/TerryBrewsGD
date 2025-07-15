@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Chair : MonoBehaviour
 {
     public bool isOcupped{ get; private set; }
     [HideInInspector]
     public Transform seatPosition;
+    public GameObject globo;
+    public TMP_Text textoCharla;
+    public TMP_Text textoPedido;
+    public TMP_Text textoNames;
+    public TMP_Text textoProfesion;
 
     private void Start()
     {
@@ -28,4 +34,5 @@ public class Chair : MonoBehaviour
            // Debug.Log("Libre");
             GetComponent<Renderer>().material.color = Color.green;
     }
+
 }

@@ -76,6 +76,7 @@ public class BarManager : MonoBehaviour
             client.player = _player;
             client._barManeger = this;
             client.AssignChair(freeChair);
+            client.chair = freeChair;
         }
         else
         {

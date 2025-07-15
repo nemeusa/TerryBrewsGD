@@ -21,10 +21,14 @@ public class Client : MonoBehaviour
 
     public TMP_Text textOrder;
     public TMP_Text textCharla;
+    public TMP_Text textNames;
+    public TMP_Text textProfesion;
 
     public string currentRequest;
-
     public string currentDialogue;
+    [SerializeField] string[] names;
+    [SerializeField] string profesion;
+
 
     //public List<string> charlaGood = new List<string>();
 
@@ -69,6 +73,8 @@ public class Client : MonoBehaviour
 
     public string[] opciones = { "Agua", "Jugo", "Cerveza", "Gaseosa" };
 
+    public GameObject globoTexto;
+
     void Awake()
     {
         soundEfects = GetComponent<SoundEfects>();
@@ -83,7 +89,6 @@ public class Client : MonoBehaviour
         _fsm.AddState(TypeFSM.VIP, new VIPState(_fsm, this));
 
         StartCoroutine(StartVars());
-
     }
 
     void Update()
@@ -101,6 +106,12 @@ public class Client : MonoBehaviour
         this.chair = chair;
         this.chair.Ocuppy();
         StartCoroutine(GoSeat());
+        globoTexto = this.chair.globo;
+        textOrder = this.chair.textoPedido;
+        textCharla = this.chair.textoCharla;
+        textNames = this.chair.textoNames;
+        textProfesion = this.chair.textoProfesion;
+
     }
 
     IEnumerator GoSeat()
@@ -137,6 +148,7 @@ public class Client : MonoBehaviour
         if (randomBlock) RandomImposter();
         _fsm.ChangeState(TypeFSM.EnterBar);
 
+        namesAndOffices();
     }
 
     void RandomImposter()
@@ -176,6 +188,49 @@ public class Client : MonoBehaviour
     }
 
     #endregion
+
+    public void TextColor()
+    {
+        if (player.help)
+        {
+            if (!imposter) textCharla.color = UnityEngine.Color.green;
+            else textCharla.color = UnityEngine.Color.red;
+        }
+
+        else textCharla.color = UnityEngine.Color.black;
+    }
+
+
+    public void namesAndOffices()
+    {
+        names = new string[]
+        {
+            "Mateo", "Santiago", "Benjamín", "Thiago", "Joaquín",
+            "Lucas", "Martín", "Nicolás", "Tomás", "Dylan",
+            "Leonardo", "Gabriel", "Matías", "Julián", "Gael",
+            "Lautaro", "Bruno", "Emiliano", "Franco", "Andrés",
+            "Simón", "Alan", "David", "Iván", "Federico",
+            "Juan", "Facundo", "Axel", "Luciano", "Elías",
+            "Agustín", "Jeremías", "Samuel", "Aarón", "Lorenzo",
+            "Nahuel", "Valentino", "Enzo", "Ezequiel", "Maximiliano",
+            "Esteban", "Rodrigo", "Damián", "Leandro", "Sebastián",
+            "Pablo", "Ignacio", "Ramiro", "Rafael", "Adrián",
+            "Hugo", "Mauro", "Ariel", "Marcelo", "Messi", "Ramiro", "Tomé",
+            "Ulises", "Diego", "Amadeo", "Agustin", "Mariano", "Gonzalo",
+            "Alonso", "Camilo", "Cristian", "Lisandro", "Guido",
+            "Ismael", "Rubén", "Ivano", "Víctor", "Hernán",
+            "Fabián", "Lauterio", "César", "Rocco", "Alanis",
+            "Teo", "Blas", "Dante", "Emil", "Aarón",
+            "Ezra", "Josué", "Dorian", "Axelino", "Iker",
+            "Bastián", "Odin", "Baltazar", "Elian", "Joaquim",
+            "Salomón", "Lionel", "Jairo", "Ángel", "Kevin",
+            "Jonás", "Gaetano", "Eitan", "Lázaro", "Matheo", "Federico", "Agustin"
+
+        };
+        
+        textNames.text = names[UnityEngine.Random.Range(0, names.Length)];
+        textProfesion.text = profesion;
+    }
 
 }
 

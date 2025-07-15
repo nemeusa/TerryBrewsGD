@@ -296,13 +296,17 @@ MonoBehaviour:
   player: {fileID: 0}
   textOrder: {fileID: 6911244728761325680}
   textCharla: {fileID: 3633504704470610632}
+  textNames: {fileID: 0}
+  textProfesion: {fileID: 0}
   currentRequest: 
   currentDialogue: "Me dan miedo las ara\xF1as"
+  names: []
+  profesion: Padre
   charlaGood:
   - 
   charlaBad:
   - "O\xF1a"
-  agua: {r: 0.31764707, g: 0.7607844, b: 0.7607844, a: 1}
+  agua: {r: 0, g: 1, b: 1, a: 1}
   jugo: {r: 1, g: 0.20784314, b: 0, a: 1}
   cerveza: {r: 0.97938144, g: 1, b: 0, a: 1}
   gaseosa: {r: 1, g: 0, b: 0.2546935, a: 1}
@@ -328,6 +332,7 @@ MonoBehaviour:
   - Jugo
   - Cerveza
   - Gaseosa
+  globoTexto: {fileID: 0}
 --- !u!114 &7542346264262656157
 MonoBehaviour:
   m_ObjectHideFlags: 0

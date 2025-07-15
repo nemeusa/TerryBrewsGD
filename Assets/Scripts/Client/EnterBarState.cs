@@ -14,8 +14,8 @@ public class EnterBarState : State
     public void OnEnter()
     {
         //_client.Charla();
-        _client.textOrder.gameObject.SetActive(false);
-        _client.textCharla.gameObject.SetActive(false);
+        //_client.textOrder.gameObject.SetActive(false);
+        //_client.textCharla.gameObject.SetActive(false);
     }
 
     public void OnUpdate()

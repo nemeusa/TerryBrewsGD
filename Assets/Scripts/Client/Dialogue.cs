@@ -21,33 +21,38 @@ public class Dialogue : MonoBehaviour
 
     [SerializeField] int _probabilityTheme = 50;
     BarManager _barManeger;
-    TMP_Text textCharla;
+    //TMP_Text textCharla;
+
+    Color _currentColor;
 
     private void Awake()
     {
         _client = GetComponent<Client>();
-        textCharla = _client.textCharla;
+        //textCharla = _client.textCharla;
+        //_currentColor = textCharla.color;
     }
 
     public void CharlaThemes()
     {
        useTheme = Random.Range(0, 101) < _probabilityTheme;
 
+        string frase;
+
         if (useTheme)
         {
             PrepareDialogue();
 
-            string frase = GetPhraseByTheme(themeToUse);
-            textCharla.text = frase;
-            currentDialogue = frase;
+            frase = GetPhraseByTheme(themeToUse);
             Theme = themeToUse.ToString();
 
             Debug.Log($" Cliente habló sobre: {Theme} | Tipo: {themeTypeToUse} | Impostor: {_client.imposter}");
         }
         else
         {
-            Charla(); // diálogo neutral
+            frase = Charla(); // diálogo neutral
         }
+
+        currentDialogue = frase;
     }
 
     void PrepareDialogue()
@@ -116,9 +121,11 @@ public class Dialogue : MonoBehaviour
         return "[tema no encontrado]";
     }
 
-    public void Charla()
+    public string Charla()
     {
         if(_barManeger == null) _barManeger = _client._barManeger;
+
+        string charla;
 
         if (!_barManeger.tutorial)
         {
@@ -128,21 +135,16 @@ public class Dialogue : MonoBehaviour
             {
 
 
-                string charla;
 
                 charla = _client.charlaGood[UnityEngine.Random.Range(0, _client.charlaGood.Length)];
-                textCharla.text = charla;
-                currentDialogue = charla;
+
 
             }
 
             else
             {
-                string charla;
-
                 charla = _client.charlaBad[UnityEngine.Random.Range(0, _client.charlaBad.Length)];
-                textCharla.text = charla;
-                currentDialogue = charla;
+
             }
         }
         else
@@ -150,39 +152,25 @@ public class Dialogue : MonoBehaviour
 
             if (!_client.imposter)
             {
-
-
-                string charla;
                 charla = _client.charlaGood[_barManeger.indexGood];
                 _barManeger.indexGood = Mathf.Min(_barManeger.indexGood + 1, _client.charlaGood.Length - 1); // No pasar el límite
-                textCharla.text = charla;
-                currentDialogue = charla;
+
 
             }
 
             else
             {
-                string charla;
                 charla = _client.charlaBad[_barManeger.indexBad];
                 _barManeger.indexBad = Mathf.Min(_barManeger.indexBad + 1, _client.charlaBad.Length - 1);
-                textCharla.text = charla;
-                currentDialogue = charla;
+
             }
         }
+
+        return charla;
     }
 
 
 
-    public void TextColor()
-    {
-        if (_client.player.help)
-        {
-            if (!_client.imposter) textCharla.color = UnityEngine.Color.green;
-            else textCharla.color = UnityEngine.Color.red;
-        }
-
-        else textCharla.color = UnityEngine.Color.white;
-    }
 
 }
 

@@ -15,12 +15,14 @@ public class OrderState : MonoBehaviour, State
     public void OnEnter()
     {
         _client.soundEfects.PlaySoundFromGroup(2);
-        _client.dialogue.CharlaThemes();
         NuevaPeticion();
-        _client.textOrder.gameObject.SetActive(true);
-        _client.textCharla.gameObject.SetActive(true);
-        _client.textOrder.gameObject.SetActive(true);
-        _client.textOrder.text = _client.currentRequest;
+        _client.dialogue.CharlaThemes();
+        //_client.textOrder.gameObject.SetActive(true);
+        //_client.textCharla.gameObject.SetActive(true);
+        //_client.textOrder.gameObject.SetActive(true);
+        _client.globoTexto.SetActive(true);
+        _client.textOrder.text = $"<color=black>Quiero </color> {_client.currentRequest}" ;
+        _client.textCharla.text = _client.dialogue.currentDialogue;
         //_client.Charla();
     }
 
@@ -28,12 +30,14 @@ public class OrderState : MonoBehaviour, State
     {
         _client.dialogue.Verification();
         var dir = _client.player.transform.position - _client.transform.position;
+        //var globoDir = _client.player.transform.position - _client.transform.position;
+        //_client.globoTexto.transform.forward = globoDir;
         _client.transform.forward = dir;
 
         _client.colorDrink();
         //Debug.Log("Order");
         _client.chair.Ocuppy();
-        _client.dialogue.TextColor();
+        _client.TextColor();
         //_client.transform.forward = new Vector3 (0, 0, 0.01f);
         
 
@@ -53,9 +57,10 @@ public class OrderState : MonoBehaviour, State
 
     public void OnExit()
     {
+        _client.globoTexto.SetActive(false);
         _client.LeaveChair();
-        _client.textOrder.gameObject.SetActive(false);
-        _client.textCharla.gameObject.SetActive(false);
+        //_client.textOrder.gameObject.SetActive(false);
+        //_client.textCharla.gameObject.SetActive(false);
     }
 
     IEnumerator niceOrder()
