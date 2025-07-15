@@ -602,6 +602,7 @@ GameObject:
   - component: {fileID: 1137080463}
   - component: {fileID: 1137080464}
   - component: {fileID: 1137080465}
+  - component: {fileID: 1137080466}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -651,6 +652,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2c671f148b7cce41a6ba12526cb82ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1137080466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137080461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96ad65577b9d01f41b4ca21501f4819a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneWin: 
+  _cashCondition: 1
+  getDamage: 0
+  contador: {fileID: 0}
+  _shotgunAudioSource: {fileID: 0}
+  _shotgunSound: {fileID: 0}
+  _emptyShotSound: {fileID: 0}
+  _beverageLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  _clientLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  currentRequest: 
+  cordura: 100
+  _corduraDanio: 10
+  _corduraMatarCliente: 15
+  _scoreText: {fileID: 0}
+  _selectionText: {fileID: 0}
+  _corduraText: {fileID: 0}
+  _corduraImageFill: {fileID: 0}
+  _corduraMinEscopeta: 100
+  _shotgunUnlockFeedback: {fileID: 0}
+  _fallDistance: 2
+  _fallOffset: {x: 0, y: 2, z: 0}
+  _fallDuration: 0.5
+  _objetoAActivar: {fileID: 0}
+  _objetoADesactivar: {fileID: 0}
+  _soundDesbloqueoEscopeta: {fileID: 0}
+  _audioSourceFeedback: {fileID: 0}
+  meshPumpBar: {fileID: 0}
+  meshPumpHand: {fileID: 0}
+  _smokeParticle: {fileID: 0}
+  _ammoVisuals: []
+  _currentAmmo: 10
+  _maxAmmo: 10
+  _blockDurationAfterShot: 1
+  _doubleShotCooldown: 5
+  _corduraPenalty: 10
+  aberrationOscStrength: 0.03
+  aberrationOscSpeed: 1
+  volume: {fileID: 0}
+  vignette: {fileID: 0}
+  vignetteOscStrength: 0.03
+  vignetteOscSpeed: 1
+  urp: {fileID: 0}
+  _sceneName:
+    m_Handle: 0
+  flash: {fileID: 0}
+  _client: {fileID: 0}
+  _talkTheme: {fileID: 0}
+  help: 0
+  _pumpHandAni: {fileID: 0}
+  _pumpBarAni: {fileID: 0}
 --- !u!1 &1325897571
 GameObject:
   m_ObjectHideFlags: 0

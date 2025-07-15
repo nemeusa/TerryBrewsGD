@@ -10,11 +10,14 @@ public class Player : MonoBehaviour
 {
     //..- -. .- / .--. .. .--- .- / -.. . / -.-. --- -.. .. --. --- .-.-. 
     [Header("Scene")]
-    [SerializeField] string _sceneLose, _sceneWin;
+    //[SerializeField] string _sceneLose, _sceneWin;
+    [SerializeField] string _sceneWin;
     [SerializeField] int _cashCondition = 1000;
     public int getDamage = 10;
-
     public SpawnContador contador;
+    private AsyncOperation _cargaEscenaWin;
+
+
     [Header("Audio")]
     [SerializeField] AudioSource _shotgunAudioSource;
     [SerializeField] AudioClip _shotgunSound;
@@ -38,7 +41,7 @@ public class Player : MonoBehaviour
 
     [Header("Condición para usar escopeta")]
     [SerializeField] private int _corduraMinEscopeta = 100;
-    [SerializeField] private GameObject _shotgunUnlockFeedback; //feedback de confirmación
+    [SerializeField] private GameObject _shotgunUnlockFeedback;
     [SerializeField] private float _fallDistance = 2f;
     [SerializeField] private Vector3 _fallOffset = new Vector3(0, 2f, 0); 
     [SerializeField] private float _fallDuration = 0.5f;
@@ -82,7 +85,6 @@ public class Player : MonoBehaviour
     public Flash flash;
     [HideInInspector] public Client _client;
     public TalksThemes _talkTheme;
-    //public BarManager barManager;
     public bool help;
 
     MoveDrinks _moveDrinks;
@@ -93,37 +95,31 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        //_pumpBarAni.SetBool("Bar gets it", true);
-        //_sceneLose = "Lose";
-        //_sceneWin = "Win";
+
 
         flash = GetComponent<Flash>();
 
         if (volume.profile.TryGet(out vignette))
         {
-           // Debug.Log("Viñeta Encontrada");
         }
         else
         {
-          //  Debug.LogWarning("No hay Nada");
         }
         if (volume.profile.TryGet(out chromAberration))
         {
-         //   Debug.Log("Una Aberración en la mira");
         }
         else
         {
-        //    Debug.LogWarning("Aca menos");
         }
         if (volume.profile.TryGet(out depthOfField))
         {
-         //   Debug.Log("mira");
         }
 
     }
     private void Start()
     {
         UpdateAmmoVisuals();
+        StartCoroutine(PrecargarEscenaVictoria());
     }
 
     private void Update()
@@ -144,7 +140,6 @@ public class Player : MonoBehaviour
                 if (moveDrinks != null)
                     if (moveDrinks.isDraggingDrink)
                     {
-                        //_moveDrinks.drinkName = _moveDrinks._currentRequest;
                         PumpOff();
                         _pumpCode = null;
                     }
@@ -152,8 +147,6 @@ public class Player : MonoBehaviour
 
                 if (_pumpCode != null)
                 {
-                   // if (_cordura <= _corduraMinEscopeta) 
-                    //{
                         if (!_usePump)
                         {
                             if (_currentAmmo > 0)
@@ -172,7 +165,6 @@ public class Player : MonoBehaviour
                         {
                             PumpOff();
                         }
-                   // }
                 }
                 if (!_shotgunUsable && cordura <= _corduraMinEscopeta)
                 {
@@ -185,12 +177,6 @@ public class Player : MonoBehaviour
                 Client client = hit.collider.GetComponent<Client>();
 
                 _client = client;
-                //if (client != null)
-                //{ 
-                //    //client.player = this;
-                //    currentRequest = client.currentRequest.ToString();
-                //    //Debug.Log("pide : " + currentRequest);
-                //}
                 Pump();
 
             }   
@@ -203,7 +189,6 @@ public class Player : MonoBehaviour
 
         if (cordura <= 0) 
         {
-            //StopAllCoroutines();
             StartCoroutine(Defeat());
         }
         if (cordura > 100) cordura = 100;
@@ -233,15 +218,25 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(0.7f);
         urp._shootURP.SetActive(false);
         urp._damageURP.SetActive(false);
-        SceneManager.LoadScene(_sceneLose);
+
+        SceneTracker.ultimaEscenaJugable = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene("Lose");
     }
 
     IEnumerator Win()
     {
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.25f); 
         urp._shootURP.SetActive(false);
         urp._damageURP.SetActive(false);
-        SceneManager.LoadScene(_sceneWin);
+
+        if (_cargaEscenaWin != null)
+        {
+            _cargaEscenaWin.allowSceneActivation = true; 
+        }
+        else
+        {
+            SceneManager.LoadScene(_sceneWin); 
+        }
     }
 
     void vinetta()
@@ -269,17 +264,6 @@ public class Player : MonoBehaviour
         {
             if (_currentAmmo > 0)
             {
-                //float currentTime = Time.time;
-                //float timeSinceLastShot = currentTime - _lastShotTime;
-                //_lastShotTime = currentTime;
-
-                //float blockDuration = _blockDurationAfterShot;
-
-                //if (timeSinceLastShot < _doubleShotCooldown)
-                //{
-                //    cordura -= _corduraPenalty;
-                //    blockDuration *= 2f; // Doble castigo
-                //}
 
                 _currentAmmo--;
                 UpdateAmmoVisuals();
@@ -302,7 +286,6 @@ public class Player : MonoBehaviour
                 }
 
                 StartCoroutine(Shoot());
-                //StartCoroutine(BlockPlayerInput(blockDuration));
             }
             else
             {
@@ -419,7 +402,6 @@ public class Player : MonoBehaviour
     private void ActivateDepthOfField(float duration, float startDistance)
     {
         if (depthOfField == null) return;
-        //StopAllCoroutines();
         StartCoroutine(Activate(duration, startDistance));
     }
 
@@ -451,5 +433,11 @@ public class Player : MonoBehaviour
         _client.visor.GetComponent<MeshRenderer>().material.color = Color.green;
         yield return new WaitForSeconds(0.3f);
         _client.visor.GetComponent<MeshRenderer>().material.color = Color.white;
+    }
+    IEnumerator PrecargarEscenaVictoria()
+    {
+        _cargaEscenaWin = SceneManager.LoadSceneAsync(_sceneWin);
+        _cargaEscenaWin.allowSceneActivation = false;
+        yield return null;
     }
 }
