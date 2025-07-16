@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class AsyncLoad : MonoBehaviour
 {
     public GameObject _loadElement;
-    public Slider _progress;
     public void SceneLoader(string nombreEscena)
     {
         StartCoroutine(AsyncCharge(nombreEscena));
@@ -22,7 +21,6 @@ public class AsyncLoad : MonoBehaviour
         while (!operacion.isDone)
         {
             float progreso = Mathf.Clamp01(operacion.progress / 0.9f);
-            _progress.value = progreso;
             yield return null;
         }
     }
