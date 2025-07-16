@@ -1,11 +1,7 @@
 using System;
 using System.Collections;
-using System.Drawing;
 using TMPro;
-using UnityEditor;
-using UnityEditor.PackageManager;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Client : MonoBehaviour
 {

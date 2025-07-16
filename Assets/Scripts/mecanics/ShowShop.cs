@@ -3,9 +3,10 @@ using UnityEngine.EventSystems;
 
 public class ShowShop : MonoBehaviour
 {
-    public GameObject objetoA;
-    public GameObject objetoB;
-    public GameObject objetoBExtra; // Nuevo objeto complementario
+    public GameObject _handShop;
+    public GameObject _barShop;
+    public MeshRenderer _barShopMesh;
+    public GameObject _canvasShop; // Nuevo objeto complementario
 
     SoundEfects soundEfects;
 
@@ -14,9 +15,9 @@ public class ShowShop : MonoBehaviour
     void Start()
     {
         soundEfects = GetComponent<SoundEfects>();
-        objetoA.SetActive(true);
-        objetoB.SetActive(false);
-        objetoBExtra.SetActive(false);
+        _barShop.SetActive(true);
+        _handShop.SetActive(false);
+        _canvasShop.SetActive(false);
     }
 
     void Update()
@@ -27,28 +28,52 @@ public class ShowShop : MonoBehaviour
             if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
                 return;
 
-            DetectarClic();
+            //DetectarClic();
+            UseShop();
         }
     }
 
-    void DetectarClic()
+    //void DetectarClic()
+    //{
+    //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+    //    if (Physics.Raycast(ray, out RaycastHit hit, 100f, layerMask))
+    //    {
+    //        GameObject clickeado = hit.collider.gameObject;
+
+    //        if (clickeado == objetoA && objetoA.activeSelf)
+    //        {
+    //            objetoA.SetActive(false);
+    //            objetoB.SetActive(true);
+    //            objetoBExtra.SetActive(true);
+    //        }
+    //        else if ((clickeado == objetoB || clickeado == objetoBExtra) && objetoB.activeSelf)
+    //        {
+    //            objetoB.SetActive(false);
+    //            objetoBExtra.SetActive(false);
+    //            objetoA.SetActive(true);
+    //        }
+    //        soundEfects.PlaySoundFromGroup(0);
+    //    }
+    //}
+
+    void UseShop()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit, 100f, layerMask))
         {
             GameObject clickeado = hit.collider.gameObject;
 
-            if (clickeado == objetoA && objetoA.activeSelf)
+            if (clickeado == _barShop && _barShopMesh.enabled)
             {
-                objetoA.SetActive(false);
-                objetoB.SetActive(true);
-                objetoBExtra.SetActive(true);
+                _barShopMesh.enabled = false;
+                _handShop.SetActive(true);
+                _canvasShop.SetActive(true);
             }
-            else if ((clickeado == objetoB || clickeado == objetoBExtra) && objetoB.activeSelf)
+            else if (clickeado == _barShop && !_barShopMesh.enabled)
             {
-                objetoB.SetActive(false);
-                objetoBExtra.SetActive(false);
-                objetoA.SetActive(true);
+                _barShopMesh.enabled = true;
+                _handShop.SetActive(false);
+                _canvasShop.SetActive(false);
             }
             soundEfects.PlaySoundFromGroup(0);
         }
