@@ -91,7 +91,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] Animator _pumpHandAni, _pumpBarAni;
 
-    
+    [SerializeField] ShowShop _showShop;
+
 
     private void Awake()
     {
@@ -114,6 +115,10 @@ public class Player : MonoBehaviour
         if (volume.profile.TryGet(out depthOfField))
         {
         }
+
+        GameStats.impostoresEliminados = 0;
+        GameStats.ordersCompletadas = 0;
+        GameStats.sanity = 0;
 
     }
     private void Start()
@@ -144,7 +149,7 @@ public class Player : MonoBehaviour
                         _pumpCode = null;
                     }
 
-
+                if(!_showShop.useShop)
                 if (_pumpCode != null)
                 {
                         if (!_usePump)
@@ -176,8 +181,9 @@ public class Player : MonoBehaviour
             {
                 Client client = hit.collider.GetComponent<Client>();
 
-                _client = client;
-                Pump();
+               
+                    _client = client;
+                    Pump();
 
             }   
         }
@@ -196,6 +202,7 @@ public class Player : MonoBehaviour
 
         if (_score >= _cashCondition)
         {
+            GameStats.sanity = cordura;
             StartCoroutine(Win());
         }
 
@@ -275,6 +282,7 @@ public class Player : MonoBehaviour
 
                 if (_client.imposter)
                 {
+                    GameStats.impostoresEliminados++;
                     MoreMoney(100);
                     StartCoroutine(correct());
                 }
@@ -339,7 +347,7 @@ public class Player : MonoBehaviour
     {
         if (_currentAmmo < _maxAmmo)
         {
-            _currentAmmo++;
+            _currentAmmo += 2;
             UpdateAmmoVisuals();
         }
     }

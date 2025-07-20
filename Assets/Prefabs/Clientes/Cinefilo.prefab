@@ -487,8 +487,8 @@ MonoBehaviour:
   - Quiero un trago que sepa a pantalla grande.
   charlaBad:
   - El cine es una mrd
-  - Hazme algo sin trama.
-  - Busco una bebida sin trama.
+  - Hazme algo aburrido.
+  - Busco una bebida sin cine.
   - "Me gustar\xEDa una secuela innecesaria."
   - Brad pitt actua horrible
   agua: {r: 0, g: 1, b: 1, a: 1}

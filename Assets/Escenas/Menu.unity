@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.032242104, g: 0.011560079, b: 0.0049207453, a: 1}
+  m_IndirectSpecularColor: {r: 0.03226629, g: 0.011526644, b: 0.0049295295, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1472,7 +1472,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Dia0Tutorial
+          m_StringArgument: Tutorial1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &897698032

@@ -14,6 +14,10 @@ public class MoveDrinks : MonoBehaviour
     [SerializeField] LayerMask _beverageLayer;
     [SerializeField] float _agarre;
 
+    [SerializeField] Transform alturaEntrega;
+
+
+
     private float _contador = 0f;
     private bool _contando = false;
 
@@ -48,14 +52,19 @@ public class MoveDrinks : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, 100f, _beverageLayer))
         {
             Client client = hit.collider.GetComponent<Client>();
-            if (client != null)
+            float alturaMinimaEntrega = 3; // Ajustá este valor a la altura real de tu barra
+
+            if (hit.point.y >= alturaMinimaEntrega)
             {
-                if (_contador >= 0.15f)
+                if (client != null)
                 {
-                    _currentRequest = client.currentRequest.ToString();
-                    if (drinkName == _currentRequest) client.goodOrder = true;
-                    else client.badOrder = true;
-                    _currentRequest = null;
+                    if (_contador >= 0.15f)
+                    {
+                        _currentRequest = client.currentRequest.ToString();
+                        if (drinkName == _currentRequest) client.goodOrder = true;
+                        else client.badOrder = true;
+                        _currentRequest = null;
+                    }
                 }
             }
         }

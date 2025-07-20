@@ -41,4 +41,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Escenas/Lose.unity
     guid: 42f1f796b9c8185478c07533494a6b75
+  - enabled: 1
+    path: Assets/Escenas/WinNew.unity
+    guid: 4220d46c788be904db678c4ae5a4a9e1
+  - enabled: 1
+    path: Assets/Escenas/Noche 4/Tutorial1.unity
+    guid: 1fa0ec23868e0a047a5c72238a231321
+  - enabled: 1
+    path: Assets/Escenas/Noche 4/Tutorial2.unity
+    guid: a429c39257fb4864389e251f5bada366
+  - enabled: 1
+    path: Assets/Escenas/Noche 4/Tutorial3.unity
+    guid: 231ccdabc3b2b9241b98ec8e5d1ace83
   m_configObjects: {}

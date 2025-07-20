@@ -10,10 +10,17 @@ public class ShowShop : MonoBehaviour
 
     SoundEfects soundEfects;
 
-    [SerializeField] LayerMask layerMask; 
+    [SerializeField] LayerMask layerMask;
+
+    GameObject clickea2;
+
+    public bool useShop;
+
+    bool des;
 
     void Start()
     {
+        useShop = false;
         soundEfects = GetComponent<SoundEfects>();
         _barShop.SetActive(true);
         _handShop.SetActive(false);
@@ -59,23 +66,35 @@ public class ShowShop : MonoBehaviour
     void UseShop()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        //if (_barShopMesh.enabled)
+        des = Physics.Raycast(ray, out RaycastHit hit2, 100f, layerMask);
+
         if (Physics.Raycast(ray, out RaycastHit hit, 100f, layerMask))
         {
             GameObject clickeado = hit.collider.gameObject;
 
             if (clickeado == _barShop && _barShopMesh.enabled)
             {
+                useShop = true;
                 _barShopMesh.enabled = false;
                 _handShop.SetActive(true);
                 _canvasShop.SetActive(true);
-            }
-            else if (clickeado == _barShop && !_barShopMesh.enabled)
-            {
-                _barShopMesh.enabled = true;
-                _handShop.SetActive(false);
-                _canvasShop.SetActive(false);
+                _barShop.GetComponent<Collider>().enabled = false;
             }
             soundEfects.PlaySoundFromGroup(0);
         }
+        if (!des)
+            if (!_barShopMesh.enabled)
+            {
+                useShop = false;
+                _barShopMesh.enabled = true;
+                _handShop.SetActive(false);
+                _canvasShop.SetActive(false);
+                soundEfects.PlaySoundFromGroup(0);
+                _barShop.GetComponent<Collider>().enabled = true;
+            }
     }
+
+
 }

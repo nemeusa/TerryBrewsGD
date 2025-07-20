@@ -141,13 +141,13 @@ public class Client : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
 
-        if (randomBlock) RandomImposter();
+       // if (randomBlock) RandomImposter();
         _fsm.ChangeState(TypeFSM.EnterBar);
 
         namesAndOffices();
     }
 
-    void RandomImposter()
+    public void RandomImposter()
     {
         if (UnityEngine.Random.Range(0, 101) > 50) imposter = true;
         else imposter = false;
@@ -208,7 +208,7 @@ public class Client : MonoBehaviour
             "Simón", "Alan", "David", "Iván", "Federico",
             "Juan", "Facundo", "Axel", "Luciano", "Elías",
             "Agustín", "Jeremías", "Samuel", "Aarón", "Lorenzo",
-            "Nahuel", "Valentino", "Enzo", "Ezequiel", "Maximiliano",
+            "Nahuel", "Valentino", "Enzo", "Ezequiel", "Maxi", "Roman", "ciro", "Breck", "becky", "Violeta", "boben",
             "Esteban", "Rodrigo", "Damián", "Leandro", "Sebastián",
             "Pablo", "Ignacio", "Ramiro", "Rafael", "Adrián",
             "Hugo", "Mauro", "Ariel", "Marcelo", "Messi", "Ramiro", "Tomé",

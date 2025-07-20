@@ -33,7 +33,9 @@ public class BarManager : MonoBehaviour
     public int indexGood = 0;
     public int indexBad = 0;
     public int indexBebida = 0;
-
+    [SerializeField] bool _imposterZickZack;
+    bool _clientZack;
+    [SerializeField] bool _tutoTienda;
 
     private void Start()
     {
@@ -66,12 +68,8 @@ public class BarManager : MonoBehaviour
            // Debug.Log(clientsCounter);
             GameObject clientObj = Instantiate(_currentClientPrefab[UnityEngine.Random.Range(0, _currentClientPrefab.Length)], _spawn, Quaternion.identity);
             Client client = clientObj.GetComponent<Client>();
-            if (clientsCounter >= _goodClients) client.randomBlock = true;
-            if (clientsCounter == _goodClients)
-            {
-                client.randomBlock = true;
-                client.imposter = true;
-            }
+            //if (clientsCounter >= _goodClients) client.randomBlock = true;
+            clientOrImposter(client);
             _player._client = client;
             client.player = _player;
             client._barManeger = this;
@@ -81,6 +79,32 @@ public class BarManager : MonoBehaviour
         else
         {
             //Debug.Log("No hay sillas libres, no spawnea el cliente.");
+        }
+
+        if(_tutoTienda) TutorialTienda();
+    }
+
+    void clientOrImposter(Client client)
+    {
+        if (clientsCounter >= _goodClients) client.RandomImposter();
+        if (clientsCounter <= _badClients)
+        {
+            client.imposter = true;
+        }
+
+        if (_imposterZickZack)
+        {
+            _clientZack = !_clientZack;
+            if (_clientZack) client.imposter = true;
+            else client.imposter = false;
+        }
+    }
+
+    void TutorialTienda()
+    {
+        if (_player._score <= 150 && _player._currentAmmo <= 0)
+        {
+            _player.ReloadOneBullet();
         }
     }
 
