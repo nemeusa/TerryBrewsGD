@@ -1,6 +1,6 @@
 public enum CupSize
 {
-    Pequeño,
+    Peque,
     Mediano,
     Grande
 }
