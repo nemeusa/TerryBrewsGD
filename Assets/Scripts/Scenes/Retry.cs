@@ -11,7 +11,7 @@ public class RetryGame : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("Noche1");
+            SceneManager.LoadScene("Menu");
         }
     }
 }

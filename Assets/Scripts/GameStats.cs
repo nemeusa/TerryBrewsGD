@@ -4,6 +4,8 @@ using UnityEngine;
 
 public static class GameStats
 {
+
+    public static int recordEndless;
     public static int impostoresEliminados;
     public static int ordersCompletadas;
     public static int sanity;

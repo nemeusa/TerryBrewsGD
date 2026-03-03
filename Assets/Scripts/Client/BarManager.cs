@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class BarManager : MonoBehaviour
 {
+    public static BarManager instance;
     //[SerializeField] GameObject _clientPrefab;
     // [SerializeField] GameObject clientGoodPrefab;
     [SerializeField] GameObject[] _currentClientPrefab;
@@ -36,6 +37,11 @@ public class BarManager : MonoBehaviour
     [SerializeField] bool _imposterZickZack;
     bool _clientZack;
     [SerializeField] bool _tutoTienda;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {

@@ -669,8 +669,9 @@ MonoBehaviour:
   _client: {fileID: 0}
   _talkTheme: {fileID: 144251267980114545}
   help: 0
-  _pumpHandAni: {fileID: 0}
-  _pumpBarAni: {fileID: 0}
+  endless: {fileID: 9105334205872252930}
+  _pumpHandAni: {fileID: 1756600672}
+  _pumpBarAni: {fileID: 3136054116974225754}
   _showShop: {fileID: 1859086996}
 --- !u!23 &40187295
 MeshRenderer:
@@ -69071,6 +69072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjetoMenuPausa: {fileID: 1127483954}
   pausa: 0
+  player: {fileID: 40187294}
 --- !u!114 &1972449967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71673,8 +71675,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1064171454557895007, guid: f80945bda8d998e499aa70895b998213,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9105334205872252930}
   m_SourcePrefab: {fileID: 100100000, guid: f80945bda8d998e499aa70895b998213, type: 3}
+--- !u!1 &9105334205872252929 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1064171454557895007, guid: f80945bda8d998e499aa70895b998213,
+    type: 3}
+  m_PrefabInstance: {fileID: 9105334205872252928}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9105334205872252930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9105334205872252929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03df666d6f603bc41a170e11ade4ea64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recordText: {fileID: 0}
 --- !u!4 &9121298477829148280
 Transform:
   m_ObjectHideFlags: 0

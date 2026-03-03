@@ -86,6 +86,7 @@ public class Player : MonoBehaviour
     [HideInInspector] public Client _client;
     public TalksThemes _talkTheme;
     public bool help;
+    public EndlessMode endless;
 
     MoveDrinks _moveDrinks;
 
@@ -96,8 +97,6 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-
-
         flash = GetComponent<Flash>();
 
         if (volume.profile.TryGet(out vignette))
@@ -124,7 +123,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         UpdateAmmoVisuals();
-        StartCoroutine(PrecargarEscenaVictoria());
+        if (!BarManager.instance.tutorial) StartCoroutine(PrecargarEscenaVictoria());
     }
 
     private void Update()
@@ -222,6 +221,7 @@ public class Player : MonoBehaviour
 
     IEnumerator Defeat()
     {
+        if (endless != null) endless.AddTotalCash(_score);
         yield return new WaitForSeconds(0.7f);
         urp._shootURP.SetActive(false);
         urp._damageURP.SetActive(false);

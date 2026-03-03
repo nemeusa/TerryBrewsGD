@@ -7,6 +7,7 @@ public class Pausa : MonoBehaviour
 {
     public GameObject ObjetoMenuPausa;
     public bool pausa = false;
+    [SerializeField] Player player;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,11 +50,15 @@ public class Pausa : MonoBehaviour
 
     public void Menu()
     {
+        if(player != null && player.endless != null)
+        player.endless.AddTotalCash(player._score);
         Reanudar();
         SceneManager.LoadScene("Menu");
     }
     public void Salir()
     {
+        if(player != null && player.endless != null)
+        player.endless.AddTotalCash(player._score);
         Application.Quit();
     }
 }

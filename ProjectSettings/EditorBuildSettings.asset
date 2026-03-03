@@ -9,33 +9,6 @@ EditorBuildSettings:
     path: Assets/Escenas/Menu.unity
     guid: 08682307573f46a4e94138f1fcb00aa8
   - enabled: 1
-    path: Assets/Escenas/Noche 0/Dia0Tutorial.unity
-    guid: 1865bdc57cf4aff4f99ba53aafbb359a
-  - enabled: 1
-    path: Assets/Escenas/Noche 0/Night0Transition.unity
-    guid: c0670e331782b9044ae62797d592eba2
-  - enabled: 1
-    path: Assets/Escenas/Noche 1/Dia1EscopetaCordura.unity
-    guid: 3eac13b72a34c45438a8fcf1c7efb2f6
-  - enabled: 1
-    path: Assets/Escenas/Noche 1/Night1Transition.unity
-    guid: 40479733a0ce2324689c6b12d7979850
-  - enabled: 1
-    path: Assets/Escenas/Noche 2/Dia2Tienda.unity
-    guid: 991686539b6c50a47aabce01e4f2e379
-  - enabled: 1
-    path: Assets/Escenas/Noche 2/Night2Transition.unity
-    guid: 855de3643358e634e9b612829be85678
-  - enabled: 1
-    path: Assets/Escenas/Noche 3/Dia3Television.unity
-    guid: 78bcaa40544cb65468531530d8619fc9
-  - enabled: 1
-    path: Assets/Escenas/Noche 3/Night3Transition.unity
-    guid: 169aa094bdbf90d45b13aaa8ce39fa62
-  - enabled: 1
-    path: Assets/Escenas/Noche 4/Dia4TePongo.unity
-    guid: a7101624d05745446965e45c01b1d7b2
-  - enabled: 1
     path: Assets/Escenas/Noche 4/Win.unity
     guid: 19415a15588c7ae47ab3ecfebbc20207
   - enabled: 1
@@ -45,15 +18,18 @@ EditorBuildSettings:
     path: Assets/Escenas/WinNew.unity
     guid: 4220d46c788be904db678c4ae5a4a9e1
   - enabled: 1
-    path: Assets/Escenas/Noche 4/Tutorial1.unity
-    guid: 1fa0ec23868e0a047a5c72238a231321
+    path: Assets/Remake.unity
+    guid: 7902865b4b5eba644bd5307a75c90b8a
   - enabled: 1
-    path: Assets/Escenas/Noche 4/Tutorial2.unity
-    guid: a429c39257fb4864389e251f5bada366
+    path: Assets/Tuto1Remake.unity
+    guid: c2cafe933d939b74baca6abc5cb3610c
   - enabled: 1
-    path: Assets/Escenas/Noche 4/Tutorial3.unity
-    guid: 231ccdabc3b2b9241b98ec8e5d1ace83
+    path: Assets/Tuto2Remake.unity
+    guid: fd037c01c1156564794f5f877997b4ff
   - enabled: 1
-    path: Assets/Escenas/test.unity
-    guid: d1443c3169f33f74595011ca69f3f814
+    path: Assets/Tuto3Remake.unity
+    guid: d79920b68af905f44a1ddea2d136a1e8
+  - enabled: 1
+    path: Assets/EndlessRemake.unity
+    guid: 60cc9a4cea7758a48b28e43fee95316c
   m_configObjects: {}
