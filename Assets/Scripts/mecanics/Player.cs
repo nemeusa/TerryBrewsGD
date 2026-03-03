@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 using System.Collections;
 using UnityEngine.SceneManagement;
@@ -39,11 +39,11 @@ public class Player : MonoBehaviour
     public int _score { get; private set; } = 0;
     public Image _corduraImageFill;
 
-    [Header("Condici�n para usar escopeta")]
+    [Header("Condici para usar escopeta")]
     [SerializeField] private int _corduraMinEscopeta = 100;
     [SerializeField] private GameObject _shotgunUnlockFeedback;
     [SerializeField] private float _fallDistance = 2f;
-    [SerializeField] private Vector3 _fallOffset = new Vector3(0, 2f, 0); 
+    [SerializeField] private Vector3 _fallOffset = new Vector3(0, 2f, 0);
     [SerializeField] private float _fallDuration = 0.5f;
     private bool _shotgunUsable = false;
     [SerializeField] private GameObject _objetoAActivar;
@@ -63,9 +63,9 @@ public class Player : MonoBehaviour
     public int _maxAmmo = 10;
     private bool _isBlocked = false;
     [SerializeField] private float _blockDurationAfterShot = 1f;
-    [SerializeField] private float _doubleShotCooldown = 5f; 
-    [SerializeField] private int _corduraPenalty = 10;      
-    private float _lastShotTime = -Mathf.Infinity;           
+    [SerializeField] private float _doubleShotCooldown = 5f;
+    [SerializeField] private int _corduraPenalty = 10;
+    private float _lastShotTime = -Mathf.Infinity;
 
 
     [Header("URP")]
@@ -149,9 +149,9 @@ public class Player : MonoBehaviour
                         _pumpCode = null;
                     }
 
-                if(!_showShop.useShop)
-                if (_pumpCode != null)
-                {
+                if (!_showShop.useShop)
+                    if (_pumpCode != null)
+                    {
                         if (!_usePump)
                         {
                             if (_currentAmmo > 0)
@@ -170,7 +170,7 @@ public class Player : MonoBehaviour
                         {
                             PumpOff();
                         }
-                }
+                    }
                 if (!_shotgunUsable && cordura <= _corduraMinEscopeta)
                 {
                     _shotgunUsable = true;
@@ -181,11 +181,11 @@ public class Player : MonoBehaviour
             {
                 Client client = hit.collider.GetComponent<Client>();
 
-               
-                    _client = client;
-                    Pump();
 
-            }   
+                _client = client;
+                Pump();
+
+            }
         }
 
         if (_score < 0) _score = 0;
@@ -193,7 +193,7 @@ public class Player : MonoBehaviour
         _selectionText.text = "Tienes: " + _selectedDrink;
 
 
-        if (cordura <= 0) 
+        if (cordura <= 0)
         {
             StartCoroutine(Defeat());
         }
@@ -208,7 +208,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A)) help = !help;
 
-        vinetta(); 
+        vinetta();
 
 
         _corduraImageFill.fillAmount = cordura / 100f;
@@ -232,17 +232,17 @@ public class Player : MonoBehaviour
 
     IEnumerator Win()
     {
-        yield return new WaitForSeconds(0.25f); 
+        yield return new WaitForSeconds(0.25f);
         urp._shootURP.SetActive(false);
         urp._damageURP.SetActive(false);
 
         if (_cargaEscenaWin != null)
         {
-            _cargaEscenaWin.allowSceneActivation = true; 
+            _cargaEscenaWin.allowSceneActivation = true;
         }
         else
         {
-            SceneManager.LoadScene(_sceneWin); 
+            SceneManager.LoadScene(_sceneWin);
         }
     }
 
@@ -323,7 +323,7 @@ public class Player : MonoBehaviour
 
         _pumpHandAni.SetBool("Hand gets it", true);
         _pumpBarAni.SetBool("Bar gets it", false);
-      
+
         meshPumpBar.enabled = false;
         meshPumpHand.enabled = true;
 
@@ -369,7 +369,7 @@ public class Player : MonoBehaviour
     {
         _pumpHandAni.SetBool("Hand gets it", false);
         _pumpBarAni.SetBool("Bar gets it", true);
-        
+
         meshPumpBar.enabled = true;
         meshPumpHand.enabled = false;
 
@@ -394,7 +394,7 @@ public class Player : MonoBehaviour
             _shotgunUnlockFeedback.transform.position = Vector3.Lerp(startPos, targetPos, t);
             yield return null;
         }
-        
+
         yield return new WaitForSeconds(2f);
         _shotgunUnlockFeedback.SetActive(false);
     }
