@@ -53,4 +53,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Escenas/Noche 4/Tutorial3.unity
     guid: 231ccdabc3b2b9241b98ec8e5d1ace83
+  - enabled: 1
+    path: Assets/Escenas/test.unity
+    guid: d1443c3169f33f74595011ca69f3f814
   m_configObjects: {}
