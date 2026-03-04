@@ -320,8 +320,9 @@ public class Player : MonoBehaviour
 
     void PumpOn()
     {
-
+        if (_pumpHandAni != null)
         _pumpHandAni.SetBool("Hand gets it", true);
+        if (_pumpBarAni != null)
         _pumpBarAni.SetBool("Bar gets it", false);
 
         meshPumpBar.enabled = false;
@@ -367,7 +368,9 @@ public class Player : MonoBehaviour
 
     void PumpOff()
     {
-        _pumpHandAni.SetBool("Hand gets it", false);
+        if (_pumpHandAni != null)
+            _pumpHandAni.SetBool("Hand gets it", false);
+        if (_pumpBarAni != null)
         _pumpBarAni.SetBool("Bar gets it", true);
 
         meshPumpBar.enabled = true;

@@ -17,6 +17,7 @@ public class SceneChanger : MonoBehaviour
 
     IEnumerator ChangeToSceneB(string scene)
     {
+        if (transitionAnim != null)
         transitionAnim.SetTrigger("exit");
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(scene);
@@ -24,6 +25,7 @@ public class SceneChanger : MonoBehaviour
 
     IEnumerator ChangeToSceneA()
     {
+        if (transitionAnim != null)
         transitionAnim.SetTrigger("exit");
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(0);

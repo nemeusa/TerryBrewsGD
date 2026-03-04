@@ -669,8 +669,9 @@ MonoBehaviour:
   _client: {fileID: 0}
   _talkTheme: {fileID: 144251267980114545}
   help: 0
-  _pumpHandAni: {fileID: 0}
-  _pumpBarAni: {fileID: 0}
+  endless: {fileID: 0}
+  _pumpHandAni: {fileID: 1756600672}
+  _pumpBarAni: {fileID: 3136054116974225754}
   _showShop: {fileID: 1859086996}
 --- !u!23 &40187295
 MeshRenderer:
@@ -56243,7 +56244,7 @@ Transform:
   m_GameObject: {fileID: 1624818122}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.52, y: 0, z: 0}
+  m_LocalPosition: {x: -6.33, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -69071,6 +69072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjetoMenuPausa: {fileID: 1127483954}
   pausa: 0
+  player: {fileID: 0}
 --- !u!114 &1972449967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69741,7 +69743,7 @@ Transform:
   m_GameObject: {fileID: 2094858634}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6, y: 0, z: 0}
+  m_LocalPosition: {x: -2.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
